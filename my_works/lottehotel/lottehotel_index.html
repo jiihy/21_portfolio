@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>글로벌 호텔그룹 롯데호텔앤리조트 공식 사이트</title>
+  <link rel="shortcut icon" href="icons/favicon1.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+  		$(document).ready(function(){
+			$('#footer_familysite').click(function(){
+				$('#footer_familysite_option').stop().toggle()
+			})
+		$('#starter_close').click(function(){
+			$('#starter_bg').hide()
+		  })
+
+		
+
+		slide_num= 0
+		num= 0
+		click = 0;
+		 
+		  slide_ul=setInterval(function(){ //3초마다 오른쪽 버튼을 클릭하는것같은 동작을 부여		
+				click = 1;
+				if(num <= -200){num = 0; $('#slide_ul').css({'left':'0'}) }
+				num = num - 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+				$('#slide_ul').stop().animate({'left':num+'%'},500,function(){
+					click = 0  })
+				if (num <= -200){
+				$('#list>li').eq(0).css({'background-color':'#686869'}).siblings('li').css({'background-color':'#fff'})
+				}
+				$('#list>li').eq(num/-100).css({'background-color':'#686869'}).siblings('li').css({'background-color':'#fff'})
+
+
+			},3000)
+
+
+	  $('#list>li').click(function(){
+		  num = $(this).index()*-100;
+		$('#slide_ul').stop().animate({'left':num+'%'},500)
+		$(this).css({'background-color':'#686869'}).siblings().css({'background-color':'#fff'})
+	  })
+
+		$('#slide_next_bt').click(function(){
+			if(click == 0){
+				click = 1;
+				if(num <= -200){num = 0; $('#slide_ul').css({'left':'0'}) }
+				num = num - 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+				$('#slide_ul').stop().animate({'left':num+'%'},500,function(){
+					click = 0  })
+				if (num <= -200){
+				$('#list>li').eq(0).css({'background-color':'#686869'}).siblings('li').css({'background-color':'#fff'})
+				}
+				$('#list>li').eq(num/-100).css({'background-color':'#686869'}).siblings('li').css({'background-color':'#fff'})
+			}
+		})
+		$('#slide_prev_bt').click(function(){
+			if(click == 0){
+				click = 1;
+			if(num >= 0 ){num = -200; $('#slide_ul').css({'left':'-200%'}) }
+			num = num + 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+			$('#slide_ul').stop().animate({'left':num+'%'},500,function(){
+				click = 0  })
+			if (num >= 0){
+			$('#slide_bt li').eq(0).css({'background-color':'#686869'}).siblings('li').css({'background-color':'#fff'})
+			}
+			$('#slide_bt li').eq(num/-100).css({'background-color':'#686869'}).siblings('li').css({'background-color':'#fff'})
+			}
+		})
+});
+  </script>
+  <style>
+	* {
+		margin : 0;
+		padding : 0;
+		list-style : none;
+		letter-spacing : -1px;
+	}
+
+	header {
+		width : 100%;
+		height : 200px;
+		min-width : 1500px;
+		background-color : #fff;
+		position : fixed;
+		top : 0;
+		z-index : 99;
+	}
+
+	#bgc {
+		background-color : #fff;
+	}
+
+	#header_box1 {
+		width : 100%;
+		height : 40px;
+		background-color : #432f31;
+		margin : auto;
+	}
+
+	#header_box1 p {
+		text-align : center;
+		color : #fff;
+		font-size : 14px;
+		line-height : 40px;
+		font-weight : 600;
+	}
+
+	.clean {
+		text-decoration : underline;
+		color : #c7bbb4;
+		cursor : pointer;
+	}
+
+	#header_box2 {
+		width : 1500px;
+		height : 120px;
+		margin : auto;
+		position : relative;
+	}
+
+	#logo {
+		height : 90px;
+		cursor : pointer;
+		position : absolute;
+		left : 0;
+		right : 0;
+		top : 10px;
+		margin : auto;
+	}
+
+	#left_menu {
+		float : left;
+		padding : 0 50px;
+		position : relative;
+	}
+
+	#left_menu li {
+		color : #777777;
+		font-size : 13px;
+		line-height : 15px;
+		display : inline-block;
+		margin-top : 20px;
+		padding : 0 10px;
+		border-right : 1px solid #e0e0e0;
+		cursor : pointer;
+	}
+
+	#left_menu li:nth-child(3) {
+		border : none;
+	}
+
+	#where_icon {
+		position : absolute;
+		top : 40px;
+		left : 15px;
+	}
+
+	.where_p {
+		font-size : 11px;
+		color : #9d9389;
+		position : absolute;
+		top : 55px;
+		left : 40px;
+	}
+
+	#right_menu {
+		float : right;
+		padding : 0 50px;
+	}
+
+	#right_menu li {
+		color : #777777;
+		font-size : 13px;
+		line-height : 15px;
+		display : inline-block;
+		margin-top : 20px;
+		padding : 0 10px;
+		border-right : 1px solid #e0e0e0;
+		cursor : pointer;
+	}
+
+	#right_menu li:nth-child(5) {
+		border : none;
+	}
+
+	#bell {
+		width : 15px;
+	}
+
+	#header_box3 {
+		width : 1500px;
+		height : 40px;
+		margin : auto;
+		text-align : center;
+		position : relative;
+	}
+
+	#main_menu li {
+		font-size : 15px;
+		display : inline-block;
+		margin : 0 10px;
+		font-weight : 600;
+		color : #666666;
+		cursor : pointer;
+		transition : 0.4s;
+	}
+
+	.booking {
+		width : 130px;
+		height : 40px;
+		border : none;
+		background-color : #1b65b3;
+		font-size : 17px;
+		font-weight : 700;
+		color : #fff;
+		position : absolute;
+		right : 55px;
+		bottom : 10px;
+		cursor : pointer;
+	}
+
+	#main_menu > li:hover {
+		color : #998465;
+	}
+
+	#slide {
+		width : 100%;
+		min-width : 1500px;
+		height : 800px;
+		position : relative;
+		text-align : center;
+		margin-top : 200px;
+		overflow : hidden;
+	}
+
+	#slide_ul {
+		width : 300%;
+		position : absolute;
+	}
+
+	#slide_ul > li {
+		float : left;
+		width : 33.33333%;
+		min-width : 1500px;
+		height : 800px;
+		position : relative;
+		text-align : center;
+	}
+
+	#slide_ul > li:nth-child(1) {
+		background : url(images/200311-2-2000-mai-GLOBAL.jpg.thumb.1920.1920.jpg) center;
+		background-size : cover;
+	}
+
+	#slide_ul > li:nth-child(2) {
+		background : url(images/main-banner-pc3.jpg.thumb.1920.1920.jpg) center;
+		background-size : cover;
+	}
+
+	#slide_ul > li:nth-child(3) {
+		background : url(images/200311-2-2000-mai-GLOBAL.jpg.thumb.1920.1920.jpg) center;
+		background-size : cover;
+	}
+
+	#slide_next_bt {
+		height : 100px;
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		right : 100px;
+		z-index : 8;
+		cursor : pointer;
+	}
+
+	#slide_prev_bt {
+		height : 100px;
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		left : 100px;
+		cursor : pointer;
+		z-index : 8;
+	}
+
+	.nowopen {
+		width : 100%;
+		height : 300px;
+		text-align : center;
+		color : #fff;
+		position : absolute;
+		left : 0;
+		top : 210px;
+		position : relative;
+	}
+
+	.nowopen h2 {
+		font-size : 18px;
+		font-weight : 400;
+		margin-bottom : 30px;
+		text-shadow : 2px 2px 0 #909090;
+	}
+
+	.nowopen h3 {
+		font-size : 60px;
+		font-weight : 300;
+		text-shadow : 2px 2px 0 #909090;
+	}
+
+	.nowopen h4 {
+		margin-top : 40px;
+		font-size : 22px;
+		font-weight : 500;
+	}
+
+	.nowopen h5 {
+		margin-top : 40px;
+		font-size : 17px;
+		font-weight : 500;
+	}
+
+	.nowopen button {
+		width : 100px;
+		height : 30px;
+		border : none;
+		background : none;
+		margin-top : 35px;
+		color : #fff;
+		font-size : 15px;
+		cursor : pointer;
+	}
+
+	#promo {
+		font-size : 15px;
+		color : #fff;
+		position : absolute;
+		right : 0;
+		bottom : 120px;
+		font-weight : 400;
+		cursor : pointer;
+	}
+
+	#promo:hover {
+		text-decoration : underline;
+	}
+
+	#booking_box {
+		width : 1170px;
+		height : 110px;
+		background-color : #fff;
+		position : absolute;
+		left : 0;
+		right : 0;
+		margin : auto;
+		bottom : 40px;
+	}
+
+	#booking_1 {
+		width : 330px;
+		height : 70px;
+		float : left;
+		border-right : 1px solid #dcdcdc;
+		margin : 20px 0;
+	}
+
+	#booking_2 {
+		width : 380px;
+		height : 70px;
+		float : left;
+		border-right : 1px solid #dcdcdc;
+		margin-top : 20px;
+	}
+
+	#booking_3 {
+		width : 270px;
+		height : 90px;
+		float : left;
+		margin : 10px 0;
+	}
+
+	#booking_2 > div {
+		width : 130px;
+		height : 60px;
+		float : left;
+	}
+
+	#booking_2 > div:nth-child(2) {
+		width : 80px;
+		margin : 5px 20px;
+	}
+
+	.booking_2_top {
+		width : 98%;
+		margin : 1%;
+		height : 25px;
+		text-align : left;
+		margin-left : 5px;
+		font-size : 14px;
+		color : #999;
+		margin-top : 5px;
+		margin-left : 30px;
+		font-weight : 600;
+	}
+
+	.booking_2_2top > img {
+		width : 40px;
+	}
+
+	.booking_2_2bottom {
+		font-weight : 600;
+		color : #777;
+	}
+
+	.booking_2_bottom {
+		width : 98%;
+		margin : 1%;
+		height : 35px;
+	}
+
+	.booking_2_left {
+		width : 40%;
+		height : 98%;
+		float : left;
+		margin : 1%;
+		font-size : 30px;
+		margin-left : 20px;
+		color : #333;
+		font-weight : 600;
+		cursor : pointer;
+	}
+
+	.booking_2_right {
+		width : 40%;
+		height : 98%;
+		float : left;
+		margin : 1%;
+		font-size : 14px;
+		color : #777;
+		margin-top : 3px;
+		text-align : left;
+	}
+
+	.booking_li2 {
+		font-size : 15px;
+		color : #666;
+		font-weight : 500;
+		margin-top : 5px;
+	}
+
+	.booking_title3 {
+		font-size : 14px;
+		float : left;
+		margin : 15px 20px;
+		color : #999;
+	}
+
+	.booking_li1 {
+		font-size : 20px;
+		margin-top : 15px;
+		color : #666;
+		font-weight : 500;
+		cursor : pointer;
+	}
+
+	.booking_li1 > img {
+		width : 20px;
+		margin-right : 10px;
+	}
+
+	.booking_li {
+		font-size : 30px;
+		color : #333;
+		font-weight : 600;
+		margin-top : 8px;
+		cursor : pointer;
+	}
+
+	#child {
+		width : 13px;
+		margin-left : 2px;
+	}
+
+	#search {
+		width : 160px;
+		height : 70px;
+		background-color : #1b65b3;
+		margin : 20px 0;
+		margin-right : 20px;
+		border : none;
+		color : #fff;
+		font-size : 17px;
+		font-weight : 600;
+		cursor : pointer;
+	}
+
+	#list {
+		position : absolute;
+		bottom : 10px;
+		right : 105px;
+		z-index : 5;
+	}
+
+	#list > li {
+		display : inline-block;
+		width : 60px;
+		height : 2px;
+		background-color : #fff;
+		border-radius : 5px;
+		cursor : pointer;
+		margin-left : -7px;
+	}
+
+	#list > li:first-child {
+		background-color : #686869;
+	}
+
+	#promotion {
+		width : 1500px;
+		height : 1400px;
+		margin : auto;
+		overflow : hidden;
+		position : relative;
+	}
+
+	#promotion > h2 {
+		text-align : center;
+		font-size : 45px;
+		font-weight : 400;
+		margin-top : 100px;
+		margin-bottom : 80px;
+	}
+
+	#promotion > button {
+		background : none;
+		border : none;
+		color : #1b65c3;
+		float : right;
+		font-size : 15px;
+		font-weight : 700;
+		position : absolute;
+		right : 30px;
+		top : 210px;
+		cursor : pointer;
+		transition : 0.7s;
+		line-height : 20px;
+	}
+
+	#promotion > button:hover {
+		font-size : 16px;
+		line-height : 20px;
+	}
+
+	.promotion_box {
+		float : left;
+		width : 440px;
+		height : 455px;
+		border-bottom : 1px solid #d6d6d6;
+		margin : 0 30px;
+		position : relative;
+	}
+
+	.promotion_box2 {
+		float : left;
+		width : 440px;
+		height : 455px;
+		border-bottom : 1px solid #d6d6d6;
+		margin : 0 30px;
+		position : relative;
+		margin-top : 100px;
+	}
+
+	#member_icon {
+		position : absolute;
+		top : 0;
+		right : 20px;
+	}
+
+	.imgbox {
+		width : 440px;
+		height : 225px;
+		overflow : hidden;
+		cursor : pointer;
+		position : relative;
+	}
+
+	.imgbox:hover .promoimg {
+		transform : scale(1.2);
+	}
+
+	.promoimg {
+		width : 100%;
+		transition : 0.7s;
+	}
+
+	.promotion_text_box {
+		margin-left : 15px;
+	}
+
+	.promotion_text_box > h2 {
+		font-size : 16px;
+		font-weight : 600;
+		margin : 10px 0;
+		color : #666;
+	}
+
+	.promotion_text_box > h3 {
+		font-size : 23px;
+		font-weight : 700;
+		margin-bottom : 10px;
+		color : #333;
+	}
+
+	.promotion_text_box > h4 {
+		font-size : 15px;
+		font-weight : 300;
+		margin-bottom : 20px;
+		color : #666;
+		width : 420px;
+		overflow : hidden;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+
+	.p_bottom {
+		font-size : 15px;
+		font-weight : 400;
+		margin-bottom : 10px;
+		color : #746a66;
+	}
+
+	.package {
+		position : absolute;
+		bottom : -40px;
+		left : 20px;
+	}
+
+	.krw {
+		position : absolute;
+		bottom : -40px;
+		right : 150px;
+		font-weight : 700;
+	}
+
+	.won {
+		position : absolute;
+		bottom : -45px;
+		right : 10px;
+		font-weight : 500;
+		font-size : 28px;
+	}
+
+	#banner_clean {
+		width : 100%;
+		height : 250px;
+		margin : auto;
+		background : url(images/200701_COVID_pc_ko.jpg) center no-repeat #fff;
+		cursor : pointer;
+	}
+
+	#youtube {
+		text-align : center;
+		margin-top : 150px;
+	}
+
+	#youtube > iframe {
+		width : 1090px;
+		height : 600px;
+		border: none;
+	}
+
+	#newex {
+		width : 100%;
+		height : 1400px;
+	}
+
+	#newex_box {
+		width : 1200px;
+		height : 1000px;
+		position : relative;
+		margin : auto;
+	}
+
+	#newex h1 {
+		font-size : 48px;
+		font-weight : 400;
+		padding-top : 130px;
+		text-align : center;
+		margin-bottom : 80px;
+	}
+
+	#newex_box1 {
+		width : 558px;
+		height : 558px;
+		background : url(images/200330-558-mai-GLOBAL.jpg) 0 0 no-repeat;
+		position : absolute;
+		left : 0;
+		top : 0;
+	}
+
+	.newex_text1 > h2 {
+		font-size : 44px;
+		font-weight : 400;
+		color : #fff;
+		margin-left : 70px;
+		margin-top : 60px;
+	}
+
+	.newex_text1 > p {
+		font-size : 18px;
+		color : #fff;
+		margin-left : 70px;
+		margin-top : 40px;
+		line-height : 30px;
+	}
+
+	.newex_text1 > button {
+		font-size : 16px;
+		background : none;
+		border : none;
+		color : #fff;
+		margin-left : 70px;
+		margin-top : 30px;
+		cursor : pointer;
+	}
+
+	#newex_box2 {
+		width : 558px;
+		height : 440px;
+		background-color : #fff;
+		text-align : center;
+		right : 0;
+		top : 0;
+		position : absolute;
+	}
+
+	.newex_text2 > img {
+		height : 90px;
+		margin-top : 25px;
+	}
+
+	.newex_text2 > .newex_text2_img2 {
+		margin-top : 80px;
+	}
+
+	.newex_text2 > h2 {
+		font-size : 32px;
+		font-weight : 400;
+		margin-bottom : 30px;
+		margin : 40px 0 10px 10px;
+	}
+
+	.newex_text2 > p {
+		font-size : 18px;
+		color : #666;
+		margin-top : 60px;
+		font-weight : 400;
+	}
+
+	.newex_text2 > button {
+		font-size : 16px;
+		background : none;
+		color : #1b65c3;
+		border : none;
+		cursor : pointer;
+		margin-top : 40px;
+		font-weight : 400;
+	}
+
+	#newex_box3 {
+		width : 558px;
+		height : 558px;
+		background : url(images/200313-558-mai-GLOBAL.png) 0 0 no-repeat;
+		position : absolute;
+		right : 0;
+		bottom : 0;
+	}
+
+	#newex_box4 {
+		width : 558px;
+		height : 440px;
+		background-color : #fff;
+		text-align : center;
+		position : absolute;
+		left : 0;
+		bottom : 0;
+	}
+
+	#rewards {
+		width : 100%;
+		height : 600px;
+		background-color : #f5f5f5;
+		margin : auto;
+		text-align : center;
+	}
+
+	#rewards > h2 {
+		font-size : 48px;
+		padding-top : 100px;
+		color : #333;
+		font-weight : 400;
+	}
+
+	#icon_box {
+		width : 1200px;
+		height : 230px;
+		margin : auto;
+	}
+
+	#icon_box > li {
+		width : 310px;
+		height : 200px;
+		display : inline-block;
+		margin : 0 15px;
+		vertical-align : top;
+	}
+
+	#icon_box > li > img {
+		margin-top : 70px;
+	}
+
+	#icon_box > li > p {
+		font-size : 17px;
+		margin-top : 25px;
+		line-height : 30px;
+	}
+
+	#rewards > button {
+		width : 450px;
+		height : 55px;
+		border : #000 solid 1px;
+		cursor : pointer;
+		margin-top : 50px;
+		transition : 0.7s;
+		font-size : 15px;
+	}
+
+	#rewards > button:hover {
+		background-color : #ddd;
+	}
+
+	#banner_club {
+		width : 100%;
+		height : 250px;
+		margin : auto;
+		background : url(images/20200514-1920-mai-global-ko.jpg) center no-repeat #fff;
+		cursor : pointer;
+		margin-top : 100px;
+	}
+
+	#banner_chat {
+		width : 100%;
+		height : 250px;
+		margin : auto;
+		background : url(images/181030-1-1410-mai-GLOBAL.jpg) center no-repeat #fff;
+		cursor : pointer;
+		margin-top : 50px;
+	}
+
+	#instagram {
+		width : 1280px;
+		height : 320px;
+		margin : auto;
+		margin-top : 100px;
+		margin-bottom : 500px;
+		padding-bottom : 100px;
+	}
+
+	#instagram1 {
+		width : 320px;
+		height : 320px;
+		float : left;
+		background-color : #ebe6de;
+		text-align : center;
+	}
+
+	#instagram1 h2 {
+		font-size : 28px;
+		font-weight : 400;
+		line-height : 45px;
+		color : #685f51;
+		margin-top : 70px;
+	}
+
+	#instagram1 h3 {
+		font-size : 16px;
+		font-weight : 400;
+		line-height : 16px;
+		color : #8f887b;
+		margin-top : 15px;
+		letter-spacing : 2px;
+	}
+
+	#instagram1 img {
+		width : 54px;
+		margin-top : 25px;
+	}
+
+	#instagram2 {
+		width : 320px;
+		height : 320px;
+		float : left;
+		background-color : #eee;
+		overflow : hidden;
+	}
+
+	#instagram3 {
+		width : 320px;
+		height : 320px;
+		float : left;
+		background-color : #ccc;
+		overflow : hidden;
+	}
+
+	#instagram4 {
+		width : 320px;
+		height : 320px;
+		float : left;
+		background-color : #bbb;
+		overflow : hidden;
+	}
+
+	#instagram3 img {
+		width : 135%;
+		margin-left : -60px;
+	}
+
+	#instagram > li:hover .insta_img {
+		transform : scale(1.1);
+	}
+
+	.insta_img {
+		width : 100%;
+		transition : 0.9s;
+		cursor : pointer;
+	}
+
+	footer {
+		width : 100%;
+		height : 450px;
+		background-color : #000;
+		margin-top : 100px;
+		position : fixed;
+		bottom : 0;
+		z-index : -99;
+	}
+
+	#footer_section1 {
+		width : 100%;
+		height : 80px;
+		background-color : #555;
+	}
+
+	#footer_section1 img {
+		height : 30px;
+		margin-top : 25px;
+		cursor : pointer;
+	}
+
+	#footer_section1_img1 {
+		float : left;
+		margin-left : 180px;
+	}
+
+	#footer_section1_img1 img {
+		margin-right : 50px;
+	}
+
+	#footer_section1_img2 {
+		float : right;
+		margin-right : 180px;
+	}
+
+	#footer_section1_img2 img {
+		margin-left : 20px;
+	}
+
+	#footer_section2 {
+		width : 97%;
+		height : 250px;
+		color : #9e9e9e;
+		margin-top : 50px;
+	}
+
+	.footer_section2_right {
+		width : 180px;
+		height : 180px;
+		float : right;
+		font-size : 14px;
+		line-height : 25px;
+	}
+
+	.footer_section2_right ul {
+		height : 180px;
+		border-right : 1px solid #3e3e3e;
+		margin-right : 25px;
+	}
+
+	.footer_section2_right li {
+		cursor : pointer;
+		transition : 0.7s;
+	}
+
+	.footer_section2_right li:hover {
+		color : #fff;
+	}
+
+	#footer_section2_right_last {
+		border : none;
+	}
+
+	#footer_section2_left {
+		float : left;
+		margin-left : 180px;
+	}
+
+	#footer_section2_left p {
+		margin-top : 35px;
+		margin-bottom: 10px;
+		font-size : 14px;
+		line-height : 23px;
+		color : #999;
+		font-weight : 400;
+	}
+
+	#footer_section3 {
+		width : 100%;
+		height : 100px;
+		border-top : 1px solid #555;
+	}
+
+	#footer_section3_left {
+		float : left;
+		margin-left : 180px;
+		margin-top : 23px;
+	}
+
+	#footer_section3_left li {
+		border-right : 1px solid #3e3e3e;
+		color : #9e9e9e;
+		display : inline-block;
+		font-size : 14px;
+		padding-right : 8px;
+		line-height : 14px;
+		cursor : pointer;
+		transition : 0.7s;
+	}
+
+	#footer_section3_left li:last-child {
+		border : none;
+	}
+
+	#footer_section3_left li:hover {
+		color : #fff;
+	}
+
+	#footer_familysite {
+		float : right;
+		width : 238px;
+		height : 38px;
+		line-height : 38px;
+		margin-left : 10px;
+		border : #666 solid 1px;
+		margin-right : 170px;
+		margin-top : 15px;
+		color : #a9a9a9;
+		font-size : 14px;
+		padding-left : 10px;
+		cursor : pointer;
+		position : relative;
+	}
+
+	#familysite_bt {
+		font-size : 14px;
+		float : right;
+		width : 60px;
+		height : 38px;
+		text-align : center;
+		line-height : 38px;
+		background-color : #666;
+		color : #fff;
+		border : none;
+		transition : 0.5s;
+		cursor : pointer;
+	}
+
+	#familysite_bt:hover {
+		background-color : #999;
+	}
+
+	#footer_familysite_option {
+		width : 248px;
+		height : 279px;
+		border : #666 solid 1px;
+		position : absolute;
+		left : -1px;
+		top : -282px;
+		background-color : #fff;
+		display : none;
+	}
+
+	#footer_familysite_option li {
+		padding-left : 10px;
+		line-height : 35px;
+		background-color : #333;
+	}
+
+	#footer_familysite_option li:hover {
+		background-color : #000;
+		color : #fff;
+	}
+
+	#footer_familysite_option li:first-child {
+		background-color : #000;
+		color : #fff;
+	}
+
+	#starter_bg {
+		width : 100%;
+		height : 100%;
+		background-color : rgba(255, 255, 255, 0.6);
+		position : fixed;
+		top : 0;
+		left : 0;
+		z-index : 9999;
+	}
+
+	#starter {
+		width : 777px;
+		height : 160px;
+		background-color : #fff;
+		position : absolute;
+		left : 0;
+		right : 0;
+		margin : auto;
+		top : -300px;
+		bottom : 0;
+		z-index : 99999;
+		border-radius : 10px;
+		text-align : center;
+		letter-spacing : 1px;
+		border : #998465 solid 3px;
+	}
+
+	#starter img {
+		float : right;
+		margin-top : 15px;
+		margin-right : 15px;
+		cursor : pointer;
+	}
+
+	#starter h2 {
+		font-size : 16px;
+		color : #000;
+		font-weight : 500;
+		margin-top : 45px;
+	}
+
+	#starter h3 {
+		font-size : 13px;
+		color : #333;
+		font-weight : 300;
+		margin-top : 25px;
+	}
+
+	.span {
+		text-decoration : underline;
+	}
+
+  </style></head><body>
+<header>
+	<div id="header_box1">
+		<p>롯데호텔앤리조트 <span class="clean">COVID-19 클린 케어 가이드라인</span> 및 <span class="clean">고객보호 정책 </span>안내</p>
+	</div>
+	<div id="header_box2">
+		<ul id="left_menu">
+			<li>호텔찾기</li>
+			<li>한국어</li>
+			<li><img src="icons/icon-1584491612.png" alt="알림 아이콘" id="bell"></li>
+			<li>
+				<img src="icons/kr_icon-cmEXADprvlrZbbeHKY9c1554968175.png" alt="지도 아이콘" id="where_icon">
+				<p class="where_p">어디로 가고 싶으세요?</p>
+			</li>
+		</ul>
+		<img src="icons/logo_global.png" alt="롯데호텔 로고" id="logo">
+			<ul id="right_menu">
+				<li>예약조회</li>
+				<li>로그인</li>
+				<li>회원가입</li>
+				<li>멤버십</li>
+				<li>라이브챗</li>
+			</ul>
+	</div>
+	<div id="header_box3">
+		<ul id="main_menu">
+			<li>호텔찾기</li>
+			<li>프로모션</li>
+			<li>웨딩&컨벤션</li>
+			<li>호텔소개</li>
+			<li>e-SHOP</li>
+			<li><button class="booking">예약하기</button></li>		
+		</ul>
+	</div>
+</header>
+<!-- slide 영역 시작 -->
+<div id="slide">
+<img src="icons/next.png" alt="슬라이드 다음 버튼" id="slide_next_bt"><img src="icons/prev.png" alt="슬라이드 이전 버튼" id="slide_prev_bt">
+<ul id="slide_ul">
+	<li>	
+	<div class="nowopen">
+		<h2>롯데호텔 시애틀</h2>
+		<h3>NOW OPEN</h3>
+		<h4>2020.09.24</h4>
+		<button>자세히보기 ></button>
+	</div>
+	</li>
+	<li>
+	<div class="nowopen">
+		<h3>COMMITMENT TO HYGIENE</h3>
+		<h5>전세계 롯데호텔에서 제공하는 강력한 위생관리 프로그램과 비대면 서비스로<br>걱정으로부터 자유로울 수 있는 공간과 경험을 제공합니다.</h5>
+		<button>자세히보기 ></button>
+	</div>
+	</li>
+	<li>
+	<div class="nowopen">
+		<h2>롯데호텔 시애틀</h2>
+		<h3>NOW OPEN</h3>
+		<h4>2020.09.24</h4>
+		<button>자세히보기 ></button>
+	</div>
+	</li>
+</ul>
+	<div id="booking_box">
+	<h4 id="promo">프로모션 코드</h4>
+ 		 <div id="booking_1"><div class="booking_2_top">방문 도시 또는 호텔명<div class="booking_li1"><img src="icons/location.png" alt="지도 아이콘">롯데호텔을 찾아보세요</div></div></div>
+		 <div id="booking_2">
+			<div id="booking_2_box1">
+				<div class="booking_2_top">체크인</div>
+				<div class="booking_2_bottom">
+					<div class="booking_2_left">28</div>
+					<div class="booking_2_right">10월<br>수요일</div>
+				</div>
+			</div>
+			<div id="booking_2_box2">
+				<div class="booking_2_2top"><img src="icons/night.png" alt="달 아이콘"></div>
+				<div class="booking_2_2bottom">1박</div>
+			</div>
+			<div id="booking_2_box3">
+				<div class="booking_2_top">체크아웃</div>
+				<div class="booking_2_bottom">
+					<div class="booking_2_left">29</div>
+					<div class="booking_2_right">10월<br>목요일</div>
+				</div>	
+			</div>
+		</div>
+		<div id="booking_3">
+			<div class="booking_title3">객실수<div class="booking_li">1</div></div>
+			<div class="booking_title3">성인<div class="booking_li">1</div></div>
+			<div class="booking_title3">어린이<img src="icons/icon-children.png" alt="느낌표 아이콘" id="child"><div class="booking_li">0</div></div>	
+		</div>
+		 <button id="search">검색</button>
+	</div>
+	<ul id="list">
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+<!-- promotion 영역시작 -->
+<div id="bgc">
+<div id="promotion">
+	<h2>롯데호텔 추천 프로모션</h2>
+	<button>프로모션 더 보기 ></button>
+	<div class="promotion_box">
+		<div class="imgbox"><img src="images/g-0939-d.jpg.thumb.480.480.jpg" alt="프로모션 이미지1" class="promoimg"></div>
+		<div class="promotion_text_box">
+		<h2>Global</h2>
+		<h3>LOTTE HOTEL Road Trip</h3>
+		<h4>LOTTE HOTEL Road Trip 패키지를 이용하고 스탬프를 10개 모으면 member</h4>
+		<p class="p_bottom">예약 <strong>2020-05-38 ~ 2020-12-19</strong></p>
+		<p class="p_bottom">투숙 <strong>2020-06-01 ~ 2020-12-20</strong></p>
+		</div>
+	</div>
+	<div class="promotion_box">
+		<div class="imgbox"><img src="images/181102-5-2000-din-LTSE.jpg.thumb.480.480.jpg" alt="프로모션 이미지2" class="promoimg"></div>
+	<div class="promotion_text_box">
+		<h2>롯데호텔 서울</h2>
+		<h3>Le Salon Offer</h3>
+		<h4>이그제큐티브타워 | 라운지혜택</h4>
+		<p class="p_bottom">예약 <strong>2020-10-15 ~ 2021-02-28</strong></p>
+		<p class="p_bottom">투숙 <strong>2020-10-15 ~ 2021-03-01</strong></p>
+		<div class="package">PACKAGE</div>
+		<div class="krw">KRW</div><div class="won">330,000 ~</div>
+	</div>
+	</div>
+
+	<div class="promotion_box">
+		<div class="imgbox"><img src="images/g-1484-d.jpg.thumb.480.480.jpg" alt="프로모션 이미지3" class="promoimg"></div>
+	<div class="promotion_text_box">
+		<h2>시그니엘 부산</h2>
+		<h3>Room & Breakfast</h3>
+		<h4>객실1박 + 조식</h4>
+		<p class="p_bottom">예약 <strong>2020-04-14 ~ 2020-12-31</strong></p>
+		<p class="p_bottom">투숙 <strong>2020-06-17 ~ 2020-12-31</strong></p>
+		<div class="package">PACKAGE</div>
+		<div class="krw">KRW</div><div class="won">310,000 ~</div>
+	</div>
+	</div>
+	<div class="promotion_box2">
+		<div class="imgbox"><img src="images/g-1096-d.jpg.thumb.480.480.jpg" alt="프로모션 이미지4" class="promoimg"></div>
+	<div class="promotion_text_box">
+		<h2>시그니엘 서울</h2>
+		<h3>Room & Breakfast</h3>
+		<h4>객실1박(2인 기준) + 조식 2인</h4>
+		<p class="p_bottom">예약 <strong>2020-10-01 ~ 2021-09-30</strong></p>
+		<p class="p_bottom">투숙 <strong>2020-10-01 ~ 2021-09-30</strong></p>
+		<div class="package">PACKAGE</div>
+		<div class="krw">KRW</div><div class="won">450,000 ~</div>
+	</div>
+	</div>
+	<div class="promotion_box2">
+		<div id="imgbox"><img src="images/g-0542.jpg.thumb.480.480.jpg" alt="프로모션 이미지5" class="promoimg"></div>
+	<div class="promotion_text_box">
+		<h2>Global</h2>
+		<h3>Autumn Kids Day</h3>
+		<h4>100년 전통의 스위스 천연 화장품 브랜드, 벨레다의 키즈 전용 어메니티</h4>
+		<p class="p_bottom">예약 <strong>2020-09-18 ~ 2020-10-31</strong></p>
+		<p class="p_bottom">투숙 <strong>2020-09-18 ~ 2020-10-31</strong></p>
+	</div>
+	</div>
+	<div class="promotion_box2">
+		<div class="imgbox"><img src="images/g-1108-d.jpg.thumb.480.480.jpg" alt="프로모션 이미지6" class="promoimg"><img src="icons/mamber_icon.png" alt="멤버 아이콘" id="member_icon"></div>
+	<div class="promotion_text_box">
+		<h2>롯데호텔 울산</h2>
+		<h3>[회원전용] Lucky Stay Promotion</h3>
+		<h4>[회원전용&온라인전용} 디럭스룸1박 | 룸온리</h4>
+		<p class="p_bottom">예약 <strong>2020-09-01 ~ 2020-10-31</strong></p>
+		<p class="p_bottom">투숙 <strong>2020-09-01 ~ 2020-10-31</strong></p>
+		<div class="package">PACKAGE</div>
+		<div class="krw">KRW</div><div class="won">82,645 ~</div>
+	</div>
+	</div>
+</div>
+
+<div id="banner_clean"></div>
+<div id="youtube">
+	<iframe src="https://www.youtube.com/embed/GthRUKTiwC8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>		
+
+<div id="newex">
+<h1>롯데호텔의 새로운 경험</h1>		
+<div id="newex_box">
+<div id="newex_box1">
+	<div class="newex_text1">
+		<h2>롯데호텔 시애틀</h2>
+		<p>Now Open <br> 2020.09.24</p>
+		<button>자세히 보기 ></button>
+	</div>
+</div>
+
+<div id="newex_box2">
+	<div class="newex_text2">
+		<img src="icons/20200630-1-mai-global.jpg" alt="한국 서비스대상 이미지">
+		<h2>한국표준협회 주관 2020 한국서비스대상 『명예의 전당』</h2>
+		<p>대한민국 호텔업계 최초 헌정</p>
+		<button>자세히 보기 ></button>
+	</div>
+	</div>
+<div id="newex_box3">
+	<div class="newex_text1">
+		<h2>시그니엘 부산</h2>
+		<p>Live beyond expectations</p>
+		<button>자세히 보기 ></button>
+	</div>
+</div>
+
+<div id="newex_box4">
+	<div class="newex_text2">
+		<img src="icons/200629-1-402-mai-GLOBAL.jpg" alt="아시아 어워드 수상 이미지" class="newex_text2_img2">
+		<h2>2020 SKI ASIA AWARDS 수상</h2>
+		<p>롯데아라이리조트 ‘SKI ASIA AWARDS’ 2년 연속 4개 부문 수상</p>
+		<button>자세히 보기 ></button>
+	</div>
+</div>
+</div>
+</div>
+
+<div id="rewards">
+	<h2>롯데호텔 리워즈 혜택</h2>
+	<ul id="icon_box">
+		<li>
+			<img src="icons/180716-1-53-pc-mai-lottehotel.png" alt="회원 전용 로고">
+			<p>회원 전용 이벤트를 누려보세요.</p>
+		</li>
+		<li>
+			<img src="icons/180716-2-53-pc-mai-lottehotel.png" alt="할인 로고">
+			<p>멤버십 회원만을 위해 할인된 가격을 <br>제공합니다.</p>
+		</li>
+		<li>
+			<img src="icons/180716-3-53-pc-mai-lottehotel.png" alt="포인트 로고">
+			<p>포인트를 적립하고, 현금처럼 실용적으로 사용하세요.</p>
+		</li>
+	</ul>
+	<button>롯데호텔 리워즈 가입하기 ></button>
+</div>
+<div id="banner_club"></div>
+<div id="banner_chat"></div>
+
+<ul id="instagram">
+	<li id="instagram1">
+		<h2>Connect With</h2>
+		<h3>#lottehotels</h3>
+		<img src="icons/insta.png" alt="인스타그램 아이콘">
+	</li>
+	<li id="instagram2"><img src="images/132202499_686476218903794_5185622759823414653_n.jpg" alt="인스타그램 이미지1" class="insta_img"></li>
+	<li id="instagram3"><img src="images/129734932_847516109331218_4858935073463307048_n.jpg" alt="인스타그램 이미지2" class="insta_img"></li>
+	<li id="instagram4"><img src="images/129744386_295616741844769_6653042459816207693_n.jpg" alt="인스타그램 이미지3" class="insta_img"></li>
+
+</ul>
+</div>
+
+	<footer>
+		<div id="footer_section1">
+			<div id="footer_section1_img1">
+				<img src="icons/footer-brand-signiel.png" alt="시그니엘 로고">
+				<img src="icons/footer-brand-lotte-hotels-resorts.png" alt="롯데호텔 로고">
+				<img src="icons/footer-brand-l7-hotels.png" alt="L7 호텔 로고">
+				<img src="icons/footer-brand-lotte-city-hotels.png" alt="롯데 시티 호텔 로고">
+				<img src="icons/footer-brand-resort.png" alt="롯데 리조트 로고">
+			</div>
+			<div id="footer_section1_img2">
+				<img src="icons/footer-LHM.png" alt="LHM 로고">
+				<img src="icons/footer-sns-tripa.png" alt="tripa 로고">
+				<img src="icons/footer-sns-facebook.png" alt="페이스북 로고">
+				<img src="icons/footer-sns-instagram.png" alt="인스타그램 로고">
+				<img src="icons/footer-sns-youtube.png" alt="유튜브 로고">
+				<img src="icons/footer-sns-blog.png" alt="블로그 로고">
+			</div>
+		</div>
+		<div id="footer_section2">
+			<div id="footer_section2_left">
+				<img src="icons/footer-logo.png" alt="롯데호텔 로고">
+				<p>㈜호텔롯데 04533, 서울특별시 중구 을지로 30 / 02-771-1000<br>대표이사 김현식 / 사업자등록번호 104-81-25980 /<br>통신판매신고번호 중구02802호</p>
+
+				<div class="w3c">
+						<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+						<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+						alt="올바른 CSS입니다!" />
+						  </a>
+						<!-- css 검사완료 코드 -->
+						<a href="http://validator.kldp.org/check?uri=referer"
+						  onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))" target="_blank"><img
+						  src="http://validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80" ></a>
+						<!-- html 검사완료 코드 -->
+				</div>
+
+			</div>
+			<div class="footer_section2_right">
+				<ul id="footer_section2_right_last">
+					<li>신규 개발</li>
+					<li>임직원</li>
+					<li>사이트맵</li>
+				</ul>
+			</div>
+			<div class="footer_section2_right">
+				<ul>
+					<li>고객의 소리</li>
+					<li>지점별 연락처</li>
+					<li>윤리 HOT LINE</li>
+					<li>채용</li>
+					<li>서비스아카데미</li>
+				</ul>
+			</div>
+			<div class="footer_section2_right">
+				<ul>
+					<li>호텔찾기</li>
+					<li>롯데호텔 소개</li>
+					<li>브랜드 소개</li>
+					<li>뉴스</li>
+					<li>수상</li>
+					<li>갤러리</li>
+				</ul>
+			</div>	
+		</div>
+		<div id="footer_section3">
+			<ul id="footer_section3_left">
+				<li>개인정보처리방침</li>
+				<li>영상정보처리기기운영&middot;관리방침</li>
+				<li>이용약관</li>
+				<li>롯데호텔 리워즈 회원약관</li>
+			</ul>
+			<div id="footer_familysite">패밀리 사이트
+			<button id="familysite_bt">이동</button>
+			<ul id="footer_familysite_option">
+				<li>패밀리사이트</li>
+				<li>롯데지주</li>
+				<li>롯데건설</li>
+				<li>롯데글로벌로지스</li>
+				<li>롯데기공</li>
+				<li>롯데비피화학</li>
+				<li>롯데렌탈</li>
+				<li>롯데리아</li>
+			</ul>
+			</div>
+		</div>
+	</footer>
+
+<div id="starter_bg">
+<div id="starter">
+	<img src="icons/icon_modal_close.png" alt="닫기 버튼" id="starter_close">
+	<h2>본 사이트는 <span class="span">포트폴리오 용 사이트</span>로 리소스는 원작자에게 있습니다.</h2>
+	<h3>HTML5, CSS3, JavaScript&jQuery로 제작되었으며 Google Chrom(전체화면)에 최적화되어있습니다.</h3>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>코나카드</title>
+  <link rel="shortcut icon" href="images/CONACARD.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+   $(document).ready(function(){
+	   $('#menu>li').mouseover(function(){
+		$(this).children('h5').css({'border-bottom':'7px solid #ff3f64','width':'55px','margin-left':'35.5px'})
+		$(this).children('h4').css({'border-bottom':'7px solid #ff3f64','width':'75px','margin-left':'25.5px'})
+		$(this).children('h3').css({'border-bottom':'7px solid #ff3f64','width':'116px','margin-left':'5px'})
+	   })
+	   $('#menu>li').mouseout(function(){
+		$(this).children('h5').css({'border-bottom':'none'})
+		$(this).children('h4').css({'border-bottom':'none'})
+		$(this).children('h3').css({'border-bottom':'none'})
+	   })
+	  $('#starter_close').click(function(){
+		$('#starter_bg').hide()
+	  })
+
+	   $('#section4_up').animate({'bottom':'70px'},500,function a(){
+		$('#section4_up').animate({'bottom':'30px'},500,function(){
+			$('#section4_up').animate({'bottom':'70px'},500,a)
+		})
+	   })
+	   $('#family_site').click(function(){
+		$('#family_site_box').stop().toggle()
+	   })
+	$('#menu>li').mouseover(function(){
+		$('.sub_menu_wrap').stop().slideDown(300)
+		$('.sub_menu').stop().slideDown(300,function(){$('#menu_letter').delay(300).animate({'opacity':'1'})})
+		$('#ttt').stop().animate({'opacity':'1','top':'250px'},300)
+	})
+	$('#menu>li').mouseout(function(){
+		$('.sub_menu_wrap').stop().slideUp(300)
+		$('.sub_menu').stop().slideUp(300)
+		$('#ttt').stop().animate({'opacity':'0','top':'70px'},300)
+	})
+			slide_num = 0
+			click = 0;
+
+	  $('#slidebt_box li').click(function(){
+		  //슬라이드를 움직이는 변수가 이미 선언되어있다. 그 변수를 사용하자
+		  slide_num = $(this).index()*-100;//해당 li(this)의 번호를 발생 1~9 = 0~8 (0으로 출발)= 0~8 * 100 = 0~800
+		$('#slide').stop().animate({'left':slide_num+'%'},500)
+		//슬라이드가 해당 버튼을 클릭할 때 발생하는 순번에 따라 반응하도록 변수 연결
+		$(this).css({'background-color':'#ff3f54'}).siblings().css({'background-color':'#fff'})
+		$('#number').text($(this).index()+1)
+	  })
+
+			slide=setInterval(function(){
+			if(click == 0){
+				click = 1;
+			if(slide_num <= -400){slide_num = 0; $('#slide').css({'left':'0'}) }
+			slide_num = slide_num - 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+			number = slide_num/-100+1
+			if( number ==5 ){ number =1; }
+			$('#number').text(number)
+			$('#slide').stop().animate({'left':slide_num+'%'},500,function(){
+				click = 0  })
+			if (slide_num <= -400){
+			$('#slidebt_box li').eq(0).css({'background-color':'#ff3f54'}).siblings().css({'background-color':'#fff'})
+			}
+			$('#slidebt_box li').eq(slide_num/-100).css({'background-color':'#ff3f54'}).siblings().css({'background-color':'#fff'})
+			}
+	
+	  },3000)
+
+
+	 $('#pause').click(function(){
+			clearInterval(slide)
+			$('#start').show()
+			$('#pause').hide()
+	   })
+	   $('#start').click(function(){
+			if(click == 0){
+				click = 1;
+			if(slide_num <= -400){slide_num = 0; $('#slide').css({'left':'0'}) }
+			slide_num = slide_num - 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+			number = slide_num/-100+1
+			if( number ==5 ){ number =1; }
+			$('#number').text(number)
+			$('#slide').stop().animate({'left':slide_num+'%'},500,function(){
+				click = 0  })
+			if (slide_num <= -400){
+			$('#slidebt_box li').eq(0).css({'background-color':'#ff3f54'}).siblings().css({'background-color':'#fff'})
+			}
+			$('#slidebt_box li').eq(slide_num/-100).css({'background-color':'#ff3f54'}).siblings().css({'background-color':'#fff'})
+			}
+
+
+
+			slide=setInterval(function(){
+			if(click == 0){
+				click = 1;
+			if(slide_num <= -400){slide_num = 0; $('#slide').css({'left':'0'}) }
+			slide_num = slide_num - 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+			number = slide_num/-100+1
+			if( number ==5 ){ number =1; }
+			$('#number').text(number)
+			$('#slide').stop().animate({'left':slide_num+'%'},500,function(){
+				click = 0  })
+			if (slide_num <= -400){
+			$('#slidebt_box li').eq(0).css({'background-color':'#ff3f54'}).siblings().css({'background-color':'#fff'})
+			}
+			$('#slidebt_box li').eq(slide_num/-100).css({'background-color':'#ff3f54'}).siblings().css({'background-color':'#fff'})
+			}
+	
+			 },3000)
+			
+			
+			
+			$('#start').hide()
+			$('#pause').show()
+	   })		
+
+
+
+	   	$('#top_bt').click(function(){
+		$('body,html').animate({'scrollTop':'0'},800)
+		})
+	   	$('#pop_top_bt').click(function(){
+		$('body,html').animate({'scrollTop':'0'},800)
+		})
+			$(window).scroll(function(){
+			sc = $(window).scrollTop();
+			if (sc >= 6093){
+				$('#pop_top').stop().hide();
+			}
+			else{
+				$('#pop_top').stop().show();
+			} })
+
+	   section1_start = 0 //section1시작값 변수선언
+	   section2_start = 0
+	   section3_start = 0
+	   section4_start = 0
+	   section5_start = 0
+	   section6_start = 0
+	   section9_start = 0
+
+	   $(window).scroll(function(){ //scroll이 움직이면 하세요
+		sc = $(window).scrollTop();
+		// section1관련 애니메이션이 sc값이 400보다 크거나 같을 때 수행하세요
+		// if(조건범위) {값}
+		if( sc >= 400 ){//스크롤이 움직일 때 + 단, 400보다 크면
+			section1_start = section1_start + 1;
+			$('#section1_start').text(section1_start)
+
+			if (section1_start == 1){ // 스크롤 한 번만 먹어(1살은 인생에 1번뿐) //스크롤이 움직일 때 + 단, 400보다 크면 + 단, section1_start가 1과 같을 때 (1살일 때)
+				//스크롤 이벤트는 지속적으로 계속 신호가 가지만, 단 한 번만 수행하는 이벤트를 위해서
+		  $('#section1 h1').animate({'opacity':'1','top':'18%'},500)
+		  $('#section1 p').delay(100).animate({'opacity':'100%','top':'40%'},600)
+		  $('#section1_img1').animate({'left':'0'},400)
+		  $('#section1_img3').animate({'bottom':'-50px'},400)
+		  $('#section1_img2').stop().animate({'bottom':'-50px'},400,function(){
+			$('#section1_img2').animate({'bottom':'-100px','right':'0'},400)
+				 })
+	   	$('#section1_img5').animate({'right':'0'},400)
+				}//두 번째 이프문 감싸기
+			}//첫 번째 이프문(sc >=400) 감싸기
+
+	if ( sc >= 1300){
+		section2_start = section2_start + 1 // 별표)스크롤이 1300보다 크면 수행 --> section2_start값이 0에서 1씩 증가
+		if( section2_start == 1 ){ 		
+		$('#section2_box h2').animate({'top':'200px','opacity':'1'},500)
+		$('#section2_box p').delay(100).animate({'top':'330px','opacity':'1'},500)
+		$('#section2_box button').delay(150).animate({'top':'430px','opacity':'1'},500)
+		$('#phone').animate({'right':'0'},700)
+		$('#screen_img').delay(700).animate({'top':'-692px'},4000,function loop_screen(){
+		$('#screen_img').delay(1000).animate({'top':'0'},4000,function(){
+		$('#screen_img').delay(700).animate({'top':'-692px'},4000,loop_screen)
+		}); }); 
+		 } //딱 한 번의 신호
+	}
+	if (sc >= 2000){
+		section3_start = section3_start + 1
+		if(section3_start ==1){
+		$('#section3_iconmenu').animate({'top':'350px','opacity':'1'},700)
+		$('#section3_textbox').animate({'top':'180px','opacity':'1'},700,function(){
+		$('#section3_iconmenu').delay(300).animate({'top':'500px','opacity':'0'},400)
+		$('#section3_textbox').delay(300).animate({'right':'23%','top':'200px','opacity':'1'},700)
+		$('#section3_textbox p').delay(500).animate({'opacity':'1'},700)
+		$('#section3_phone').delay(1000).animate({'left':'25%','opacity':'1'},500)
+		$('#section3_textbox button').delay(1000).slideDown();
+	   });
+		}
+		}
+	if (sc >= 2500){
+	section4_start = section4_start + 1
+	if (section4_start ==1){
+	$('#section4_textbox h2').delay(500).animate({'opacity':'1','top':'50px'},700)
+	$('#section4_textbox p').delay(700).animate({'opacity':'1','top':'180px'},700)
+	$('#section4_textbox2').delay(1000).animate({'opacity':'1','left':'480px'},1300)
+	$('#section4_imgbox').delay(1000).animate({'opacity':'1','bottom':'100px'},900,function(){
+		$('#card1').animate({'right':'280px'},600)
+		$('#card3').animate({'right':'20px'},600)
+	})
+	} }
+	if (sc >= 3200){
+		section5_start = section5_start + 1
+	if(section5_start == 1){
+		$('#section5_phone1').delay(400).animate({'left':'18%','opacity':'1'},800)
+	   $('#section5_textbox h2').delay(400).animate({'top':'-80px','opacity':'1'},800) 
+	   $('#section5_textbox p').delay(400).animate({'top':'50px','opacity':'1'},800)
+	   $('#section5_phone2').delay(400).animate({'left':'28%'},700)
+	   $('#section5').animate({'opacity':'1'},400,function(){ // css는 애니메이션을 안먹기 때문에 가상의 애니메이션 처리 후 콜백
+			$('#section5_phone2').css({'box-shadow':'0 20px 30px rgba(0,0,0,0.3)'})
+	   })
+	}}
+	if (sc >=4200){
+	section6_start = section6_start + 1
+	if (section6_start ==1){
+	$('#section6_textbox h2').delay(400).animate({'top':'0','opacity':'1'},800)
+	$('#section6_textbox h3').delay(500).animate({'top':'130px','opacity':'1'},800)
+	}}
+
+	if (sc >=5450){
+	section9_start = section9_start + 1
+	if (section9_start ==1){
+	$('#section9_img1').delay(300).animate({'left':'0','top':'40%'},500)
+	$('#section9_img2').delay(300).animate({'left':'-65%','right':'0','margin':'auto','top':'0'},500)
+	$('#section9_img3').delay(300).animate({'left':'0','right':'-45%','margin':'auto','top':'0','opacity':'1'},500)
+	$('#section9_img4').delay(300).animate({'right':'0','bottom':'0'},500)
+	$('#section9_textbox h2').delay(300).animate({'top':'100px','opacity':'1'},1000)
+	$('#section9_textbox h5').delay(300).animate({'top':'250px','opacity':'1'},1000)
+	$('#section9_bt').delay(300).animate({'top':'300px','opacity':'1'},1000)
+
+	}}
+
+
+			   }) // 
+
+   });
+  </script><style>
+
+	* {
+		margin : 0;
+		padding : 0;
+		list-style : none;
+		font-family : '맑은 고딕';
+		font-family : 'Roboto', sans-serif;
+	}
+
+	a {
+		text-decoration : none;
+		color : inherit;
+	}
+
+	.w3c{background-color: #20252b;text-align: center;}
+		header {
+		width : 100%;
+		height : 100px;
+		background-color : #fff;
+		position : fixed;
+		left : 0;
+		top : 0;
+		z-index : 999;
+	}
+
+	#logo {
+		margin-left : 50px;
+		float : left;
+		margin-top : 41px;
+	}
+
+	#logo img {
+		vertical-align : top;
+	}
+
+	#menu {
+		width : 710px;
+		float : right;
+		margin-right : 50px;
+	}
+
+	#menu > li {
+		width : 126px;
+		margin-top : 42px;
+		text-align : center;
+		font-size : 17px;
+		font-weight : 500;
+		line-height : 17px;
+		float : left;
+		color : #555;
+		position : relative;
+		cursor : pointer;
+		padding : 0 5px;
+	}
+
+	#menu > li:nth-child(2) {
+		padding-right : 30px;
+	}
+
+	#menu > li:nth-child(2) .sub_menu {
+		padding-right : 20px;
+	}
+
+	#menu > li:hover {
+		height : 8px;
+		font-weight : 500;
+	}
+
+	.sub_menu_wrap {
+		background : url(images/gnb_bg.png) 450px 0 no-repeat #fff;
+		width : 100%;
+		height : 180px;
+		background-color : #fff;
+		position : absolute;
+		left : 0;
+		top : 100px;
+		display : none;
+	}
+
+	.sub_menu {
+		position : absolute;
+		left : 0;
+		right : 0;
+		margin : auto;
+		top : 58px;
+		display : none;
+		height : 150px;
+		}
+		.sub_menu > li {
+		line-height : 30px;
+		font-size : 15px;
+		font-weight : 300;
+	}
+
+	.sub_menu > li:hover {
+		color : #ff4f64;
+	}
+
+	#ttt {
+		position : fixed;
+		font-size : 100px;
+		top : 70px;
+		left : 100px;
+		z-index : 999;
+		opacity : 0;
+		font-size : 60px;
+		font-weight : 400;
+	}
+
+	#menu > li > h3 {
+		height : 8px;
+		width : 126px;
+		font-size : 17px;
+		font-weight : 500;
+		line-height : 17px;
+		color : #555;
+		cursor : pointer;
+	}
+
+	#menu > li > h3:hover {
+		width : 116px;
+		margin-left : 5px;
+		border-bottom : 7px solid #ff4f64;
+	}
+
+	#menu > li > h5 {
+		height : 8px;
+		width : 126px;
+		font-size : 17px;
+		font-weight : 500;
+		line-height : 17px;
+		color : #555;
+		cursor : pointer;
+	}
+
+	#menu > li > h5:hover {
+		width : 55px;
+		margin-left : 35.5px;
+		border-bottom : 7px solid #ff4f64;
+	}
+
+	#menu > li > h4 {
+		height : 8px;
+		width : 126px;
+		font-size : 17px;
+		font-weight : 500;
+		line-height : 17px;
+		color : #555;
+		cursor : pointer;
+	}
+
+	#menu > li > h4:hover {
+		width : 75px;
+		margin-left : 25.5px;
+		border-bottom : 7px solid #ff4f64;
+	}
+
+	#slide_wrap {
+		width : 100%;
+		height : 800px;
+		margin-top : 100px;
+		position : relative;
+		overflow : hidden;
+	}
+
+	#slide {
+		width : 500%;
+		height : 8700px;
+		position : absolute;
+	}
+
+	#slide li {
+		width : 20%;
+		height : 800px;
+		float : left;
+		float : right;
+	}
+
+	#slide li:nth-child(1) {
+		background : url(images/slide1.jpg) 0 0 no-repeat #fff;
+	}
+
+	#slide li:nth-child(2) {
+		background : url(images/slide2.jpg) 0 0 no-repeat #fff;
+	}
+
+	#slide li:nth-child(3) {
+		background : url(images/slide3.jpg) 0 0 no-repeat #fff;
+	}
+
+	#slide li:nth-child(4) {
+		background : url(images/slide4.jpg) 0 0 no-repeat #fff;
+	}
+
+	#slide li:nth-child(5) {
+		background : url(images/slide1.jpg) 0 0 no-repeat #fff;
+	}
+
+	#slidebt_box {
+		position : absolute;
+		top : 50px;
+		left : 300px;
+		width : 175px;
+	}
+
+	#pause {
+		cursor : pointer;
+		vertical-align : middle;
+	}
+
+	#start {
+		cursor : pointer;
+		vertical-align : middle;
+		display : none;
+	}
+
+	#slidebt_box_bt {
+		width : 150px;
+		float : right;
+	}
+
+	#slidebt_box_bt li {
+		display : inline-block;
+		width : 10px;
+		height : 10px;
+		margin : 0 10px;
+		background-color : #fff;
+		border-radius : 10px;
+		cursor : pointer;
+		vertical-align : middle;
+	}
+
+	#slidebt_box_bt li:first-child {
+		background-color : #ff3f54;
+	}
+
+	#number {
+		font-size : 180px;
+		font-weight : 300;
+		margin-left : 20px;
+	}
+
+	#section1 {
+		width : 100%;
+		height : 800px;
+		position : relative;
+		text-align : center;
+		overflow : hidden;
+	}
+
+	#section1 h1 {
+		position : absolute;
+		width : 100%;
+		font-size : 60px;
+		font-weight : 300;
+		top : 13%;
+		right : 0;
+		left : 0;
+		margin : auto;
+		opacity : 0;
+	}
+
+	#section1 p {
+		position : absolute;
+		width : 100%;
+		font-size : 16px;
+		font-weight : 300;
+		top : 35%;
+		right : 0;
+		left : 0;
+		margin : auto;
+		opacity : 0;
+		line-height : 25px;
+	}
+
+	#section1 > img {
+		position : absolute;
+	}
+
+	#section1_img1 {
+		left : -300px;
+		top : 300px;
+	}
+
+	#section1_img2 {
+		left : 0;
+		right : -100px;
+		bottom : -100px;
+		margin : auto;
+	}
+
+	#section1_img3 {
+		left : 0;
+		right : -100px;
+		bottom : -400px;
+		margin : auto;
+	}
+
+	#section1_img4 {
+		left : 0;
+		right : -600px;
+		bottom : -400px;
+		margin : auto;
+	}
+
+	#section1_img5 {
+		right : -300px;
+		top : 200px;
+	}
+
+	#section2 {
+		width : 100%;
+		height : 700px;
+		background-color : #ff4155;
+		color : #fff;
+	}
+
+	#section2_box {
+		width : 1120px;
+		height : 700px;
+		margin : auto;
+		position : relative;
+	}
+
+	#section2_box h2 {
+		position : absolute;
+		font-size : 40px;
+		font-weight : 300;
+		top : 300px;
+		left : 100px;
+		opacity : 0;
+	}
+
+	#section2_box p {
+		position : absolute;
+		font-size : 16px;
+		font-weight : 300;
+		top : 430px;
+		left : 100px;
+		opacity : 0;
+		line-height : 25px;
+	}
+
+	#section2_box button {
+		position : absolute;
+		font-size : 16px;
+		font-weight : 400;
+		top : 530px;
+		left : 100px;
+		width : 250px;
+		height : 50px;
+		color : #fff;
+		background : none;
+		border : #fff solid 1px;
+		opacity : 0;
+		transition : 0.5s;
+		cursor : pointer;
+	}
+
+	#section2_box button:hover {
+		background-color : #fff;
+		color : #333;
+	}
+
+	#phone {
+		position : absolute;
+		right : -300px;
+		bottom : -4px;
+	}
+
+	#screen {
+		width : 258px;
+		height : 450px;
+		position : absolute;
+		left : 93px;
+		top : 53px;
+		overflow : hidden;
+		background-color : #fff;
+	}
+
+	#screen_img {
+		position : absolute;
+		top : 0;
+	}
+
+	#section3 {
+		width : 100%;
+		height : 700px;
+		text-align : center;
+		position : relative;
+	}
+
+	#section3_iconmenu {
+		position : absolute;
+		margin : auto;
+		left : 0;
+		right : 0;
+		top : 400px;
+		opacity : 0;
+	}
+
+	#section3_iconmenu li {
+		display : inline-block;
+		vertical-align : top;
+	}
+
+	#section3_iconmenu li:nth-child(2), #section3_iconmenu li:nth-child(4) {
+		margin-top : 50px;
+	}
+
+	#section3_iconmenu h3 {
+		font-size : 16px;
+		font-weight : 300;
+	}
+
+	#section3_textbox {
+		position : absolute;
+		top : 230px;
+		text-align : left;
+		right : 38%;
+		opacity : 0;
+	}
+
+	#section3_textbox h2 {
+		font-size : 40px;
+		font-weight : 300;
+		left : 0;
+		right : -23%;
+		margin : auto;
+		top : 20px;
+		opacity : 1;
+	}
+
+	#section3_textbox p {
+		font-size : 16px;
+		font-weight : 300;
+		margin-top : 30px;
+		opacity : 0;
+		line-height : 25px;
+	}
+
+	#section3_textbox button {
+		display : none;
+		width : 250px;
+		height : 50px;
+		font-size : 16px;
+		font-weight : 400;
+		background : none;
+		border : #333 solid 1px;
+		color : #333;
+		margin-top : 30px;
+		transition : background-color 0.5s, color 0.5s;
+		cursor : pointer;
+	}
+
+	#section3_textbox button:hover {
+		background-color : #ff4155;
+		color : #fff;
+		border : none;
+	}
+
+	#section3_phone {
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		left : 10%;
+		opacity : 0;
+	}
+
+	#section4 {
+		width : 100%;
+		height : 900px;
+		background-color : #eee;
+		position : relative;
+	}
+
+	#section4_textbox {
+		width : 600px;
+		height : 300px;
+		position : absolute;
+		top : 50px;
+		margin : auto;
+		right : 0;
+		left : -350px;
+	}
+
+	#section4_textbox h2 {
+		font-size : 40px;
+		font-weight : 300;
+		line-height : 50px;
+		opacity : 0;
+		position : absolute;
+		top : 100px;
+	}
+
+	#section4_textbox p {
+		font-size : 16px;
+		font-weight : 300;
+		line-height : 25px;
+		color : #737373;
+		opacity : 0;
+		position : absolute;
+		top : 230px;
+	}
+
+	#section4_textbox2 {
+		width : 460px;
+		font-size : 50px;
+		position : absolute;
+		bottom : 250px;
+		left : -1000px;
+		line-height : 90px;
+		opacity : 0;
+		background : url(images/line.png) 300px 140px no-repeat;
+	}
+
+	#section4_imgbox {
+		position : absolute;
+		right : 300px;
+		margin : auto;
+		bottom : 550px;
+		opacity : 0;
+	}
+
+	#card1 {
+		position : absolute;
+		bottom : 0;
+		right : 150px;
+	}
+
+	#card2 {
+		position : absolute;
+		bottom : 0;
+		right : 150px;
+	}
+
+	#card3 {
+		position : absolute;
+		bottom : 0;
+		right : 150px;
+	}
+
+	#section4_up {
+		position : absolute;
+		right : 600px;
+		bottom : 30px;
+	}
+
+	#section5 {
+		width : 100%;
+		height : 800px;
+		position : relative;
+	}
+
+	#section5_textbox {
+		position : absolute;
+		width : 600px;
+		height : 300px;
+		right : 230px;
+		top : 300px;
+	}
+
+	#section5_textbox h2 {
+		font-size : 40px;
+		font-weight : 300;
+		line-height : 50px;
+		opacity : 0;
+		position : absolute;
+		top : -30px;
+	}
+
+	#section5_textbox p {
+		font-size : 16px;
+		font-weight : 300;
+		line-height : 25px;
+		color : #737373;
+		opacity : 0;
+		position : absolute;
+		top : 100px;
+	}
+
+	#section5_phone2 {
+		position : absolute;
+		top : 0;
+		bottom : 70px;
+		margin : auto;
+		left : 26%;
+		box-shadow : 0 0 0 rgba(0, 0, 0, 0);
+		transition : box-shadow 0.5s;
+		border-radius : 50px;
+	}
+
+	#section5_phone1 {
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		left : 23%;
+		opacity : 0;
+	}
+
+	#section6 {
+		width : 100%;
+		height : 820px;
+		background : url(images/section07_bg.png) center no-repeat fixed;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section6_textbox {
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		right : 0;
+		left : 0;
+		margin : auto;
+		width : 500px;
+		height : 200px;
+		text-align : center;
+		color : #fff;
+	}
+
+	#section6_textbox h2 {
+		font-size : 40px;
+		line-height : 50px;
+		font-weight : 400;
+		position : absolute;
+		top : 100px;
+		right : 0;
+		left : 0;
+		margin : auto;
+		opacity : 0;
+	}
+
+	#section6_textbox h3 {
+		font-size : 16px;
+		line-height : 25px;
+		font-weight : 100;
+		position : absolute;
+		top : 230px;
+		right : 0;
+		left : 0;
+		margin : auto;
+		opacity : 0;
+	}
+
+	#section7 {
+		width : 1410px;
+		height : 400px;
+		margin : auto;
+		margin-top : 80px;
+	}
+
+	#section7 h2 {
+		font-size : 40px;
+		font-weight : 400;
+		float : left;
+	}
+
+	#section7 button {
+		float : right;
+		border : none;
+		border-bottom : 1px solid #000;
+		background : none;
+		cursor : pointer;
+		font-size : 14px;
+		transition : 0.4s;
+		line-height : 25px;
+		margin-right : 40px;
+	}
+
+	#section7 button:hover {
+		color : #ff4155;
+		border-bottom : 1px solid #ff4155;
+	}
+
+	#section7 ul {
+		padding-top : 100px;
+		width : 1400px;
+		margin : auto;
+	}
+
+	#section7 li {
+		width : 360px;
+		float : left;
+		margin-right : 150px;
+		cursor : pointer;
+	}
+
+	#section7 li:last-child {
+		margin-right : 0;
+	}
+
+	#section7 ul li h4 {
+		font-size : 18px;
+		line-height : 28px;
+		font-weight : 400;
+	}
+
+	#section7 ul li h5 {
+		font-size : 15px;
+		line-height : 25px;
+		font-weight : 300;
+		width : 360px;
+		height : 70px;
+		overflow : hidden;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+		color : #666;
+		margin-top : 5px;
+	}
+
+	#section7 ul li h6 {
+		width : 22px;
+		height : 2px;
+		background-color : #ff4155;
+		margin-top : 50px;
+	}
+
+	#section7 ul li p {
+		font-size : 15px;
+		line-height : 15px;
+		color : #999;
+		font-weight : 300;
+		margin-top : 30px;
+	}
+
+	#section8 {
+		width : 100%;
+		background-color : #f9fafc;
+	}
+
+	#section8_box {
+		width : 1400px;
+		height : 220px;
+		margin : auto;
+	}
+
+	#section8_notice {
+		width : 1080px;
+		float : left;
+		position : relative;
+	}
+
+	#section8_notice h2 {
+		margin-top : 30px;
+		font-size : 21px;
+		font-weight : 400;
+	}
+
+	#section8_notice h6 {
+		width : 22px;
+		height : 2px;
+		background-color : #000;
+		margin-top : 15px;
+	}
+
+	#section8_notice button {
+		font-size : 12px;
+		font-weight : 300;
+		color : #999;
+		position : absolute;
+		top : 50px;
+		right : 70px;
+		border : none;
+		background : none;
+		cursor : pointer;
+		transition : 0.5s;
+	}
+
+	#section8_notice button:hover {
+		color : #ff4f64;
+	}
+
+	#section8_notice table {
+		margin-top : 15px;
+		font-size : 15px;
+		line-height : 28px;
+		font-weight : 300;
+		color : #999;
+	}
+
+	#section8_notice table th {
+		cursor : pointer;
+		text-align : left;
+		font-size : 15px;
+		font-weight : 300;
+		padding-right : 400px;
+		color : #333;
+	}
+
+	#section8_notice table th:hover {
+		color : #ff4155;
+	}
+
+	#section8_contact {
+		width : 280px;
+		height : 150px;
+		border-bottom : 1px solid #eee;
+		float : right;
+	}
+
+	#section8_contact h2 {
+		font-size : 21px;
+		font-weight : 400;
+		width : 150px;
+		margin-top : 30px;
+	}
+
+	#section8_contact p {
+		font-size : 10px;
+		font-weight : 100;
+		line-height : 14px;
+		width : 100px;
+		margin-top : 20px;
+	}
+
+	#section8_contact h3 {
+		font-size : 29px;
+		font-weight : 700;
+		margin-left : 120px;
+		margin-top : -40px;
+	}
+
+	#section8_contact h5 {
+		font-size : 13px;
+		font-weight : 300;
+		color : #999;
+		margin-left : 120px;
+		margin-top : 0;
+	}
+
+	#section9 {
+		width : 100%;
+		height : 500px;
+		background-color : #ff4155;
+		position : relative;
+		overflow : hidden;
+	}
+
+	#section9_textbox {
+		width : 900px;
+		margin : auto;
+		text-align : left;
+		color : #fff;
+		padding-top : 100px;
+		position : relative;
+	}
+
+	#section9_textbox h2 {
+		font-size : 60px;
+		font-weight : 100;
+		line-height : 65px;
+		letter-spacing : 15px;
+		position : absolute;
+		top : 200px;
+		right : 0;
+		left : 0;
+		margin : auto;
+		opacity : 0;
+		background : url(images/line2.png) 150px 110px no-repeat;
+	}
+
+	#section9_textbox h5 {
+		font-size : 16px;
+		line-height : 25px;
+		font-weight : 300;
+		margin-top : 40px;
+		position : absolute;
+		top : 400px;
+		right : 0;
+		left : 0;
+		margin : auto;
+		opacity : 0;
+	}
+
+	#section9_bt {
+		position : absolute;
+		top : 500px;
+		opacity : 0;
+	}
+
+	#section9_bt > li {
+		float : left;
+		margin-right : 5px;
+		width : 200px;
+		height : 60px;
+		border-radius : 2px;
+		cursor : pointer;
+		margin-top : 30px;
+		transition : 0.7s;
+	}
+
+	#section9_bt > li h6 {
+		font-size : 10px;
+		font-weight : 400;
+		line-height : 10px;
+		padding-left : 60px;
+		padding-top : 18px;
+	}
+
+	#section9_bt > li h4 {
+		font-size : 16px;
+		font-weight : 300;
+		line-height : 16px;
+		padding-left : 60px;
+	}
+
+	#section9_bt > li:nth-child(1) {
+		background : url(images/ios_bg.png) 25px 15px no-repeat;
+		background-color : #992733;
+	}
+
+	#section9_bt > li:nth-child(1):hover {
+		background-color : #190608;
+	}
+
+	#section9_bt > li:nth-child(2) {
+		background : url(images/and_bg.png) 25px 20px no-repeat;
+		background-color : #992733;
+	}
+
+	#section9_bt > li:nth-child(2):hover {
+		background-color : #190608;
+	}
+
+	#section9_img1 {
+		position : absolute;
+		left : -50%;
+		top : 40%;
+	}
+
+	#section9_img2 {
+		position : absolute;
+		left : -65%;
+		right : 0;
+		margin : auto;
+		top : -50%;
+	}
+
+	#section9_img3 {
+		position : absolute;
+		top : -50%;
+		right : -45%;
+		left : 0;
+		margin : auto;
+		opacity : 0;
+	}
+
+	#section9_img4 {
+		position : absolute;
+		right : -50%;
+		bottom : 0%;
+	}
+
+	footer {
+		width : 100%;
+		height : 300px;
+		background-color : #20252b;
+	}
+
+	#footer_box {
+		width : 1350px;
+		height : 300px;
+		margin : auto;
+		position : relative;
+	}
+
+	#footer_ul {
+		width : 1100px;
+		height : 15px;
+		padding-top : 30px;
+		float : left;
+	}
+
+	#footer_ul li {
+		float : left;
+		cursor : pointer;
+		border-right : 1px solid #31343d;
+		color : #fff;
+		padding : 0 8px;
+		font-size : 14px;
+		line-height : 14px;
+		letter-spacing : -1px;
+	}
+
+	.footer_li {
+		font-weight : 100;
+		letter-spacing : -1px;
+		color : #1bbc80;
+	}
+
+	#footer_ul li:last-child {
+		border : none;
+	}
+
+	#family_site {
+		width : 215px;
+		line-height : 30px;
+		background-color : #1b2027;
+		float : right;
+		border-bottom : 1px solid #fff;
+		color : #545a5c;
+		margin-top : 30px;
+		font-size : 14px;
+		font-weight : 300;
+		background : url(images/family_site1.png) 210px 10px no-repeat;
+		cursor : pointer;
+		position : relative;
+		padding-left : 10px;
+	}
+
+	#family_site_box {
+		padding-left : 10px;
+		width : 215px;
+		position : absolute;
+		bottom : 0;
+		left : 0;
+		color : #545a66;
+		display : none;
+		background-color : #1b2027;
+	}
+
+	#family_site_box li:hover {
+		color : #fff;
+	}
+
+	#family_site li:nth-child(3) {
+		color : #fff;
+		border : none;
+	}
+
+	#copyright {
+		width : 1100px;
+		height : 230px;
+		padding-left : 8px;
+		padding-top : 80px;
+	}
+
+	#copyright h2 {
+		font-size : 16px;
+		font-weight : 400;
+		line-height : 20px;
+		color : #fff;
+	}
+
+	#copyright h3 {
+		font-size : 14px;
+		font-weight : 400;
+		line-height : 20px;
+		color : #545a66;
+		margin-top : 15px;
+		letter-spacing : -2px;
+	}
+
+	.copyright_num {
+		color : #8b9096;
+	}
+
+	#copyright h4 {
+		font-size : 12px;
+		font-weight : 400;
+		line-height : 20px;
+		color : #545a66;
+		margin-top : 15px;
+		letter-spacing : -1px;
+	}
+
+	#copyright img {
+		height : 35px;
+		margin-top : 10px;
+	}
+
+	#top_bt {
+		position : absolute;
+		bottom : -35px;
+		right : 0;
+		cursor : pointer;
+	}
+
+	#pop_top {
+		bottom : 10px;
+		right : 10px;
+		position : fixed;
+		z-index : 9999;
+		height : 265px;
+		width : 80px;
+		text-align : center;
+	}
+
+	#pop_top img {
+		cursor : pointer;
+	}
+
+	#pop_top_bt {
+		margin-top : 30px;
+	}
+
+	#starter_bg {
+		width : 100%;
+		height : 100%;
+		background-color : rgba(0, 0, 0, 0.4);
+		position : fixed;
+		top : 0;
+		left : 0;
+		z-index : 9999;
+	}
+
+	#starter {
+		width : 777px;
+		height : 160px;
+		background-color : #fff;
+		position : absolute;
+		left : 0;
+		right : 0;
+		margin : auto;
+		top : -200px;
+		bottom : 0;
+		z-index : 99999;
+		border-radius : 10px;
+		text-align : center;
+		letter-spacing : 1px;
+		border : #ff4155 solid 3px;
+	}
+
+	#starter img {
+		float : right;
+		margin-top : 15px;
+		margin-right : 15px;
+		cursor : pointer;
+	}
+
+	#starter h2 {
+		font-size : 16px;
+		color : #000;
+		font-weight : 500;
+		margin-top : 45px;
+	}
+
+	#starter h3 {
+		font-size : 13px;
+		color : #333;
+		font-weight : 300;
+		margin-top : 25px;
+	}
+
+	.span {
+		text-decoration : underline;
+	}
+
+ </style></head><body>
+  <header>
+<h1 id="ttt">MENU</h1>
+  	<h1 id="logo"><img src="images/t_logo.jpg" alt="코나카드 로고"></h1>
+	<div class="sub_menu_wrap"></div>
+
+  	<ul id="menu">		
+  		<li><h3>코나카드 소개</h3>
+			<ul class="sub_menu">
+				<li>코나카드란?</li>
+				<li>카드 신청 &middot; 관리</li>
+				<li>코나카드샵</li>
+				<li>혜택 가이드</li>
+				<li>앱이용안내</li>
+			</ul>
+		</li>
+  		<li><h5>파트너</h5>
+		<ul class="sub_menu">
+			<li>제휴 브랜드</li>
+		</ul>
+		</li>
+  		<li><h5>이벤트</h5>
+		<ul class="sub_menu">
+			<li>진행 이벤트</li>
+		</ul>
+		</li>
+  		<li><h5>미디어</h5>
+		<ul class="sub_menu">
+			<li>언론기사</li>
+		</ul>
+		</li>
+  		<li><h4>고객지원</h4>
+		<ul class="sub_menu">
+			<li>제휴 브랜드</li>
+			<li>공지사항</li>
+			<li>FAQ</li>
+			<li>제휴문의</li>
+			<li>고객상담안내</li>
+		</ul>
+		</li>
+  	</ul>
+  </header>
+
+  <div id="slide_wrap">
+  	<ul id="slide">
+  			<li></li>
+  			<li></li>
+  			<li></li>
+  			<li></li>
+  			<li></li>
+  	</ul>
+	  <div id="slidebt_box">
+	<div id="number">1</div>
+  	<img src="images/pause_icon.png" alt="멈춤 버튼" id="pause">
+  	<img src="images/play_icon.png" alt="시작 버튼" id="start">
+  			<ul id="slidebt_box_bt">
+  				<li></li>
+  				<li></li>
+  				<li></li>
+  				<li></li>
+  			</ul>
+  </div>	
+
+  </div>
+
+<div id="section1">
+	<h1>매달 혜택이 업데이트<br>코나카드</h1>
+	<p>365일 내내 즐기는 혜택부터 트렌드에 맞춘 이달의 혜택까지!<br>나에게 맞춘 예산과 디자인으로 즐겨보세요.</p>
+	<img src="images/section02_bg01.png" alt="배경 이미지1" id="section1_img1">
+	<img src="images/awesome_black01.png" alt="블랙 카드" id="section1_img2">
+	<img src="images/yoga_pink01.png" alt="핑크 카드" id="section1_img3">
+	<img src="images/section02_bg02.png" alt="배경 이미지2" id="section1_img4">
+	<img src="images/section02_bg03.png" alt="배경 이미지3" id="section1_img5">
+</div>
+
+<div id="section2">
+	<div id="section2_box">
+		<h2>하나, 코나카드만의<br>업데이트 혜택을 즐겨보세요</h2>
+		<p>365일 내내 즐기는 혜택부터<br>트렌드에 따라 매달 업데이트되는 이달의 혜택까지!<br>연회비 없이 한 장의 코나카드로 모든 혜택을 즐겨보세요.
+</p>
+		<button>혜택 가이드</button>
+		<div id="phone"><img src="images/section03_display.png" alt="폰 이미지" id="phone_img">
+			<div id="screen">
+				<img src="images/section03_display_contents.png" alt="스크린 이미지" id="screen_img">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="section3">
+	<div id="section3_textbox">
+		<h2>둘, 나의 예산에 맞추어<br>충전해보세요</h2>
+		<p>언제 어디서나 모바일로 카드 충전을 할 수 있으니까!<br>이젠 나의 예산에 맞추어 충전하고 사용해보세요.</p>
+		<button>앱 이용안내</button>
+	</div>
+	<img src="images/section04_2.png" alt="폰 이미지" id="section3_phone">
+	<ul id="section3_iconmenu">
+		<li>
+			<img src="images/section04_1_1.png" alt="예산 아이콘">
+			<h3>코나 카드를 통한<br>예산 플래닝</h3>
+		</li>
+		<li>
+			<img src="images/section04_1_2.png" alt="화살표 아이콘">
+		</li>
+		<li>
+			<img src="images/section04_1_3.png" alt="충동구매 아이콘">
+			<h3>충동구매 ↓</h3>
+		</li>
+		<li>
+			<img src="images/section04_1_4.png" alt="더하기 아이콘">
+		</li>
+		<li>
+			<img src="images/section04_1_5.png" alt="과소비 아이콘">
+			<h3>과소비 ↓</h3>
+		</li>
+	</ul>
+</div>
+
+	<div id="section4">
+		<div id="section4_textbox">
+			<h2>셋, 나의 스타일대로<br>카드를 선택해보세요</h2>
+			<p>카드사에서 정해주는 하나의 디자인은 그만!<br>이젠 직접 카드 디자인을 선택하고 사용해보세요.</p>
+		</div>
+		<div id="section4_textbox2"><h1>KONA<br>CARD</h1><img src="images/se44.png" alt="꾸밈 이미지"></div>
+		<div id="section4_imgbox">
+			<img src="images/section05_1_3.png" alt="카드 1" id="card3">
+			<img src="images/section05_1_2.png" alt="카드 2" id="card2">
+			<img src="images/section05_1_1.png" alt="카드 3" id="card1">
+		</div>
+	<img src="images/section4_up.png" alt="위로 화살표" id="section4_up">	
+	</div>
+
+	<div id="section5">
+		<div id="section5_textbox">
+			<h2>넷, 안전하게 결제하고 <br>편리하게 관리해보세요</h2>
+			<p>코나카드로 소중한 내 돈은 안전하게 결제하고,<br>모바일에서 충전하고 이용내역을 확인하니까 편리하게 관리하고!<br>지금 바로 코나카드 앱에서 만나보세요.</p>
+		</div>
+		<div id="section5_imgbox">
+			<img src="images/section06_card_02.png" alt="휴대폰 이미지 1" id="section5_phone1">
+			<img src="images/section06_card_01.png" alt="휴대폰 이미지 2" id="section5_phone2">
+		</div>
+	</div>	
+
+	<div id="section6">
+		<div id="section6_textbox">
+			<h2>매일매일 어디서나<br>나와 함께하는 카드!</h2>
+			<h3>이젠 코나카드와 함께 내가 원하는 컬러나<br>일러스트의 IC 실물 카드로 나를 표현해보세요.</h3>
+		</div>
+	</div>
+	<div id="section7">
+		<h2>언론기사</h2>
+		<button>+ 더보기</button>
+		<ul>
+			<li>
+				<h4>코나아이, 세계 최초 코로나19 바이러스 99.99% 사멸 항바이러스 카드 출시</h4>
+				<h5>■ 전세계 최초 코로나19 바이러스 사멸 필름 개발한<br> 케이바이로와 독점 공급 계약 체결 ■ 연간 2,000만<br>장의 코로나19 항바이러스 카드 제조 예정 스마트카드 제조 기업 코나아이㈜(대표 조정일)가 최근 바이오벤처기업 ㈜케이바이로(대표 권충성)와 ‘케이바이로 항바이러스 PVC코팅 필름’ 관련 국내 독점 공급 계약을 체결하고 항바이러스 필름을 적용한 신용카드 제품을 출시할 계획이다.
+
+ </h5>
+				<p>2021/01/11</p>
+			</li>
+			<li>
+				<h4>코나아이, 강원도 횡성군 지역화폐 운영 우선협상자로 선정</h4>
+				<h5> ■ 연간 50억원 발급 예정 카드형 횡성사랑상품권 운<br>영대행 우선협상자로 선정
+ ■ 카드형 지역화폐 발급<br> 및 모바일 기반 충전식 선불카드 플랫폼 운영 예정 핀테크 기업 코나아이(대표 조정일)는 강원도 횡성군의 카드형 횡성사랑상품권 운영대행사 선정 입찰에서 우선협상대상자로 선정됐다고 8일 밝혔다.</h5>
+				<p>2021/01/08</p>
+			</li>
+			<li>
+				<h4>코나아이, 영국 핀테크 기업 ‘레볼루트’에 메탈카드 공급</h4>
+				<h5>코나아이(대표이사 조정일)가 영국 핀테크 회사인 레<br>볼루트(Revolut)와 메탈카드 공급 계약을 체결하고 제<br>품을 공급하고 있다고 23일 밝혔다. 코나아이는 2019년 유럽, 호주 등에 메탈카드를 수출한 데 이어, 지난 10월 레볼루트와도 공급 계약을 체결하면서 전통적인 칩 모듈 및 카드 사업 외에도 메탈카드, 지문카드와 같은 고부가 카드 영역에서도 글로벌 공급사로 자리매김하고 있다. 특히 올해는 코로나19의 확산으로 수출사업 추진이 어려운 상황에서도 다양한 글로벌 금융사 및 기업과 제품 공급 계약을 성사시키는 성과를 거뒀다. 
+ </h5>
+				<p>2020/12/23</p>
+			</li>
+		</ul>
+	</div>
+
+<div id="section8">
+	<div id="section8_box">
+		<div id="section8_notice">
+			<h2>공지사항</h2>
+			<button>+ more</button>
+			<table>
+				<tr>
+					<th>[공지] 대구은행 펌뱅킹 서비스 일시 중단 안내(01/10)</th>
+					<td>2021/01/08</td>
+				</tr>
+				<tr>
+					<th>[안내] 플라이하이 시스템점검으로 주민등록증 진위확인 서비스 일시 중단(12/29)</th>
+					<td>2020/12/24</td>
+				</tr>
+				<tr>
+					<th>[안내] 플라이하이 시스템점검으로 운전면허증 진위확인 서비스 일시 중단(12/28)</th>
+					<td>2020/12/24</td>
+				</tr>
+			</table>
+		</div>
+		<div id="section8_contact">
+			<h2>고객센터</h2>
+			<p>CUSTOMER SERVICE CENTER</p>
+			<h3>1899.4118</h3>
+			<h5>평일 : AM 09:00 ~ PM 18:00 (공휴일 휴무)</h5>
+		</div>
+	</div>
+</div>
+
+	<div id="section9">
+		<div id="section9_textbox">
+			<h2>KONACARD <br> APP</h2>
+			<h5>매달 혜택이 업데이트 코나카드<br>지금 바로 코나카드 앱에서 만나보세요.</h5>
+			<ul id="section9_bt">
+				<li id="section9_appstore">
+					<h6>DOWNLOAD ON THE</h6>
+					<h4>APP STORE</h4>
+				</li>
+				<li id="section9_googlestore">
+					<h6>ANDROID APP ON</h6>
+					<h4>GOOGLE PLAY</h4>
+				</li>
+			</ul>
+		</div>
+			<img src="images/section09_bg02.png" alt="배경 이미지1" id="section9_img1">
+			<img src="images/section09_bg01.png" alt="배경 이미지2" id="section9_img2">
+			<img src="images/section09_bg04.png" alt="배경 이미지3" id="section9_img3">
+			<img src="images/section09_bg03.png" alt="배경 이미지4" id="section9_img4">
+	</div>
+
+	<footer>
+	<div id="footer_box">
+		<ul id="footer_ul">
+			<li>전자금융거래 이용약관</li>
+			<li>코나카드 서비스 이용약관</li>
+			<li><span class="footer_li">개인정보처리방침</span></li>
+			<li>개인정보 수집&middot;이용 동의</li>
+			<li>위치기반서비스 이용 약관</li>
+			<li>마케팅 정보 수신 동의</li>
+			<li>사이트맵</li>
+		</ul>
+		<div id="family_site"><p>family site</p>		
+		<ul id="family_site_box">
+			<li>코나아이</li>
+			<li>파트너포털</li>
+			<li>family site</li>
+		</ul>	
+</div>
+		<div id="copyright">
+			<h2>KNOA i</h2>
+			<h3>주소&nbsp;:&nbsp;서울특별시 영등포구 은행로 3 익스콘벤처타워 8층 대표자:조정일<br>사업자등록번호 : 109-81-53365 &nbsp;고객센터 : <span class="copyright_num">1899-4118</span></h3>
+			<h4>COPYRIGHT KONA I CO., LTD. ALL RIGHTS RESERVED.</h4>
+			<img src="images/awardlogo.png" alt="어워드 로고">
+		</div>
+		<img src="images/btn_top.png" alt="맨 위로 가기 버튼" id="top_bt">
+	</div>
+	
+		<div class="w3c">
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+					<img style="border:0;width:88px;height:31px"
+					src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+					alt="올바른 CSS입니다!" />
+					  </a>
+					<!-- css 검사완료 코드 -->
+					<a href="http://validator.kldp.org/check?uri=referer"
+					  onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))" target="_blank"><img
+					  src="http://validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80" ></a>
+					<!-- html 검사완료 코드 -->
+			</div>
+
+	</footer>
+
+	<div id="pop_top">
+		<img src="images/link_playstore.png" alt="플레이 스토어 버튼">
+		<img src="images/link_appstore.png" alt="앱 스토어 버튼">
+		<img src="images/btn_top2.png" alt="맨 위로 가기 버튼" id="pop_top_bt">
+	</div>
+
+
+<div id="starter_bg">
+<div id="starter">
+	<img src="images/icon_modal_close.png" alt="닫기 버튼" id="starter_close">
+	<h2>본 사이트는 <span class="span">포트폴리오 용 사이트</span>로 리소스는 원작자에게 있습니다.</h2>
+	<h3>HTML5, CSS3, JavaScript&jQuery로 제작되었으며 Google Chrom(전체화면)에 최적화되어있습니다.</h3>
+</div></div>
+
+
+
+
+ </body>
+</html>

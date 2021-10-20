@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>Starbucks Coffee Korea</title>
+  <link rel="shortcut icon" href="starbucks_pa.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function(){
+
+//		 $('#starter_close').click(function(){
+//			$('#starter_bg').hide()
+//		  })
+
+			slide_num = 0
+			click = 0;
+
+			promo_content_ul = setInterval(function(){
+			if(click == 0){
+				click = 1;
+			if(slide_num <= -300){slide_num = 0; $('#promo_content_ul').css({'left':'0'}) }
+			slide_num = slide_num - 100 
+			$('#promo_content_ul').stop().animate({'left':slide_num+'%'},500,function(){
+				click = 0  })
+			if (slide_num <= -300){
+			$('#promo_list li').eq(0).css({'width':'12px','height':'12px','border':'3px solid green','background-color':'#fff','box-sizing':'border-box'}).siblings().css({'width':'12px','height':'12px','background-color':'#bbb','border':'none'})
+			}
+			$('#promo_list li').eq(slide_num/-100).css({'width':'12px','height':'12px','border':'3px solid green','background-color':'#fff','box-sizing':'border-box'}).siblings().css({'width':'12px','height':'12px','background-color':'#bbb','border':'none'})
+			}
+		},3000)
+
+		$('#promo_bt1').click(function(){
+			$(this).hide()
+			$('#promo_bt').show()
+			$('#promo_content').slideDown()
+		})	
+		$('#promo_bt').click(function(){
+			$(this).hide()
+			$('#promo_bt1').show()
+			$('#promo_content').slideUp()
+		})
+
+		$('#promo_list li:nth-child(1)').click(function(){
+			$('#promo_content_ul').animate({'left':'0'})
+		})
+		$('#promo_list li:nth-child(2)').click(function(){
+			$('#promo_content_ul').animate({'left':'-100%'})
+		})
+		$('#promo_list li:nth-child(3)').click(function(){
+			$('#promo_content_ul').animate({'left':'-200%'})
+		})
+
+		$('.footer_menu_arrow3').click(function(){
+			$(this).hide()
+			$(this).siblings('img').show()
+			$(this).siblings('.menu_popup_list_sub').slideDown()
+		})	
+		$('.footer_menu_arrow4').click(function(){
+			$(this).hide()
+			$(this).siblings('img').show()	
+			$(this).siblings('.menu_popup_list_sub').slideUp()
+		})
+
+
+		$('#promo_list li').click(function(){
+			$(this).css({'border':'3px solid green','background-color':'#fff','box-sizing':'border-box'})
+			$(this).siblings('li').css({'background-color':'#bbb','border':'none'})
+		})
+		//header_icon li 3째를 클릭하면 #menu_popup이 right 가 0으로 animate되어라
+		$('#header_icon li:nth-child(3)').click(function(){
+			$('#menu_popup').animate({'right':'0'},200)
+			$('#wrap').animate({'margin-left':'-60%'},200)
+		})
+		$('#menu_popup_closebt').click(function(){
+			$('#menu_popup').animate({'right':'-160%'},200)
+			$('#wrap').css({'margin-left':'0'})
+		})
+
+		// footer_menu_arrow를 클릭하면 footer_menu_arrow2가 보이고 footer_menu_arrow는 꺼져라
+		$('.footer_menu_arrow').click(function(){
+			$(this).hide()
+			$(this).siblings('img').show()
+			$(this).siblings('.footer_menu_sub').slideDown()
+		})	
+		$('.footer_menu_arrow2').click(function(){
+			$(this).hide()
+			$(this).siblings('img').show()	
+			$(this).siblings('.footer_menu_sub').slideUp()
+		})
+
+		$('#main_box1').animate({'opacity':'1'},800)
+		$('#main_box2').delay(400).animate({'opacity':'1'},800)
+		$('#main_box3').delay(800).animate({'opacity':'1'},800)
+		$('#main_box4').delay(1200).animate({'opacity':'1'},800)
+		$('#main_box5').delay(1600).animate({'opacity':'1'},800)
+		$('#more_bt').delay(2000).animate({'opacity':'1'},800)
+
+	})
+  </script><style>
+	* {
+		margin : 0;
+		padding : 0;
+		list-style : none;
+	}
+
+	a {
+		text-decoration : none;
+		color : inherit;
+	}
+
+	header {
+		position : fixed;
+		z-index : 990;
+		width : 100%;
+		height : 70px;
+		background-color : #f6f5ef;
+		top : 0;
+	}
+
+	#logo img {
+		float: left;
+		vertical-align : top;
+		cursor : pointer;
+	}
+
+	#header_icon {
+		width : 180px;
+		height : 40px;
+		margin-top : 15px;
+		float : right;
+	}
+
+	#header_icon li {
+		width : 40px;
+		height : 40px;
+		float : left;
+		margin : 0 10px;
+		margin-top : 5px;
+		cursor : pointer;
+	}
+
+	#header_icon li img {
+		width : 90%;
+	}
+
+	#quick_menu {
+		position : fixed;
+		z-index : 991;
+		top : 90px;
+		right : 5%;
+		width : 25%;
+	}
+
+	#quick_menu img {
+		width : 100%;
+		vertical-align : top;
+		cursor : pointer;
+	}
+
+	#main {
+		width : 100%;
+		position : relative;
+		margin-top : 70px;
+		overflow : hidden;
+	}
+
+	#main_bg {
+		width : 100%;
+		vertical-align : top;
+	}
+
+	#main_text1 {
+		position : absolute;
+		width : 60%;
+		left : 5%;
+		top : 15vw;
+	}
+
+	#main_box1 {
+		position : absolute;
+		width : 80%;
+		left : 12%;
+		top : 55vw;
+		opacity : 0;
+	}
+
+	#main_box1_img {
+		width : 80%;
+	}
+
+	#main_box1_textimg {
+		width : 55%;
+		margin-top : -4vw;
+		margin-left : -3vw;
+	}
+
+	#main_box2 {
+		position : absolute;
+		width : 80%;
+		left : 55%;
+		top : 70vw;
+		opacity : 0;
+	}
+
+	#main_box2_img {
+		width : 70%;
+	}
+
+	#main_box2_textimg {
+		width : 65%;
+		margin-top : -2vw;
+		margin-left : -10vw;
+	}
+
+	#main_box3 {
+		position : absolute;
+		width : 80%;
+		left : 10%;
+		top : 170vw;
+		opacity : 0;
+	}
+
+	#main_box3_img {
+		width : 80%;
+	}
+
+	#main_box3_textimg {
+		width : 42%;
+		position : absolute;
+		right : -3%;
+		top : 20%;
+	}
+
+	#main_box4 {
+		position : absolute;
+		width : 100%;
+		right : -15%;
+		top : 220vw;
+		opacity : 0;
+	}
+
+	#main_box4_img {
+		width : 60%;
+		margin-top : 2vw;
+		margin-left : -3vw;
+	}
+
+	#main_box4_textimg {
+		width : 40%;
+		margin-left : -1vw;
+		margin-bottom : 45vw;
+	}
+
+	#main_box5 {
+		position : absolute;
+		width : 80%;
+		left : 10%;
+		top : 250vw;
+		opacity : 0;
+	}
+
+	#main_box5_img {
+		width : 75%;
+		margin-top : 10vw;
+		margin-left : 13vw;
+	}
+
+	#main_box5_textimg {
+		width : 65%;
+		margin-top : -6vw;
+		margin-left : 6vw;
+	}
+
+	#more_bt {
+		background : none;
+		color : #fff;
+		border : #fff solid 2px;
+		width : 130px;
+		height : 35px;
+		position : absolute;
+		bottom : 5vw;
+		left : 0;
+		right : 0;
+		margin : auto;
+		cursor : pointer;
+		opacity : 0;
+		border-radius : 4px;
+		transition : 0.5s;
+	}
+
+	#more_bt:hover {
+		background-color : green;
+		transition : 0.5s;
+	}
+
+	#content_box {
+		background-color : #000;
+		height : 110px;
+	}
+
+	#content_box h2 {
+		float : left;
+		color : #fff;
+		font-size : 20px;
+		font-weight : 500;
+		line-height : 110px;
+	}
+
+	#content_box img {
+		float : left;
+		margin-top : 35px;
+		margin-left : 30px;
+		margin-right : 10px;
+	}
+
+	#content_bt {
+		float : right;
+		width : 37px;
+		height : 37px;
+		border-radius : 40px;
+		border : #fff solid 1px;
+		margin-top : 36px;
+		margin-right : 30px;
+		background : none;
+		font-weight : 100;
+		color : #fff;
+		font-size : 30px;
+		cursor : pointer;
+	}
+
+	#promo_box {
+		background-color : #f6f5ef;
+		text-align : center;
+		position : relative;
+	}
+
+	#promo_head {
+		height : 114px;
+		position : relative;
+	}
+
+	#promo_head li {
+		display : inline-block;
+		margin : 0 10px;
+		line-height : 110px;
+	}
+
+	#promo_head li h2 {
+		color : #222;
+		font-size : 30px;
+	}
+
+	#promo_bt {
+		width : 33px;
+		height : 33px;
+		border-radius : 40px;
+		background : none;
+		border : #222 solid 1px;
+		color : #222;
+		font-size : 25px;
+		line-height : 25px;
+		font-weight : 100;
+		cursor : pointer;
+		margin-bottom : 5px;
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+	}
+
+	#promo_bt1 {
+		width : 33px;
+		height : 33px;
+		border-radius : 40px;
+		background : none;
+		border : #222 solid 1px;
+		color : #222;
+		font-size : 25px;
+		line-height : 33px;
+		font-weight : 100;
+		cursor : pointer;
+		display : none;
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		right : 82px;
+	}
+
+	#promo_content {
+		width : 100%;
+		height : 75vw;
+		background-color : #f6f5ef;
+		overflow : hidden;
+		position : relative;
+	}
+
+	.promo_more_bt {
+		width : 124px;
+		height : 5vw;
+		border : #222 solid 2px;
+		color : #000;
+		font-weight : 500;
+		cursor : pointer;
+		position : absolute;
+		right : 0;
+		left : 0;
+		margin : auto;
+		bottom : 1vw;
+		background : none;
+		color : #6a6a6a;
+		border-radius : 3px;
+		margin-bottom : 2vw;
+	}
+
+	.promo_more_bt:hover {
+		text-decoration : underline;
+	}
+
+	#promo_content_ul {
+		width : 400%;
+		height : 370px;
+		position : absolute;
+		left : 0;
+	}
+
+	#promo_content_ul li {
+		width : 25%;
+		float : left;
+		position : relative;
+	}
+
+	#promo_content_ul li img {
+		width : 100%;
+	}
+
+	#promo_list {
+		position : absolute;
+		right : 0;
+		left : 0;
+		margin : auto;
+		bottom : 2vw;
+	}
+
+	#promo_list li {
+		display : inline-block;
+		width : 12px;
+		height : 12px;
+		border-radius : 15px;
+		background-color : #bbb;
+		cursor : pointer;
+	}
+
+	#promo_list li:first-child {
+		width : 12px;
+		height : 12px;
+		box-sizing : border-box;
+		background-color : #fff;
+		border : green solid 3px;
+	}
+
+	#rewards {
+		width : 100%;
+		background-color : #1e3932;
+		text-align : center;
+		color : #fff;
+	}
+
+	#rewards button:hover {
+		text-decoration : underline;
+		cursor : pointer;
+	}
+
+	#rewards_box1 {
+		width : 90%;
+		border-bottom : 1px solid #4b615b;
+		margin : auto;
+	}
+
+	#rewards_img {
+		width : 40%;
+		margin-top : 40px;
+	}
+
+	#rewards_box1 h3 {
+		font-size : 18px;
+		font-weight : 400;
+		margin-top : 30px;
+	}
+
+	#rewards_box1 h5 {
+		font-size : 14px;
+		font-weight : 400;
+		margin-top : 15px;
+		line-height : 21px;
+	}
+
+	.rewards_b {
+		font-weight : 900;
+	}
+
+	#rewards_bt1 {
+		width : 35vw;
+		line-height : 35px;
+		background-color : #00704a;
+		border : none;
+		border-radius : 3px;
+		margin : 4vw 0;
+		color : #fff;
+	}
+
+	#rewards_bt2 {
+		width : 35vw;
+		line-height : 31px;
+		background : none;
+		border : #fff solid 2px;
+		border-radius : 3px;
+		margin-left : 1vw;
+		color : #fff;
+	}
+
+	#rewards_box2 h5 {
+		font-size : 14px;
+		font-weight : 400;
+		margin : 20px 0;
+		line-height : 21px;
+	}
+
+	#egift_bt {
+		width : 71vw;
+		line-height : 31px;
+		border-radius : 3px;
+		background : none;
+		border : #fff solid 2px;
+		color : #fff;
+		margin-bottom : 60px;
+	}
+
+	#bland {
+		background : url(m_2020_xmas_bean_bg.jpg) center;
+		text-align : center;
+		background-size : cover;
+	}
+
+	#bland_md_img {
+		margin-top : 100px;
+		width : 75%;
+	}
+
+	#bland_text_img {
+		margin-top : 20px;
+		width : 75%;
+		margin-top : 50px;
+	}
+
+	#bland_more_bt {
+		width : 35vw;
+		height : 36px;
+		margin-top : 20px;
+		margin-bottom : 100px;
+		border-radius : 3px;
+		background : none;
+		border : #000 solid 2px;
+		cursor : pointer;
+		transition : 0.6s;
+	}
+
+	#bland_more_bt:hover {
+		background-color : #000;
+		color : #fff;
+		text-decoration : underline;
+	}
+
+	#reserve {
+		width : 100%;
+		height : 904px;
+		background : url(m_reserve_xmas_beans.jpg) center 0 no-repeat;
+		background-size : cover;
+		position : relative;
+	}
+
+	#reserve_bt {
+		width : 35vw;
+		height : 36px;
+		margin-top : 20px;
+		margin-bottom : 100px;
+		border-radius : 3px;
+		background : none;
+		border : #e3b59e solid 2px;
+		color : #e3b59e;
+		cursor : pointer;
+		transition : 0.6s;
+		position : absolute;
+		bottom : 100px;
+		right : 0;
+		left : 0;
+		margin : auto;
+	}
+
+	#reserve_bt:hover {
+		background-color : #000;
+		color : #fff;
+		text-decoration : underline;
+	}
+
+	#reserve_magazine {
+		width : 100%;
+		height : 920px;
+		position : relative;
+	}
+
+	#reserve_magazine1 {
+		width : 90%;
+		position : absolute;
+		right : 0;
+		left : 0;
+		margin : auto;
+		top : 80px;
+	}
+
+	#reserve_magazine2 {
+		width : 75%;
+		position : absolute;
+		right : 0;
+		left : 0;
+		margin : auto;
+		top : 600px;
+	}
+
+	#reserve_magazine3 {
+		font-size : 14px;
+		font-weight : 400;
+		color : #666;
+		letter-spacing : 4px;
+		position : absolute;
+		top : 840px;
+		text-align : center;
+		cursor : pointer;
+		margin-left : 132px;
+	}
+
+	#reserve_magazine3:hover {
+		background-color : #976d3f;
+		color : #fff;
+		transition : 0.7s;
+	}
+
+	#reserve_store {
+		position : relative;
+		width : 100%;
+		height : 750px;
+		background-color : #e7e7e7;
+		font-family : 'Gothic A1', sans-serif;
+	}
+
+	#reserve_store1 {
+		width : 240px;
+		position : absolute;
+		top : 244px;
+		left : 0;
+	}
+
+	#reserve_store2 {
+		width : 293px;
+		position : absolute;
+		top : 0;
+		left : 4px;
+	}
+
+		#reserve_store3 {
+		width : 190px;
+		position : absolute;
+		top : 151px;
+		left : 220px;
+	}
+
+	#reserve_store_textbox {
+		position : absolute;
+		top : 386px;
+		right : 0;
+		left : 0;
+		margin : auto;
+		text-align : center;
+		display : inline-block;
+		letter-spacing : -1px;
+		color : #373737;
+	}
+
+	#reserve_store_textbox h2 {
+		font-size : 25px;
+		font-weight : 500;
+	}
+
+	#reserve_store_textbox h3 {
+		font-weight : 200;
+		font-weight : 500;
+		margin : 15px 0;
+	}
+
+	#reserve_store_textbox h4 {
+		font-size : 18px;
+		font-weight : 500;
+		line-height : 30px;
+	}
+
+		.reserve_store_span {
+		font-weight : 700;
+	}
+
+	#reserve_store_bt {
+		width : 35vw;
+		height : 36px;
+		border-radius : 3px;
+		background : none;
+		border : #000 solid 2px;
+		color : #000;
+		cursor : pointer;
+		transition : 0.6s;
+		margin-top : 30px;
+	}
+
+	#reserve_store_bt:hover {
+		background-color : #000;
+		color : #fff;
+		text-decoration : underline;
+	}
+
+	#menu_popup {
+		width : 160%;
+		height : 100%;
+		background-color : rgba(0, 0, 0, 0.5);
+		position : fixed;
+		right : 0;
+		top : 0;
+		z-index : 999;
+		right : -160%;
+		overflow : auto;
+	}
+
+	#menu_popup_box {
+		width : 40%;
+		height : 100%;
+		background-color : #111;
+		float : right;
+	}
+
+	#menu_popup_closebt {
+		position : absolute;
+		right : 42%;
+		top : 2%;
+		transition : 0.8s;
+		cursor : pointer;
+	}
+
+	#menu_popup_closebt:hover {
+		transform : rotate(180deg);
+	}
+
+	#search_box {
+		text-align : center;
+		padding : 30px 0;
+		background-color : #2d2926;
+		border-bottom : 1px solid #111;
+	}
+
+	#search_box > input {
+		width : 190px;
+		height : 50px;
+		border-radius : 5px;
+		margin-right : 5px;
+	}
+
+	#search_box > button {
+		width : 90px;
+		height : 50px;
+		border-radius : 3px;
+		background-color : #666;
+		color : #fff;
+		font-size : 18px;
+		cursor : pointer;
+		border : none;
+	}
+
+	#menu_popup_list {
+		width : 100%;
+		background-color : #111;
+	}
+
+	#menu_popup_box > ul:first-child > li {
+		margin-left : 100px;
+	}
+
+	#menu_popup_list > li {
+		line-height : 80px;
+		overflow : hidden;
+		background-color : #111;
+		color : #fff;
+		margin-left : 30px;
+		cursor : pointer;
+		border-bottom : 1px solid #2d2926;
+	}
+
+	#menu_popup_list h3 {
+		font-weight : 400;
+		float : left;
+	}
+
+	.menu_popup_list_1 h3 {
+		margin-left : 30px;
+	}
+
+	.menu_popup_list_1 > ul {
+		padding-left : 30px;
+	}
+
+	#menu_popup_list h3:hover {
+		text-decoration : underline;
+	}
+
+	#menu_popup_list > li:first-child {
+		clear : both;
+		margin-left : 0;
+		background-color : #2d2926;
+	}
+
+	.menu_popup_list_sub {
+		line-height : 80px;
+		clear : both;
+		display : none;
+		background-color : #111;
+	}
+
+	.menu_popup_list_sub > li {
+		padding-left : 10px;
+	}
+
+	.menu_popup_list_sub > li:hover {
+		text-decoration : underline;
+	}
+
+	.footer_menu_arrow3 {
+		float : right;
+		margin-right : 10px;
+		margin-top : 30px;
+	}
+
+	.footer_menu_arrow4 {
+		float : right;
+		margin-right : 10px;
+		margin-top : 30px;
+		display : none;
+	}
+
+	#wrap {
+		width : 100%;
+		position : absolute;
+	}
+
+	footer {
+		background-color : #2c2a29;
+		text-align : center;
+	}
+
+	#footer_menu > ul > li {
+		width : 100%;
+		line-height : 50px;
+		overflow : hidden;
+		border-top : 1px solid #403a36;
+		background-color : #554c46;
+		color : #fff;
+		cursor : pointer;
+	}
+
+	#footer_menu > ul > li h3 {
+		float : left;
+		margin-left : 10px;
+		font-size : 15px;
+		font-weight : 600;
+	}
+
+	#footer_menu > ul > li h3:hover {
+		text-decoration : underline;
+	}
+
+	#footer_menu > ul > li .footer_menu_arrow {
+		float : right;
+		margin-right : 10px;
+		margin-top : 15px;
+	}
+
+	#footer_menu > ul > li .footer_menu_arrow2 {
+		float : right;
+		margin-right : 10px;
+		margin-top : 15px;
+		display : none;
+	}
+
+	.footer_menu_sub {
+		text-align : left;
+		padding-left : 10px;
+		background-color : #645952;
+		line-height : 40px;
+		clear : both;
+		display : none;
+		font-size : 14px;
+		color : #e6dbd3;
+		font-weight : 400;
+	}
+
+	.footer_menu_sub li:hover {
+		text-decoration : underline;
+	}
+
+	#footer_join {
+		height : 6vh;
+		background-color : #2c2a29;
+		padding : 5vw;
+	}
+
+	.footer_join_bt {
+		cursor : pointer;
+		background : none;
+		display : inline-block;
+		width : 25vw;
+		border : #fff solid 2px;
+		font-size : 3vw;
+		color : #fff;
+		text-align : center;
+		line-height : 10vw;
+		border-radius : 3px;
+		margin-right : 1vw;
+	}
+
+	.footer_join_bt:hover {
+		text-decoration : underline;
+	}
+
+	#honor {
+		height : 16vw;
+		background-color : #282828;
+	}
+
+	#honor img {
+		height : 8vw;
+		margin-top : 4vw;
+	}
+
+	#footer_detail {
+		width : 65%;
+		margin : auto;
+		font-size : 11px;
+	}
+
+	#footer_detail li {
+		display : inline-block;
+		line-height : 12px;
+		color : #ccc;
+		border-right : 1px solid #393939;
+		padding-right : 7px;
+		margin-top : 10px;
+		cursor : pointer;
+	}
+
+	.footer_detail_1 {
+		color : #00b050;
+	}
+
+	.footer_map_bt {
+		width : 20vw;
+		line-height : 6vw;
+		border-radius : 3px;
+		margin-right : 1vw;
+		font-size : 1vw;
+		border : #fff solid 1px;
+		display : inline-block;
+		color : #fff;
+		margin : 4vw 0;
+		font-size : 11px;
+		background : none;
+		cursor : pointer;
+		padding : 0 1vw;
+	}
+
+	.footer_map_bt:hover {
+		text-decoration : underline;
+	}
+
+	#detail {
+		font-size : 11px;
+		color : #999;
+		font-weight : 400;
+	}
+
+	#copyright {
+		font-size : 10px;
+		color : #999;
+		font-weight : 400;
+		padding : 15px 0;
+	}
+
+	#starter_bg {
+		width : 100%;
+		height : 100%;
+		background-color : rgba(0, 0, 0, 0.6);
+		position : fixed;
+		top : 0;
+		left : 0;
+		z-index : 9999;
+	}
+
+	#starter {
+		width : 70vw;
+		height : 170px;
+		background-color : #006e3f;
+		position : absolute;
+		left : 0;
+		right : 0;
+		margin : auto;
+		top : -400px;
+		bottom : 0;
+		z-index : 99999;
+		border-radius : 10px;
+		text-align : center;
+		letter-spacing : 1px;
+		border : #fff solid 4px;
+	}
+
+	#starter img {
+		cursor : pointer;
+		position : absolute;
+		right : 0;
+		left : 0;
+		margin : auto;
+		width : 6%;
+		bottom : 20px;
+	}
+
+	#starter h2 {
+		font-size : 3vw;
+		color : #fff;
+		font-weight : 500;
+		margin-top : 25px;
+	}
+
+	#starter h3 {
+		font-size : 2vw;
+		color : #ddd;
+		font-weight : 100;
+		margin-top : 20px;
+	}
+
+	.span {
+		text-decoration : underline;
+	}
+
+	.w3c {
+		text-align : center;
+		background-color : #2c2a29;
+		padding-top : 2vh;
+	}
+
+ </style></head><body>
+	<header>
+		<img src="logo_m.jpg" alt="스타벅스 로고 이미지" id="logo">
+		<ul id="header_icon">
+			<li><img src="list_1.png" alt="마이페이지 아이콘"></li>
+			<li><img src="list_2.png" alt="지도 아이콘"></li>
+			<li><img src="list_3.png" alt="메뉴리스트 아이콘"></li>
+		</ul>
+	</header>		
+<!-- header 영역 끝 -->
+	<div id="quick_menu">
+		<img src="badge_efreq_m_2020winter.png" alt="프리퀀시 이벤트 바로가기">
+		<img src="plcc_badge_mobile.png" alt="스타벅스 현대카드 바로가기">
+	</div>
+
+	<div id="wrap">
+	<!-- main_bg를 css bg로 깔지 않은 이유는 높이가 유동적으로 변경되기 때문에 이미지의 높이 정보로 main 의 높이가 결정되어야 한다. 그래서 이미지로 삽입한다. -->
+		<div id="main">
+			<img src="m_main_bg.jpg" alt="메인 페이지 배경 이미지" id="main_bg">
+			<img src="m_2020_xmas_slogan_1.png" alt="메리 크리스마스 텍스트" id="main_text1">
+				<div id="main_box1">
+					<img src="m_2020_xmas_latte_1.png" alt="토피넛 라떼 이미지" id="main_box1_img">
+					<img src="imgtxt1.png" alt="토피넛 라떼 텍스트" id="main_box1_textimg">
+				</div>
+				<div id="main_box2">
+					<img src="m_2020_xmas_popcorn_1.png" alt="토피넛 프라푸지노 이미지" id="main_box2_img">
+					<img src="imgtxt2.png" alt="토피넛 프라푸지노 텍스트" id="main_box2_textimg">
+				</div>
+				<div id="main_box3">
+					<img src="m_2020_xmas_relaxer_1.png" alt="캐모마일 릴렉서 이미지" id="main_box3_img">
+					<img src="imgtxt3.png" alt="캐모마일 릴렉서 텍스트" id="main_box3_textimg">
+				</div>
+				<div id="main_box4">
+					<img src="imgtxt4.png" alt="다크초콜릿 블렌디드 이미지" id="main_box4_textimg">
+					<img src="m_2020_xmas_blended_1.png" alt="다크초콜릿 블렌디드 텍스트" id="main_box4_img">
+				</div>
+				<div id="main_box5">
+					<img src="m_2020_xmas_chocolate_1.png" alt="다크초콜릿 이미지" id="main_box5_img">
+					<img src="imgtxt5.png" alt="다크초콜릿 텍스트" id="main_box5_textimg">
+				</div>
+				<button id="more_bt">자세히 보기</button>
+		</div>
+
+	
+	<div id="content_box">
+		<img src="content.png" alt="공지사항 아이콘">
+		<h2>시스템 개선 및 점검 안내</h2>
+		<button id="content_bt">+</button>
+	</div>
+
+	<div id="promo_box">
+		<ul id="promo_head">
+			<li><h2>스타벅스 프로모션</h2></li><li><button id="promo_bt">∧</button></li><li><button id="promo_bt1">∨</button></li>
+		</ul>
+			<div id="promo_content">
+				<ul id="promo_content_ul">
+					<li>
+						<img src="RG1SJN_20201105113327781.jpg" alt="프로모션 이미지1">
+						<button class="promo_more_bt">자세히 보기</button>		
+					</li>
+					<li>
+						<img src="IqsqMb_20201014165619892.jpg" alt="프로모션 이미지2">
+						<button class="promo_more_bt">자세히 보기</button>		
+					</li>
+					<li>
+						<img src="uX1xA2_20191227175905000.jpg" alt="프로모션 이미지3">
+						<button class="promo_more_bt">자세히 보기</button>		
+					</li>
+					<li>
+						<img src="RG1SJN_20201105113327781.jpg" alt="프로모션 이미지1">
+						<button class="promo_more_bt">자세히 보기</button>		
+					</li>
+				</ul>
+				<ul id="promo_list">
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+	</div> 
+
+	<div id="rewards">
+		<div id="rewards_box1">
+			<img src="rewards-logo.png" alt="스타벅스 리워드 이미지" id="rewards_img">
+			<h3>스타벅스만의 특별한 혜택,<br><span class="rewards_b">스타벅스 리워드</span></h3>
+			<h5><span class="rewards_b">스타벅스 회원이세요?</span><br>로그인을 통해 나만의 리워드를 확인해보세요.<br><span class="rewards_b">스타벅스 회원이 아니세요?</span><br>가입을 통해 리워드 혜택을 즐기세요.</h5>
+			<button id="rewards_bt1">회원가입</button>
+			<button id="rewards_bt2">로그인</button>
+		</div>
+		<div id="rewards_box2">
+			<h5>회원 가입 후, 스타벅스 e-Gift Card를
+<br><span class="rewards_b">"나에게 선물하기"로 구매하시고,</span>
+<br><span class="rewards_b">편리하게 등록하세요!</span>
+<br>카드를 등록하여 스타벅스 리워드 회원이 되신 후,
+<br>첫 구매를 하시면 무료 음료쿠폰을 드립니다!</h5>
+			<button id="egift_bt">e-Gift Card 선물하기</button>
+		</div>
+	</div>
+
+	<div id="bland">
+		<img src="m_2020_xmas_bean.png" alt="크리스마스 블렌드 이미지" id="bland_md_img">
+		<img src="m_2020_xmas_bean_txt.png" alt="크리스마스 블렌드 텍스트" id="bland_text_img">
+		<button id="bland_more_bt">자세히 보기</button>
+	</div>
+
+	<div id="reserve">
+		<button id="reserve_bt">자세히 보기</button>
+	</div>
+
+	<div id="reserve_magazine">
+		<img src="reserve_visual_mobile.png" alt="리워드 메가진 이미지" id="reserve_magazine1">
+		<img src="reserve_text_mobile.png" alt="리워드 메가진 텍스트" id="reserve_magazine2">
+		<h2 id="reserve_magazine3">&nbsp;EXPLORE OUR STORY&nbsp;</h2>
+	</div>
+
+	<div id="reserve_store">
+		<img src="store_exp_img03.png" alt="리워드 스토어 이미지1" id="reserve_store1">
+		<img src="store_exp_img02.png" alt="리워드 스토어 이미지2" id="reserve_store2">
+		<img src="store_exp_img01.png" alt="리워드 스토어 이미지3" id="reserve_store3">
+			<div id="reserve_store_textbox">
+				<h2>스타벅스를<br><span class="reserve_store_span">가까이에서 경험</span>해보세요.</h2>
+				<h3>고객님과 가장 가까이 있는 매장을 찾아보세요!</h3>
+				<h4>차별화된 커피 경험을 누릴 수 있는 <span class="reserve_store_span">리저브&trade; 매장</span><br>
+				다양한 방법으로 편리하게 즐길 수 있는 <span class="reserve_store_span">드라이브 스루 매장</span><br>
+				함께해서 더 따뜻할 수 있는 지역사회 소통 공간<br>
+				<span class="reserve_store_span">커뮤니티 매장</span></h4>
+				<button id="reserve_store_bt">매장 찾기</button>
+			</div>
+	</div>
+
+	<div id="menu_popup">
+		<div id="menu_popup_box">
+			<div id="search_box">
+				<input type="text">
+				<button>Search</button>
+			</div>
+			<ul id="menu_popup_list">
+				<li class="menu_popup_list_1">
+					<h3>My Starbucks</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow3">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow4">
+						<ul class="menu_popup_list_sub"> 
+							<li>한눈에 보기</li>
+							<li>My 리워드</li>
+							<li>My 스타벅스 카드</li>
+							<li>My 스타벅스 e-Gift Card</li>
+							<li>My 쿠폰</li>
+							<li>My 캘린더</li>
+							<li>My 메뉴</li>
+							<li>My 매장</li>
+							<li>My e-프리퀀시</li>
+							<li>My 고객의 소리</li>
+							<li>전자영수증</li>
+							<li>개인컵 리워드 설정</li>
+							<li>My DT Pass</li>
+							<li>인박스</li>
+							<li>개인정보관리</li>
+						</ul>
+				</li>
+				<li>
+					<h3>COFFEE</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow3">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow4">
+					<ul class="menu_popup_list_sub">
+						<li>한눈에 보기</li>
+						<li>커피</li>
+						<li>나와 어울리는 커피</li>
+						<li>스타벅스 리저브&trade;</li>
+						<li>에스프레소 음료</li>
+						<li>최상의 커피를 즐기는 법</li>
+						<li>커피 이야기</li>
+					</ul>
+				</li>
+				<li>
+					<h3>MENU</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow3">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow4">
+					<ul class="menu_popup_list_sub">
+						<li>한눈에 보기</li>
+						<li>음료</li>
+						<li>푸드</li>
+						<li>상품</li>
+						<li>카드</li>
+						<li>메뉴 이야기</li>
+					</ul>
+				</li>
+
+				<li>
+					<h3>STORE</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow3">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow4">
+					<ul class="menu_popup_list_sub">
+						<li>한눈에 보기</li>
+						<li>매장 찾기</li>
+						<li>드라이브 스루 매장</li>
+						<li>스타벅스 리저브&trade; 매장</li>
+						<li>커뮤니티 스토어 매장</li>
+						<li>매장 이야기</li>
+					</ul>
+				</li>
+
+				<li>
+					<h3>RESPONSIBILITY</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow3">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow4">
+					<ul class="menu_popup_list_sub">
+						<li>한눈에 보기</li>
+						<li>사회 공헌 캠페인 소개</li>
+						<li>지역 사회 참여 활동</li>
+						<li>환경보호 활동</li>
+						<li>윤리 구매</li>
+						<li>글로벌 사회 공헌</li>
+					</ul>
+				</li>
+
+				<li>
+					<h3>Starbucks Rewards</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow3">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow4">
+					<ul class="menu_popup_list_sub">
+						<li>한눈에 보기</li>
+						<li>스타벅스 리워드</li>
+						<li>스타벅스 카드</li>
+						<li>스타벅스 e-Gift Card</li>
+					</ul>
+				</li>
+
+				<li>
+					<h3>WHAT'S NEW</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow3">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow4">
+					<ul class="menu_popup_list_sub">
+						<li>한눈에 보기</li>
+						<li>프로모션&이벤트</li>
+						<li>새소식</li>
+						<li>매장별 이벤트</li>
+						<li>공지사항</li>
+						<li>월페이퍼</li>
+					</ul>
+				</li>
+			</ul>	
+		</div>
+		<img src="close.png" alt="닫기 아이콘" id="menu_popup_closebt">
+	</div>
+
+	<footer>
+		<div id="footer_menu">
+			<ul>
+				<li>
+					<h3>CUSTOMER SERVICE & IDEAS</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow2">
+					<ul class="footer_menu_sub">
+						<li>자주하는 질문</li>
+						<li>고객의 소리</li>
+						<li>스타벅스 이용 팁</li>
+						<li>고객경험 설문조사</li>
+						<li>비회원 전자영수증 조회</li>
+					</ul>
+				</li>
+				<li>
+					<h3>COMPANY</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow2">
+					<ul class="footer_menu_sub">
+						<li>한눈에 보기</li>
+						<li>스타벅스 사명</li>
+						<li>스타벅스 소개</li>
+						<li>국내 뉴스룸</li>
+						<li>세계의 스타벅스</li>
+						<li>글로벌 뉴스룸</li>
+					</ul>
+				</li>
+				<li>
+					<h3>CORPORATE SALES</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow2">
+					<ul class="footer_menu_sub">
+						<li>단체 및 기업 구매 안내</li>
+					</ul>
+				</li>
+				<li>
+					<h3>PARTNERSHIP</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow2">
+					<ul class="footer_menu_sub">
+						<li>신규 입점 제의</li>
+						<li>협력 고객사 등록신청</li>
+					</ul>
+				</li>
+				<li>
+					<h3>ONLINE COMMUNITY</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow2">
+					<ul class="footer_menu_sub">
+						<li>페이스북</li>
+						<li>트위터</li>
+						<li>유튜브</li>
+						<li>블로그</li>
+						<li>인스타그램</li>
+					</ul>
+				</li>
+				<li>
+					<h3>RECRUIT</h3>
+					<img src="arrow.png" alt="아래로 화살표 아이콘" class="footer_menu_arrow">
+					<img src="arrow2.png" alt="위로 화살표 아이콘" class="footer_menu_arrow2">
+					<ul class="footer_menu_sub">
+						<li>채용 소개</li>
+						<li>채용 지원하기</li>
+					</ul>
+				</li>
+			</ul>	
+		</div>
+			<div id="footer_join">
+				<button class="footer_join_bt">HOME</button>
+				<button class="footer_join_bt">Sign In</button>
+				<button class="footer_join_bt">Join Us</button>
+			</div>
+			<div id="honor">
+				<img src="m_footer_award17_01.jpg" alt="고용노동부 표창 텍스트">
+			</div>
+			<ul id="footer_detail">
+				<li><span class="footer_detail_1">개인정보처리방침</span></li>
+				<li>영상정보처리기기 운영관리방침</li>
+				<li>홈페이지 이용약관</li>
+				<li>위치정보 이용약관</li>
+				<li>스타벅스 카드 이용약관</li>
+				<li>비회원 이용약관</li>
+				<li>My DT Pass서비스 이용약관</li>
+				<li>윤리경영 핫라인</li>
+			</ul>
+			<div id="footer_map">
+				<button class="footer_map_bt">찾아오시는 길</button>
+				<button class="footer_map_bt">신규입점제의</button>
+				<button class="footer_map_bt">사이트 맵</button>
+			</div>
+			<h5 id="detail">
+				사업자등록번호 : 201-81-21515
+			<br>(주)스타벅스커피 코리아 대표이사 : 송 데이비드 호섭
+			<br>TEL : 1522-3232
+			<br>개인정보 책임자 : 장석현
+			</h5>
+			<p id="copyright">
+				ⓒ 2020 Starbucks Coffee Company. All Rights Reserved.
+			</p>
+	
+</footer>
+
+
+<!-- <div id="starter_bg"> -->
+<!-- 	<div id="starter"> -->
+<!-- 		<img src="close.png" alt="" id="starter_close"> -->
+<!-- 		<h2>본 사이트는 <span class="span">포트폴리오 용 사이트</span>로<br> 리소스는 원작자에게 있습니다.</h2> -->
+<!-- 		<h3>HTML5, CSS3, JavaScript&jQuery로 제작되었으며<br>Google Chrom(모바일 화면)에 최적화되어있습니다.</h3> -->
+<!-- 	</div> -->
+<!-- </div> -->
+<div class="w3c">
+		<a href="http://validator.kldp.org/check?uri=referer"
+		  onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))" target="_blank"><img
+		  src="http://validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80" ></a>
+		<!-- html 검사완료 코드 -->
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+		<img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="올바른 CSS입니다!" />
+		  </a>
+		<!-- css 검사완료 코드 -->
+</div>
+
+</div>
+
+
+ </body>
+</html>

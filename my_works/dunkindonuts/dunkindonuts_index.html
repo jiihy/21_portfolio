@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>던킨</title>
+  <link rel="shortcut icon" href="던킨파비콘.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" >
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>  
+  $(document).ready(function(){
+	  $('#starter_close').click(function(){
+		$('#starter_bg').hide()
+	  })
+
+	$('#header2_right').mouseover(function(){
+		$('#sub_menu_wrap').stop().slideDown(200)
+	})
+	$('#header2_right').mouseout(function(){
+		$('#sub_menu_wrap').stop().slideUp(200)
+	})
+	$('#header2_right>li').mouseover(function(){
+		$(this).children('.sub_menu_box').stop().fadeIn(200)
+	})
+	$('#header2_right>li').mouseout(function(){
+		$(this).children('.sub_menu_box').stop().fadeOut(200)
+	})
+
+	section1_start = 0
+	   $(window).scroll(function(){
+		sc = $(window).scrollTop();
+		if (sc >=900){
+			section1_start = section1_start + 1
+			if( section1_start == 1 ){ 		
+			$('#bg1_img1').animate({'opacity':'1','margin-left':'-300px'},800)
+			$('#bg1_img2').animate({'opacity':'1','margin-left':'-200px','bottom':'80px'},800)
+		}}})
+
+	   $(window).mousemove(function(e){
+		x = e.pageX - ( $('#sns_wrap').offset().left )
+		//마우스가 움직이면  #slide값이 반대로 이동
+		$('#sns_img').css({'left':(x+800)*-1})
+	   })
+
+		slide_num= 0
+		num= 0
+		click = 0;
+
+	  new_list_ul=setInterval(function(){ //3초마다 오른쪽 버튼을 클릭하는것같은 동작을 부여		
+					
+						if(num <= -300){num = 0; $('.new_list_ul').css({'left':'0'})}//순간이동 css// 
+						num = num - 101 //right_bt를 클릭할때마다 슬라이드가 -100% 만큼씩 왼쪽으로 이동
+						$('.new_list_ul').stop().animate({'left':num+'%'},800)
+						if (num <= -300){
+						$('#new_list_bt li').eq(0).css({'background-color':'#000','transform':'scale(1.2)'}).siblings().css({'background-color':'#c4b597','transform':'scale(1)'})
+						}
+						$('#new_list_bt li').eq(num/-101).css({'background-color':'#000','transform':'scale(1.2)'}).siblings().css({'background-color':'#c4b597','transform':'scale(1)'})		
+				
+			},3000)
+
+	  $('#new_list_bt li').click(function(){
+		  num = $(this).index()*-101;
+		$('.new_list_ul').stop().animate({'left':num+'%'},500)
+		$(this).css({'background-color':'#000','transform':'scale(1.2)'}).siblings().css({'background-color':'#999','transform':'scale(1)'})
+	  })
+
+		slide_box = setInterval(function(){
+			if(click == 0){
+				click = 1;
+			if(slide_num <= -600){slide_num = 0; $('#slide_box').css({'left':'0'}) }
+			slide_num = slide_num - 100 
+			$('#slide_box').stop().animate({'left':slide_num+'%'},500,function(){
+				click = 0  })
+			if (slide_num <= -600){
+			$('#slide_btbox ul li').eq(0).css({'transform':'scale(1.2)','background-color':'#000'}).siblings().css({'background-color':'#999','transform':'scale(1)'})
+			}
+			$('#slide_btbox ul li').eq(slide_num/-100).css({'transform':'scale(1.2)','background-color':'#000'}).siblings().css({'background-color':'#999','transform':'scale(1)'})
+			}
+		},3000)
+
+		$('#slide_next_bt').click(function(){
+			if(click == 0){
+				click = 1;
+			if(slide_num <= -600){slide_num = 0; $('#slide_box').css({'left':'0'}) }
+			slide_num = slide_num - 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+			$('#slide_box').stop().animate({'left':slide_num+'%'},500,function(){
+				click = 0  })
+			if (slide_num <= -600){
+			$('#slide_bt li').eq(0).css({'transform':'scale(1.2)','background-color':'#000'}).siblings().css({'background-color':'#999','transform':'scale(1)'})
+			}
+			$('#slide_bt li').eq(slide_num/-100).css({'transform':'scale(1.2)','background-color':'#000'}).siblings().css({'background-color':'#999','transform':'scale(1)'})
+			}
+		})
+		$('#slide_prev_bt').click(function(){
+			if(click == 0){
+				click = 1;
+			if(slide_num >= 0 ){slide_num = -600; $('#slide_box').css({'left':'-600%'}) }
+			slide_num = slide_num + 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+			$('#slide_box').stop().animate({'left':slide_num+'%'},500,function(){
+				click = 0  })
+			if (slide_num >= 0){
+			$('#slide_bt li').eq(0).css({'transform':'scale(1.2)','background-color':'#000'}).siblings().css({'background-color':'#999','transform':'scale(1)'})
+			}
+			$('#slide_bt li').eq(slide_num/-100).css({'transform':'scale(1.2)','background-color':'#000'}).siblings().css({'background-color':'#999','transform':'scale(1)'})
+			}
+		})
+	  $('#slide_bt li').click(function(){
+		  slide_num = $(this).index()*-100;
+		$('#slide_box').stop().animate({'left':slide_num+'%'},500)
+		$(this).css({'transform':'scale(1.2)','background-color':'#000'}).siblings().css({'background-color':'#999','transform':'scale(1)'})
+	  })
+		$('#new_list_bt li').click(function(){
+			$(this).css({'background-color':'#000','transform':'scale(1.2)'})
+			$(this).siblings('li').css({'background-color':'#c4b597','transform':'scale(1)'}) 
+		})
+		$('#monthly').click(function(){
+			$('#box').slideToggle();
+		})
+	});
+	</script>
+  <style>
+	* {
+		padding : 0;
+		margin : 0;
+		list-style : none;
+		font-family : 'Noto Sans JP', sans-serif;
+	}
+
+	a {
+		color : inherit;
+		text-decoration : none;
+	}
+
+	header {
+		width : 100%;
+		border-top : 4px solid #2c1810;
+		position : fixed;
+		z-index : 9999;
+		top : 0;
+	}
+
+	#header1 {
+		width : 100%;
+		height : 116px;
+		background-color : #f8faf0;
+		border-bottom : 1px solid #e5e2e0;
+	}
+
+	#header2 {
+		width : 100%;
+		height : 54px;
+		border-bottom : 1px solid #483325;
+		background-color : #fff;
+		position : relative;
+	}
+
+		#header1_box {
+		width : 1200px;
+		height : 116px;
+		margin : auto;
+		position : relative;
+	}
+
+	#header2_box {
+		width : 1200px;
+		height : 54px;
+		margin : auto;
+	}
+
+	#header1_left {
+		width : 400px;
+		height : 100px;
+		margin-top : 7px;
+		float : left;
+	}
+
+	#header1_left li {
+		float : left;
+		line-height : 100px;
+		font-size : 12px;
+		color : #736a60;
+		margin-right : 20px;
+		cursor : pointer;
+	}
+
+	#header1_right {
+		height : 100px;
+		margin-top : 6px;
+		float : right;
+	}
+
+	#header1_right li {
+		float : left;
+		line-height : 100px;
+		font-size : 12px;
+		color : #736a60;
+		margin-left : 20px;
+		cursor : pointer;
+	}
+
+	#header1_right li img {
+		vertical-align : middle;
+		cursor : pointer;
+	}
+
+	#logo {
+		width : 111px;
+		height : 40px;
+		position : absolute;
+		top : 30px;
+		left : 50%;
+		margin-left : -55px;
+		cursor : pointer;
+	}
+
+	#monthly {
+		width : 150px;
+		height : 20px;
+		background-color : #2c1810;
+		color : #d2952d;
+		text-align : center;
+		position : absolute;
+		bottom : -20px;
+		right : 20%;
+		font-size : 12px;
+		border-radius : 0 0 5px 5px;
+		cursor : pointer;
+	}
+
+	#monthly img {
+		margin-right : 10px;
+		margin-bottom : 2px;
+	}
+
+	#wrap {
+		width : 100%;
+		background-color : #2c1810;
+		z-index : 9999;
+		position : fixed;
+		margin : auto;
+	}
+
+	#box {
+		width : 100%;
+		height : 215px;
+		text-align : center;
+		display : none;
+	}
+
+	#box > img {
+		cursor : pointer;
+	}
+
+	#header2_left {
+		height : 50px;
+		margin-top : 1px;
+		float : left;
+		line-height : 50px;
+	}
+
+	#header2_left > li {
+		display : inline-block;
+		font-size : 12px;
+		color : #998366;
+		font-weight : 900;
+		margin-right : 30px;
+		letter-spacing : 2px;
+		cursor : pointer;
+	}
+
+	#header2_right {
+		width : 960px;
+		height : 50px;
+		line-height : 50px;
+		margin-top : 1px;
+		float : right;
+	}
+
+	#header2_right > li {
+		width : 160px;
+		float : left;
+		display : inline-block;
+		font-size : 14px;
+		color : #000;
+		font-weight : 900;
+		letter-spacing : 2px;
+		cursor : pointer;
+		transition : 0.3s;
+		text-align : center;
+	}
+
+	#header2_right > li:hover {
+		color : #f9b234;
+	}
+
+	#sub_menu_wrap {
+		width : 100%;
+		height : 300px;
+		background-color : #fff;
+		border-bottom : 1px solid #000;
+		position : absolute;
+		left : 0;
+		top : 54px;
+		border-top : 1px solid #000;
+		display : none;
+	}
+
+	.sub_menu_box {
+		text-align : left;
+		position : absolute;
+		left : 0;
+		top : 54px;
+		width : 100%;
+		height : 300px;
+		background-color : #fff;
+		border-top : 1px solid #000;
+		display : none;
+		padding-left : 18.5%;
+	}
+
+	.sub_menu {
+		width : 160px;
+		float : left;
+		margin-top : 40px;
+	}
+
+	.sub_menu:hover .sub_menu_top {
+		color : #000;
+	}
+
+	.sub_menu > li {
+		line-height : 20px;
+		vertical-align : top;
+		font-size : 13px;
+		font-weight : 300;
+		color : #bab8b8;
+		letter-spacing : -1px;
+	}
+
+	.sub_menu > li:hover {
+		color : #f9b234;
+	}
+
+	.sub_menu > li:first-child {
+		font-weight : 400;
+		font-size : 14px;
+		color : #7a6e5f;
+		margin-bottom : 10px;
+	}
+
+	#sub_menu_box_img1 {
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		left : 0;
+		right : 1250px;
+	}
+
+	#sub_menu_box_img2 {
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		left : 0;
+		right : 600px;
+	}
+
+	.sub_menu_img_box {
+		width : 365px;
+		height : 248px;
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		left : 0;
+		right : -460px;
+	}
+
+	#sub_menu_box_img3 {
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		left : -200px;
+		right : 0;
+		margin : auto;
+	}
+
+	#sub_menu_box_img4 {
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		left : 0;
+		right : -460px;
+		margin : auto;
+	}
+
+	#slide {
+		width : 100%;
+		height : 659px;
+		overflow : hidden;
+		margin-top : 170px;
+		position : relative;
+	}
+
+	#slide_box {
+		width : 700%;
+		height : 659px;
+		position : absolute;
+	}
+
+	#slide_box li {
+		width : 14.2857143%;
+		height : 659px;
+		float : left;
+	}
+
+	#slide_box li:nth-child(1) {
+		background : url(images/1591781796.jpg) center no-repeat #ddd;
+	}
+
+	#slide_box li:nth-child(2) {
+		background : url(images/1591781816.jpg) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(3) {
+		background : url(images/1591781837.jpg) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(4) {
+		background : url(images/1591781870.jpg) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(5) {
+		background : url(images/1580951826.png) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(6) {
+		background : url(images/1575611684.png) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(7) {
+		background : url(images/1591781796.jpg) center no-repeat #ddd;
+	}
+
+	#slide_btbox {
+		width : 1200px;
+		height : 649px;
+		margin : auto;
+		margin-top : 5px;
+		position : relative;
+	}
+
+	#slide_btbox li:first-child {
+		transform : scale(1.2);
+		background-color : #000;
+	}
+
+	#slide_prev_bt {
+		width : 80px;
+		height : 20px;
+		position : absolute;
+		left : -80px;
+		top : 40%;
+		margin-top : -10px;
+		cursor : pointer;
+	}
+
+	#slide_next_bt {
+		width : 80px;
+		height : 20px;
+		position : absolute;
+		right : -80px;
+		top : 40%;
+		margin-top : -10px;
+		cursor : pointer;
+	}
+
+	#slide_bt {
+		position : absolute;
+		text-align : center;
+		bottom : 10px;
+		width : 100%;
+	}
+
+	#slide_bt li {
+		width : 8px;
+		height : 8px;
+		display : inline-block;
+		border-radius : 8px;
+		background-color : #999;
+		cursor : pointer;
+		margin : 0 2px;
+	}
+
+	#new_event {
+		width : 1100px;
+		height : 240px;
+		margin : auto;
+		margin-top : 80px;
+		position : relative;
+	}
+
+	#new_event1 {
+		width : 25%;
+		height : 240px;
+		float : left;
+	}
+
+	#new_event1 button {
+		width : 150px;
+		height : 40px;
+		background-color : #fff;
+		border : #af8f72 solid 1px;
+		color : #af8f72;
+		bottom : 0;
+		left : 0;
+		position : absolute;
+		border-radius : 5px;
+		cursor : pointer;
+	}
+
+	#new_event2 {
+		width : 25%;
+		height : 240px;
+		float : left;
+	}
+
+	#new_event2 h4 {
+		font-size : 18px;
+		font-weight : 500;
+		color : #400000;
+		margin-top : 30px;
+	}
+
+	#new_event2 h6 {
+		font-size : 9px;
+		font-weight : 300;
+		margin-top : 20px;
+		color : #a7a7a7;
+	}
+
+	#new_event3 {
+		width : 50%;
+		height : 240px;
+		float : left;
+		text-align : right;
+	}
+
+	#new_event3 > iframe {
+		width : 427px;
+		height : 240px;
+		border : none;
+	}
+
+	#line {
+		width : 20px;
+		height : 2px;
+		background-color : #ab9b7f;
+	}
+
+	#new_list {
+		width : 1100px;
+		height : 446px;
+		margin : auto;
+		margin-top : 30px;
+	}
+
+	#new_list > li {
+		float : left;
+		width : 267px;
+		height : 446px;
+		margin-right : 10px;
+		border : #d1cccb solid 1px;
+		box-sizing : border-box;
+		border-radius : 5px;
+		cursor : pointer;
+		position : relative;
+		overflow : hidden;
+	}
+
+	#new_list > li:last-child {
+		margin-right : 0;
+	}
+
+	.new_list_ul {
+		width : 1103px;
+		position : absolute;
+		left : 0;
+		top : 0;
+	}
+
+	.new_list_ul > li {
+		width : 268px;
+		float : left;
+	}
+
+	.new_list_box1 {
+		width : 100%;
+		height : 266px;
+	}
+
+	.new_list_box2 {
+		width : 100%;
+		height : 84px;
+		border-top : 1px solid #d1cccb;
+		border-bottom : 1px solid #d1cccb;
+		position : relative;
+	}
+
+	.new_list_box2 h3 {
+		font-size : 22px;
+		font-weight : 400;
+		margin : 10px 20px;
+	}
+
+	.new_list_box2 h6 {
+		font-size : 12px;
+		font-weight : 300;
+		margin : 5px 20px;
+	}
+
+	.new_event_icon {
+		position : absolute;
+		right : 20px;
+		top : 30px;
+	}
+
+	.new_list_box3 {
+		width : 100%;
+		height : 94px;
+		padding : 10px 20px;
+		box-sizing : border-box;
+		color : #69523d;
+	}
+
+	#new_list_bt {
+		width : 1100px;
+		margin : auto;
+		margin-top : 30px;
+		text-align : center;
+	}
+
+	#new_list_bt li {
+		width : 8px;
+		height : 8px;
+		display : inline-block;
+		border-radius : 8px;
+		background-color : #c4b597;
+		margin : 5px;
+		cursor : pointer;
+	}
+
+	#new_list_bt li:first-child {
+		transform : scale(1.2);
+		background-color : #000;
+	}
+
+	#bg1 {
+		width : 100%;
+		height : 400px;
+		background : url(images/img_banner_1_1.jpg) center no-repeat fixed #fff;
+		background-size : cover;
+		margin-top : 30px;
+		position : relative;
+	}
+
+	#bg1_img1 {
+		position : absolute;
+		left : 50%;
+		margin-left : -1000px;
+		top : 130px;
+		opacity : 0;
+	}
+
+	#bg1_img2 {
+		position : absolute;
+		left : 50%;
+		margin-left : 500px;
+		bottom : 80px;
+		opacity : 0;
+	}
+
+	#menu_list {
+		width : 1200px;
+		margin : auto;
+		margin-top : 60px;
+		text-align : center;
+	}
+
+	#menu_list h4 {
+		font-size : 18px;
+		font-weight : 500;
+		color : #400000;
+		margin-top : 30px;
+	}
+
+	#menu_list p {
+		font-size : 8px;
+		font-weight : 300;
+		color : #868686;
+		margin-top : 10px;
+	}
+
+	#menu_list ul {
+		overflow : hidden;
+	}
+
+	#menu_list ul li {
+		width : 220px;
+		margin : 10px;
+		float : left;
+	}
+
+	#menu_list ul li h5 {
+		font-size : 23px;
+		font-weight : 400;
+		margin-top : 215px;
+		color : #372317;
+	}
+
+	#menu_list ul li button {
+		height : 30px;
+		margin-top : 20px;
+		background-color : #fff;
+		border : #af8f72 solid 1px;
+		color : #af8f72;
+		border-radius : 5px;
+		font-size : 12px;
+		padding : 0 20px;
+		cursor : pointer;
+	}
+
+	#menu_list ul li button:nth-child(3) {
+		white-space : nowrap;
+	}
+
+	#dunkin_menu li {
+		height : 300px;
+		position : relative;
+	}
+
+	#dunkin_menu img {
+		width : 215px;
+		height : 215px;
+		border-radius : 300px;
+		transition : 0.5s;
+		position : absolute;
+		top : 0;
+		left : 0;
+		box-shadow : -4px 3px 0 #fff;
+	}
+
+	#dunkin_menu li:hover img {
+		box-shadow : -4px 3px 0 #c4b597;
+		cursor : pointer;
+		transform : translate(10px,-10px);
+	}
+
+	#bg2 {
+		margin-top : 80px;
+		width : 100%;
+		height : 400px;
+		background : url(images/img_banner_1_2.jpg) 0 0 no-repeat #fff;
+		background-attachment : fixed;
+		background-size : cover;
+		position : relative;
+	}
+
+	#bg2_leftbox {
+		position : absolute;
+		width : 380px;
+		height : 380px;
+		background : url(images/bg_map.png) center no-repeat;
+		left : 50%;
+		margin-left : -450px;
+		top : -50px;
+		overflow : hidden;
+		cursor : pointer;
+	}
+
+	#bg2_leftbox h4 {
+		font-weight : 500;
+		font-size : 16px;
+		color : #fff;
+		margin-top : 170px;
+		margin-left : 100px;
+	}
+
+	#bg2_leftbox p {
+		font-size : 15px;
+		font-weight : 400;
+		color : #fff;
+		margin-left : 100px;
+		margin-top : 10px;
+	}
+
+	#bg2_leftbox span {
+		color : #ff9900;
+	}
+
+	#bg2_rightbox {
+		position : absolute;
+		width : 380px;
+		height : 380px;
+		background : url(images/bg_catering.png) center no-repeat;
+		left : 50%;
+		bottom : -50px;
+		margin-left : -50px;
+		cursor : pointer;
+	}
+
+	#bg2_rightbox h4 {
+		font-weight : 500;
+		font-size : 16px;
+		margin-top : 170px;
+		margin-left : 150px;
+		color : #400000;
+	}
+
+	#bg2_rightbox p {
+		font-weight : 400;
+		font-size : 15px;
+		margin-top : 10px;
+		margin-left : 150px;
+		color : #400000;
+	}
+
+	#sns {
+		width : 100%;
+		text-align : center;
+	}
+
+	#sns > img {
+		margin-top : 80px;
+	}
+
+	#sns h4 {
+		font-size : 18px;
+		font-weight : 500;
+		color : #400000;
+		margin-top : 30px;
+	}
+
+	#sns_icon li {
+		width : 60px;
+		height : 60px;
+		display : inline-block;
+		margin : 5px;
+		margin-top : 30px;
+		cursor : pointer;
+	}
+
+	#sns_icon li:nth-child(1) {
+		background : url(icons/sns1.png) 0 0 no-repeat;
+	}
+
+	#sns_icon li:nth-child(2) {
+		background : url(icons/sns2.png) 0 0 no-repeat;
+	}
+
+	#sns_icon li:nth-child(3) {
+		background : url(icons/sns3.png) 0 0 no-repeat;
+	}
+
+	#sns_icon li:nth-child(4) {
+		background : url(icons/sns4.png) 0 0 no-repeat;
+	}
+
+	#sns_icon li:nth-child(5) {
+		background : url(icons/sns5.png) 0 0 no-repeat;
+	}
+
+	#sns_wrap {
+		position : relative;
+		bottom : 0;
+		left : 0;
+		right : 0;
+		margin : auto;
+		width : 100%;
+		height : 230px;
+		padding-top : 20px;
+		overflow : hidden;
+	}
+
+	#sns_img {
+		width : 7800px;
+		height : 230px;
+		position : absolute;
+	}
+
+	#sns_img li {
+		width : 260px;
+		height : 230px;
+		float : left;
+		cursor : pointer;
+	}
+
+	#sns_img li img {
+		width : 100%;
+		vertical-align : top;
+	}
+
+	footer {
+		width : 1300px;
+		height : 400px;
+		margin : auto;
+		margin-top : 60px;
+	}
+
+	#footer_leftbox {
+		width : 350px;
+		height : 280px;
+		float : left;
+		margin-left : 30px;
+	}
+
+	#footer_leftbox img {
+		margin-top : 30px;
+	}
+
+	#family_site {
+		cursor : pointer;
+	}
+
+	#footer_text {
+		font-size : 10px;
+		color : #75675c;
+		margin-top : 20px;
+	}
+
+	#footer_text li {
+		width : 50%;
+		float : left;
+		box-sizing : border-box;
+	}
+
+	#footer_text li:nth-child(1) {
+		width : 100%;
+	}
+
+	#footer_text li:nth-child(6) {
+		width : 100%;
+	}
+
+	#footer_logo1 {
+		margin-top : 30px;
+		cursor : pointer;
+	}
+
+	#footer_logo2 {
+		margin-right : 10px;
+	}
+
+	#footer_rightbox {
+		width : 800px;
+		height : 200px;
+		float : right;
+		padding-top : 30px;
+		margin-right : 30px;
+	}
+
+	#footer_rightbox1 {
+		width : 100%;
+		height : 250px;
+		border-top : 2px solid #c0c0c0;
+		box-sizing : border-box;
+	}
+
+	#footer_rightbox2 {
+		width : 100%;
+		height : 10px;
+		border-top : 1px solid #c0c0c0;
+		box-sizing : border-box;
+	}
+
+	#footer_rightbox_left {
+		width : 550px;
+		height : 230px;
+		margin-top : 10px;
+		float : left;
+	}
+
+	#footer_rightbox_left div {
+		display : inline-block;
+		vertical-align : top;
+		margin : 10px 30px 10px 0;
+	}
+
+	#footer_rightbox_left div h4 {
+		font-size : 13px;
+		margin-bottom : 10px;
+		font-weight : 400;
+		color : #46342d;
+	}
+
+	#footer_rightbox_left div li {
+		font-size : 13px;
+		margin-bottom : 4px;
+		font-weight : 300;
+		cursor : pointer;
+		color : #75675c;
+	}
+
+	#footer_rightbox_right {
+		width : 200px;
+		height : 150px;
+		margin-top : 10px;
+		float : right;
+		text-align : right;
+		color : #75675c;
+	}
+
+	#footer_rightbox_right h3 {
+		font-size : 13px;
+		margin-top : 10px;
+		font-weight : 400;
+		cursor : pointer;
+	}
+
+	#footer_rightbox_right img {
+		width : 30px;
+		height : 30px;
+		margin-top : 20px;
+		cursor : pointer;
+	}
+
+	#footer_rightbox2 li {
+		display : inline-block;
+		font-size : 12px;
+		margin-right : 19px;
+		font-weight : 400;
+		padding-bottom : 50px;
+		cursor : pointer;
+		color : #75675c;
+	}
+
+	#footer_rightbox2 li:nth-child(3) {
+		color : red;
+	}
+
+	#footer_rightbox2 li:nth-child(7) {
+		margin-right : 0;
+	}
+
+	#starter_bg {
+		width : 100%;
+		height : 100%;
+		background-color : rgba(255, 255, 255, 0.6);
+		position : fixed;
+		top : 0;
+		left : 0;
+		z-index : 9999;
+	}
+
+	#starter {
+		width : 777px;
+		height : 160px;
+		background-color : #fff;
+		position : absolute;
+		left : 0;
+		right : 0;
+		margin : auto;
+		top : -400px;
+		bottom : 0;
+		z-index : 99999;
+		border-radius : 10px;
+		text-align : center;
+		letter-spacing : 1px;
+		border : #aa8b4d solid 1px;
+	}
+
+	#starter img {
+		float : right;
+		margin-top : 15px;
+		margin-right : 15px;
+		cursor : pointer;
+	}
+
+	#starter h2 {
+		font-size : 16px;
+		color : #46342d;
+		font-weight : 900;
+		margin-top : 45px;
+	}
+
+	#starter h3 {
+		font-size : 13px;
+		color : #75675c;
+		font-weight : 300;
+		margin-top : 25px;
+	}
+
+	.span {
+		text-decoration : underline;
+	}
+
+	.w3c {
+		text-align: center;
+	}
+
+
+  </style></head><body>
+<!-- header1 영역시작 -->
+<header>
+	<div id="wrap">
+	<div id="box"><img src="images/1581426347.png" alt="마시멜로 초코 쿠키 이미지"></div>	
+	
+		<div id="monthly"><img src="icons/bu_dom.png" alt="Monthly Dunkin 아래로 버튼">MONTHLY DUNKIN</div>
+	</div>
+ 	<div id="header1">
+		<div id="header1_box">
+			<ul id="header1_left">
+				<li>FACEBOOK</li>
+				<li>BLOG</li>
+				<li>INSTAGRAM</li>
+				<li>TWITTER</li>
+				<li>YOUTUBE</li>
+			</ul>
+			<h1 id="logo"><img src="logo.png" alt="던킨도너츠 로고 이미지"></h1>
+			<ul id="header1_right">
+				<li>창업문의</li>
+				<li>영양정보</li>
+				<li>고객센터</li>
+				<li>SEARCH</li>
+				<li><img src="icons/icon_search.png" alt="검색 아이콘"></li>
+			</ul>
+		</div>
+	</div>
+<!-- header2 영역시작 -->
+ 	<div id="header2">
+		<div id="header2_box">			
+			<div id="sub_menu_wrap"></div>
+			<ul id="header2_left">
+				<li>LOGIN</li>
+				<li>JOIN</li>
+			</ul>
+			<ul id="header2_right">
+			<li>ONLINE STORE
+				<div class="sub_menu_box">
+					<img src="images/gnb_happyorder.png" alt="해피오더 서비스 바로가기 버튼" id="sub_menu_box_img1">
+					<img src="images/gnb_happyemarket.png" alt="해피 E-마켓 바로가기 버튼" id="sub_menu_box_img2">
+				</div>
+			</li>
+			<li class="sub_menu_top">MENU
+				<div class="sub_menu_box">
+					<div class="sub_menu_img_box">
+						<img src="images/1591782328.png" alt="10월, 이달의 도넛 크림치즈필드 이미지">
+					</div>
+
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">DONUT</li>
+
+						<li>이달의 도넛(DOM)</li>
+						<li>베이직</li>
+						<li>베이글</li>
+						<li>기타</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">SANDWICHES</li>
+
+						<li>핫 샌드위치</li>
+						<li>DD앳홈</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">COFFEE</li>
+
+						<li>센트럴파크</li>
+						<li>던킨 에스프레소</li>
+						<li>브류드커피</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">BEVERAGE</li>
+
+						<li>버블/젤리</li>
+						<li>크러쉬/던카치노</li>
+						<li>에이드/아이스티</li>
+						<li>초코/티/티라떼</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">OTHERS</li>
+
+						<li>아이스 디저트</li>
+						<li>커피상품</li>
+						<li>빙수</li>
+					</ul>
+				</div>
+			</li>
+			<li>DC x DUNKIN'
+				<div class="sub_menu_box">
+					<div class="sub_menu_img_box">
+						<img src="images/1591782328.png" alt="10월, 이달의 도넛 크림치즈필드 이미지">
+					</div>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">DONUT</li>
+
+						<li>이달의 도넛(DOM)</li>
+						<li>베이직</li>
+						<li>베이글</li>
+						<li>기타</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">SANDWICHES</li>
+
+						<li>핫 샌드위치</li>
+						<li>DD앳홈</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">COFFEE</li>
+
+						<li>센트럴파크</li>
+						<li>던킨 에스프레소</li>
+						<li>브류드커피</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">BEVERAGE</li>
+
+						<li>버블/젤리</li>
+						<li>크러쉬/던카치노</li>
+						<li>에이드/아이스티</li>
+						<li>초코/티/티라떼</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">OTHERS</li>
+
+						<li>아이스 디저트</li>
+						<li>커피상품</li>
+						<li>빙수</li>
+					</ul>
+				</div>
+			</li>
+			<li>EVENT
+				<div class="sub_menu_box">
+					<div class="sub_menu_img_box">
+						<img src="images/1627880222.png" alt="KT멤버십 VIP초이스 이미지">
+					</div>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">진행중인 이벤트</li>
+
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">당첨자 발표</li>
+					</ul>
+				</div>
+			</li>
+			<li>STORE
+				<div class="sub_menu_box">
+				<img src="images/1586682806.png" alt="던킨 매장 찾기 바로가기 버튼" id="sub_menu_box_img3">
+				<img src="images/1533376784.png" alt="단체주문&케이터링 서비스 바로가기 버튼" id="sub_menu_box_img4">
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">오프라인 STORE</li>
+
+						<li>매장 찾기</li>
+						<li>신규 매장 안내</li>
+						<li>품질경영우수가맹점</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">가맹점 개설 안내</li>
+
+						<li>대한민국 가맹시장</li>
+						<li>SPC와 함께하는 던킨</li>
+						<li>25년간 사랑받는 던킨의 강점</li>
+						<li>새로운 출발 안내</li>
+					</ul>
+				</div>
+			</li>
+			<li>BRAND
+				<div class="sub_menu_box">
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">브랜드 소개</li>
+
+						<li>던킨도너츠에<br> 대해서 알아보세요</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">브랜드 소식</li>
+
+						<li>던킨 소식을<br> 알려드립니다</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">미디어 센터</li>
+
+						<li>던킨의 보도자료들을<br> 확인하세요</li>
+					</ul>
+					<ul class="sub_menu">					
+						<li class="sub_menu_top">CF</li>
+
+						<li>던킨도너츠CF</li>
+					</ul>
+				</div>
+			</li>	</ul>
+		</div>
+	</div>
+ </header>
+<!-- slide 영역시작 -->
+<div id="slide">
+<ul id="slide_box">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+	<div id="slide_btbox">
+		<img src="icons/btn_prev.png" alt="슬라이드 이전 버튼" id="slide_prev_bt">
+		<img src="icons/btn_next.png" alt="슬라이드 다음 버튼" id="slide_next_bt">
+		<ul id="slide_bt">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</div>
+<!-- new_event 영역시작 -->
+<div id="new_event">
+	<div id="new_event1">
+	<img src="images/tit_new_event.png" alt="뉴 이벤트 이미지">
+	<button>전체 이벤트 보기</button>
+	</div>
+	
+	<div id="new_event2">
+	<div id="line"></div>
+	<h4>던킨도너츠의 다양한 혜택과<br>이벤트 그리고 신제품</h4>
+	<h6>sweet break, dunkin’ donuts</h6></div>
+
+	<div id="new_event3">
+		<iframe src="https://www.youtube.com/embed/TcRZW2e1QsY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>	
+<!-- new_list 영역 시작 -->
+<ul id="new_list">
+<li class="new_list_box">
+	<ul class="new_list_ul">
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1620093555.png" alt="모닝 콤보 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>MORNING COMBO</h3>
+			<h6>2020-04-17 ~</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>핫 샌드위치 구매 시 1,000원 추가하면 콤보음료 제공!</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1597022086.jpg" alt="손소독제 사전예약 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>손소독제 사전예약</h3>
+			<h6>2020-10-08 ~ 2020-10-17</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>필수 아이템! 슈퍼맨 손소독제 사전예약 2천원 OFF!</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1623479035(0)(1).png" alt="삼성카드 제휴 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>삼성카드 제휴</h3>
+			<h6>2019-01-01 ~ 2020-12-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+		
+		<div class="new_list_box3">
+			<p>삼성 보너스 포인트 사용 시, 결제금액의 최대 100% 포인트 차감할인!</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1620093555.png" alt="모닝 콤보 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>MORNING COMBO</h3>
+			<h6>2020-04-17 ~</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>핫 샌드위치 구매 시 1,000원 추가하면 콤보음료 제공!</p>
+		</div>
+		</li>
+	</ul>
+</li>
+
+<li class="new_list_box">
+	<ul class="new_list_ul">
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1623495273.jpg" alt="던킨 투나잇 이미지">	
+		</div>
+
+		<div class="new_list_box2">
+			<h3>DUNKIN' TONIGHT</h3>
+			<h6>2020-12-18 ~ 2021-12-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>띵동~ 한밤에 찾아오는 던킨! 한밤 중 즐기는 던킨 투나잇</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1623479077.png" alt="현대카드 제휴 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>현대카드 제휴</h3>
+			<h6>2020-01-01 ~ 2021-12-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>매월 10일 M special, 현대카드 M 포인트 50% 할인!</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1635764755.jpg" alt="소프트 밀크 도넛 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>Soft MILK DONUT</h3>
+			<h6>2019-01-11 ~ 2021-01-14</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>우유도넛 기프트팩</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1623495273.jpg" alt="던킨 투나잇 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>DUNKIN' TONIGHT</h3>
+			<h6>2020-12-18 ~ 2021-12-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>띵동~ 한밤에 찾아오는 던킨! 한밤 중 즐기는 던킨 투나잇</p>
+		</div>
+		</li>
+	</ul>
+</li>
+
+<li class="new_list_box">
+	<ul class="new_list_ul">
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1593944374.png" alt="던킨 프라이데이 이미지">	
+		</div>
+
+		<div class="new_list_box2">
+			<h3>DONUT FRIDAY</h3>
+			<h6>2020-05-08 ~</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>매주 금요일 페이머스 글레이즈드팩 6개입 4,300원, 12개입 7,900원!</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1602495515.jpg" alt="던킨 스마트주문 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>던킨 스마트주문</h3>
+			<h6>2020-12-01 ~ 2021-01-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>간편하게 네이버 스마트 주문! 스마트 주문만의 스윗한 꿀혜택도 놓치지 마세요!</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1628577300.jpg" alt="핫샌드위치 콤보 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>핫샌드위치 콤보</h3>
+			<h6>2020-10-20 ~ 2021-12-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>하루종일 1,000원 추가시 콤보음료를 제공!</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1593944374.png" alt="던킨 프라이데이 이미지">	
+		</div>
+
+		<div class="new_list_box2">
+			<h3>DONUT FRIDAY</h3>
+			<h6>2020-05-08 ~</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>매주 금요일 페이머스 글레이즈드팩 6개입 4,300원, 12개입 7,900원!</p>
+		</div>
+		</li>
+	</ul>
+</li>
+
+<li class="new_list_box">
+	<ul class="new_list_ul">
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1599636322.jpg" alt="케이티 멤버십 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>KT 멤버십</h3>
+			<h6>2019-05-01 ~ 2021-12-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>매일 아침 든든하게 오굿!모닝</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1607566263.jpg" alt="던킨 커피스탬프 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>던킨 커피스탬프</h3>
+			<h6>2020-10-12 ~ 2021-01-03</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>MY COFFEE MOMENT, MY COFFEE STAMP</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1554361669.png" alt="케이티 멤버십 브이아이피 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>KT 멤버십 VIP</h3>
+			<h6>2020-01-01 ~ 2021-12-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+
+		<div class="new_list_box3">
+			<p>KT 멤버십 VIP 초이스 글레이즈드 + 아메리카노 FREE</p>
+		</div>
+		</li>
+
+		<li>
+		<div class="new_list_box1">
+			<img src="images/1599636322.jpg" alt="케이티 멤버십 이미지">
+		</div>
+
+		<div class="new_list_box2">
+			<h3>KT 멤버십</h3>
+			<h6>2019-05-01 ~ 2021-12-31</h6>
+			<img src="icons/icon_store.gif" alt="스토어 바로가기 아이콘" class="new_event_icon">
+		</div>
+		<div class="new_list_box3">
+			<p>매일 아침 든든하게 오굿!모닝</p>
+		</div>
+		</li>
+	</ul>
+</li>
+</ul>
+
+<ul id="new_list_bt">
+	<li></li><li></li><li></li>
+</ul>
+<!-- bg1 영역시작 -->
+<div id="bg1">
+	<img src="images/scroll_txt_1.png" alt="잠깐의 여유와 달콤한 행복 이미지" id="bg1_img1">
+	<img src="images/scroll_txt_2.png" alt="Sweet Break, Dunkin' Donuts image" id="bg1_img2">	
+</div>
+<!-- menu list 영역시작 -->
+<div id="menu_list">
+	<img src="images/tit_dunkin_menu.png" alt="던킨 도넛 메뉴 텍스트 이미지" id="menu_list_title_img">
+	<h4>던킨도너츠의 다양한 음료와 도넛들</h4>
+	<p>Happiness, Fun, Refreshment, Energy and Break... If need be, just enjoy them! In busy daily lives,<br>Dunkin' will be a sweet friend to you.</p>
+	<ul id="dunkin_menu">
+		<li>
+			<img src="images/img_product_1.png" alt="도넛 이미지">
+			<h5>donuts</h5>
+			<button>도넛 메뉴 보기</button>
+		</li>
+		<li>
+			<img src="images/img_product_2.png" alt="커피 이미지">
+			<h5>coffee</h5>
+			<button>커피 메뉴 보기</button>
+		</li>
+		<li>
+			<img src="images/img_product_3.png" alt="샌드위치 콤보 이미지">
+			<h5>hot sandwiches</h5>
+			<button>샌드위치 메뉴 보기</button>
+		</li>
+		<li>
+			<img src="images/img_product_4.png" alt="음료 이미지">
+			<h5>beverage</h5>
+			<button>음료 메뉴 보기</button>
+		</li>
+		<li>
+			<img src="images/img_product_5.png" alt="아이스크림 이미지">
+			<h5>others</h5>
+			<button>기타 메뉴 보기</button>
+		</li>
+	</ul>
+</div>
+<!-- bg2 영역 시작 -->
+<div id="bg2">
+	<div id="bg2_leftbox">
+		<h4>매장찾기</h4>
+		<p>달콤한 휴식을 즐길 수 있는<br><span>던킨도너츠 매장</span> 을 찾아보세요</p>
+	</div>
+	<div id="bg2_rightbox">
+		<h4>단체주문 & 케이터링 서비스</h4>
+		<p>특별한 날, 던킨과 함께<br>즐거움을 나누세요</p>
+	</div>
+</div>
+<!-- sns 영역시작 -->
+<div id="sns">
+	<img src="images/tit_dunkin_sns.png" alt="던킨 도너츠 SNS 텍스트 이미지" id="sns_list_title_img">
+	<h4>던킨도너츠와 함께하는 SNS</h4>
+	<ul id="sns_icon">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+<div id="sns_wrap">
+	<ul id="sns_img">
+		<li><img src="images/1649060611.png" alt="도넛 이미지 1"></li>
+		<li><img src="images/1649060640(0).png" alt="도넛 이미지 2"></li>
+		<li><img src="images/1649060725.png" alt="도넛 이미지 3"></li>
+		<li><img src="images/1649060743.png" alt="도넛 이미지 4"></li>
+		<li><img src="images/1649060758.png" alt="도넛 이미지 5"></li>
+		<li><img src="images/1649060791(0).png" alt="도넛 이미지 6"></li>
+		<li><img src="images/1649060791.png" alt="도넛 이미지 7"></li>
+		<li><img src="images/1649060806(0).png" alt="도넛 이미지 8"></li>
+		<li><img src="images/1649060806.png" alt="도넛 이미지 9"></li>
+		<li><img src="images/1649060743.jpg" alt="도넛 이미지 10"></li>
+		<li><img src="images/1649060455.jpg" alt="도넛 이미지 11"></li>
+		<li><img src="images/1649060592(0).png" alt="도넛 이미지 12"></li>
+		<li><img src="images/1649060611(0).png" alt="도넛 이미지 13"></li>
+		<li><img src="images/1649060806.png" alt="도넛 이미지 14"></li>
+		<li><img src="images/1649060743.png" alt="도넛 이미지 15"></li>
+		<li><img src="images/1649060611.png" alt="도넛 이미지 16"></li>
+		<li><img src="images/1649060640(0).png" alt="도넛 이미지 17"></li>
+		<li><img src="images/1649060725.png" alt="도넛 이미지 18"></li>
+		<li><img src="images/1649060743.png" alt="도넛 이미지 19"></li>
+		<li><img src="images/1649060758.png" alt="도넛 이미지 20"></li>
+		<li><img src="images/1649060791(0).png" alt="도넛 이미지 21"></li>
+		<li><img src="images/1649060791.png" alt="도넛 이미지 22"></li>
+		<li><img src="images/1649060806(0).png" alt="도넛 이미지 23"></li>
+		<li><img src="images/1649060806.png" alt="도넛 이미지 24"></li>
+		<li><img src="images/1649060743.jpg" alt="도넛 이미지 25"></li>
+		<li><img src="images/1649060455.jpg" alt="도넛 이미지 26"></li>
+		<li><img src="images/1649060592(0).png" alt="도넛 이미지 27"></li>
+		<li><img src="images/1649060611(0).png" alt="도넛 이미지 28"></li>
+		<li><img src="images/1649060806.png" alt="도넛 이미지 29"></li>
+		<li><img src="images/1649060743.png" alt="도넛 이미지 30"></li>
+
+	</ul>
+</div>
+</div>
+<!-- footer 영역시작 -->
+<footer>
+<div id="footer_leftbox"><img src="icons/footer_logo.png" alt="던킨 도너츠 로고 이미지" id="footer_logo1">
+<ul id="footer_text">
+	<li>서울특별시 서초구 남부순환로 2620(양재동 11-149번지)</li>
+	<li>사업자 등록번호 : 303-81-09535</li>
+	<li>비알코리아(주) 대표이사 김창대</li>
+	<li>TEL : 080-555-3131</li>
+	<li>개인정보관리책임자 : 김경우</li>
+	<li>COPYRIGHT Ⓒ 2016 BRKOREA COMPANY. ALL RIGHTS RESERVED.</li>
+</ul>
+<img src="icons/footer_img_btn1.png" alt="SPC 사회공헌활동 로고 이미지" id="footer_logo2">
+<img src="icons/footer_img_btn2.png" alt="ccm로고 이미지" id="footer_logo3">
+<img src="icons/footer_img_btn3.png" alt="G로고 이미지" id="footer_logo4">
+<br><select name="family_site" id="family_site">
+		<option >FAMILY SITE</option>
+		<option>SPC그룹</option>
+		<option>비알코리아</option>
+		<option>베스킨라빈스</option>
+		<option>파리바게뜨</option>
+		<option>샤니</option>
+		<option>파스쿠찌</option>
+		<option>해피포인트카드</option>
+		<option>던킨 온라인 스쿨</option>
+		<option>던킨 아르바이트</option>
+	</select></div>
+
+<div id="footer_rightbox">
+	<div id="footer_rightbox1">
+		<div id="footer_rightbox_left">
+		<div id="footer_rightbox_left1">
+			<h4>MENU</h4>
+			<ul>
+				<li>DONUT</li>
+				<li>MEAL</li>
+				<li>COFFEE</li>
+				<li>BDVERAGE</li>
+				<li>OTHERS</li>
+			</ul>
+		</div>
+		<div id="footer_rightbox_left2">
+			<h4>EVENT</h4>
+			<ul>
+				<li>매장 프로모션</li>
+				<li>온라인 이벤트</li>
+				<li>당첨자 발표</li>
+			</ul>
+		</div>
+		<div id="footer_rightbox_left3">
+			<h4>STORE</h4>
+			<ul>
+				<li>오프라인 STORE</li>
+				<li>온라인 STORE</li>
+				<li>가맹점 개설 안내</li>
+			</ul>
+		</div>
+		<div id="footer_rightbox_left4">
+			<h4>BRAND</h4>
+			<ul>
+				<li>브랜드 소개</li>
+				<li>뉴스 & 공지</li>
+				<li>CF</li>
+			</ul>
+		</div></div>
+		<div id="footer_rightbox_right">
+		<h3>로그인</h3>
+		<h3>회원가입</h3>
+		<h3>고객센터</h3>
+		<h3><b>가맹점 개설 안내</b></h3>
+		<h3>영앙정보</h3>
+
+	<img src="icons/sns1.png" alt="페이스북 바로가기 아이콘">
+<img src="icons/sns2.png" alt="인스타그램 바로가기 아이콘">
+<img src="icons/sns3.png" alt="블로그 바로가기 아이콘">
+<img src="icons/sns4.png" alt="유튜브 바로가기 아이콘">
+<img src="icons/sns5.png" alt="트위터 바로가기 아이콘">	
+		</div></div>
+	<ul id="footer_rightbox2">
+<li>윤리신고센터</li>
+<li>이용약관</li>
+<li>개인정보처리방침</li>
+<li>영상정보처리기기운영관리방침</li>
+<li>이메일무단수집거부</li>
+<li>거래희망회사 사전등록</li>
+<li>채용안내</li>
+</ul>
+</div>
+</footer>
+
+<div id="starter_bg">
+	<div id="starter">
+		<img src="icons/icon_modal_close.png" alt="팝업 닫기 버튼" id="starter_close">
+		<h2>본 사이트는 <span class="span">포트폴리오 용 사이트</span>로 리소스는 원작자에게 있습니다.</h2>
+		<h3>HTML5, CSS3, JavaScript&jQuery로 제작되었으며 Google Chrom(전체화면)에 최적화되어있습니다.</h3>
+	</div>
+</div>
+
+<div class="w3c">
+	<a href="http://validator.kldp.org/check?uri=referer"
+      onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))" target="_blank"><img
+      src="http://validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80" ></a>
+		<!-- html 검사완료 코드 -->
+		 <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="올바른 CSS입니다!" /></a>
+			<!-- css 검사완료 코드 -->
+</div>
+
+ </body>
+</html>

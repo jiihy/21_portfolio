@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ <link rel="shortcut icon" href="icons/lane.ico">
+  <title>라네즈, 수분 가득 맑고 건강하게 빛나는 아름다움</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+   $(document).ready(function(){
+
+$(window).resize(function(){ //창의 크기에 따라 반응
+	if( $(window).width() < 820 ){ //모바일
+	  $('#sns>ul').css({'left':0})
+      sns_num3 = 0
+      click3 = 0
+      $('#sns_bt_right').click(function(){
+         if (click3 == 0){
+            click3 = 1;
+         if(sns_num3 <= -4080){sns_num3 = 0; $('#sns ul').css({'left':'0px'})}
+         sns_num3 = sns_num3 - 204
+         $('#sns ul').stop().animate({'left':sns_num3 + 'px'},500,function(){
+            click3 = 0 })
+      }
+      })
+      sns_num3 = 0
+      click3 = 0
+      $('#sns_bt_left').click(function(){
+      if (click3 == 0){
+         click3 = 1;
+         if(sns_num3 >= 0){sns_num3 = -4080; $('#sns ul').css({'left':'-4080px'})}
+         sns_num3 = sns_num3 + 204
+         $('#sns ul').stop().animate({'left':sns_num3 + 'px'},500,function(){
+            click3 =0})
+         }
+      })
+
+
+
+	}
+	else if( $(window).width() >= 820  && $(window).width()< 1220){ //태블릿상태
+	  $('#sns>ul').css({'left':0})
+      sns_num2 = 0
+      click2 = 0
+      $('#sns_bt_right').click(function(){
+         if (click2 == 0){
+            click2 = 1;
+         if(sns_num2 <= -3990){sns_num2 = 0; $('#sns ul').css({'left':'0px'})}
+         sns_num2 = sns_num2 - 420
+         $('#sns ul').stop().animate({'left':sns_num2 + 'px'},500,function(){
+            click2 = 0 })
+      }
+      })
+      sns_num2 = 0
+      click2 = 0
+      $('#sns_bt_left').click(function(){
+      if (click2 == 0){
+         click2 = 1;
+         if(sns_num2 >= 0){sns_num2 = -3990; $('#sns ul').css({'left':'-4080px'})}
+         sns_num2 = sns_num2 + 420
+         $('#sns ul').stop().animate({'left':sns_num2 + 'px'},500,function(){
+            click2 =0})
+         }
+      })
+
+
+	}
+
+	else {		//아닐땐 이렇게
+	  $('#sns>ul').css({'left':0})
+      $('#menu>li').mouseenter(function(){
+         $(this).children('.sub_menu_box').stop().show()
+         $(this).children('.sub_menu_box').children('.sub_menu').stop().show()
+      })
+      $('#menu>li').mouseleave(function(){
+         $(this).children('.sub_menu_box').stop().hide()
+         $(this).children.children('.sub_menu').stop().hide()
+      })
+      
+      sns_num = 0
+      click = 0
+      $('#sns_bt_right').click(function(){
+         if (click == 0){
+            click = 1;
+         if(sns_num <= -4200){sns_num = 0; $('#sns ul').css({'left':'0px'})}
+         sns_num = sns_num - 840
+         $('#sns ul').stop().animate({'left':sns_num + 'px'},500,function(){
+            click = 0 })
+      }
+      })
+      sns_num = 0
+      click = 0
+      $('#sns_bt_left').click(function(){
+      if (click == 0){
+         click = 1;
+         if(sns_num >= 0){sns_num = -4200; $('#sns ul').css({'left':'-4200px'})}
+         sns_num = sns_num + 840
+         $('#sns ul').stop().animate({'left':sns_num + 'px'},500,function(){
+            click=0})
+         }
+      })
+
+	}
+
+})//창크기반응구역
+
+         
+
+
+
+
+
+
+
+
+
+   if( $(window).width() < 820 ){ //모바일상태
+      sns_num3 = 0
+      click3 = 0
+      $('#sns_bt_right').click(function(){
+         if (click3 == 0){
+            click3 = 1;
+         if(sns_num3 <= -4080){sns_num3 = 0; $('#sns ul').css({'left':'0px'})}
+         sns_num3 = sns_num3 - 204
+         $('#sns ul').stop().animate({'left':sns_num3 + 'px'},500,function(){
+            click3 = 0 })
+      }
+      })
+      sns_num3 = 0
+      click3 = 0
+      $('#sns_bt_left').click(function(){
+      if (click3 == 0){
+         click3 = 1;
+         if(sns_num3 >= 0){sns_num3 = -4080; $('#sns ul').css({'left':'-4080px'})}
+         sns_num3 = sns_num3 + 204
+         $('#sns ul').stop().animate({'left':sns_num3 + 'px'},500,function(){
+            click3 =0})
+         }
+      })
+
+
+
+      }
+   else if( $(window).width() >= 820  && $(window).width()< 1220){ //태블릿상태
+      sns_num2 = 0
+      click2 = 0
+      $('#sns_bt_right').click(function(){
+         if (click2 == 0){
+            click2 = 1;
+         if(sns_num2 <= -3990){sns_num2 = 0; $('#sns ul').css({'left':'0px'})}
+         sns_num2 = sns_num2 - 420
+         $('#sns ul').stop().animate({'left':sns_num2 + 'px'},500,function(){
+            click2 = 0 })
+      }
+      })
+      sns_num2 = 0
+      click2 = 0
+      $('#sns_bt_left').click(function(){
+      if (click2 == 0){
+         click2 = 1;
+         if(sns_num2 >= 0){sns_num2 = -3990; $('#sns ul').css({'left':'-4080px'})}
+         sns_num2 = sns_num2 + 420
+         $('#sns ul').stop().animate({'left':sns_num2 + 'px'},500,function(){
+            click2 =0})
+         }
+      })
+
+
+
+      }
+   else{
+      $('#menu>li').mouseenter(function(){
+         $(this).children('.sub_menu_box').stop().show()
+         $(this).children('.sub_menu_box').children('.sub_menu').stop().show()
+      })
+      $('#menu>li').mouseleave(function(){
+         $(this).children('.sub_menu_box').stop().hide()
+         $(this).children.children('.sub_menu').stop().hide()
+      })
+      
+      sns_num = 0
+      click = 0
+      $('#sns_bt_right').click(function(){
+         if (click == 0){
+            click = 1;
+         if(sns_num <= -4200){sns_num = 0; $('#sns ul').css({'left':'0px'})}
+         sns_num = sns_num - 840
+         $('#sns ul').stop().animate({'left':sns_num + 'px'},500,function(){
+            click = 0 })
+      }
+      })
+      sns_num = 0
+      click = 0
+      $('#sns_bt_left').click(function(){
+      if (click == 0){
+         click = 1;
+         if(sns_num >= 0){sns_num = -4200; $('#sns ul').css({'left':'-4200px'})}
+         sns_num = sns_num + 840
+         $('#sns ul').stop().animate({'left':sns_num + 'px'},500,function(){
+            click=0})
+         }
+      })
+   }
+   
+
+      section1_start = 0 //section1시작값 변수선언
+      section2_1start = 0 //section1시작값 변수선언
+      section2_2start = 0 //section1시작값 변수선언
+      section2_3start = 0 //section1시작값 변수선언
+      section3_start = 0 //section1시작값 변수선언
+      section4_start = 0 //section1시작값 변수선언
+      section5_start = 0 //section1시작값 변수선언
+      section6_start = 0 //section1시작값 변수선언
+		lastsc = 0;
+      $(window).scroll(function(){ //scroll이 움직이면 하세요
+      sc = $(window).scrollTop();
+      $('#scroll_text').text(sc)
+
+      if (sc >=100){
+         section1_start = section1_start + 1
+         if( section1_start == 1 ){       
+         $('.best_img').stop().animate({'opacity':'1'},800)
+         $('.best_img1').stop().animate({'opacity':'1','top':'0'},800)
+      }}
+
+         if (sc >= ($('#list1').offset().top-500) ){  //공통조건으로 바꾸기
+
+         section2_1start = section2_1start + 1
+         if( section2_1start == 1 ){       
+         $('#list1').stop().animate({'opacity':'1'},800)
+      }}
+         if (sc >= ($('#list2').offset().top-500) ){  //공통조건으로 바꾸기
+
+         section2_2start = section2_2start + 1
+         if( section2_2start == 1 ){       
+         $('#list2').stop().animate({'opacity':'1'},1000)
+      }}
+         if (sc >= ($('#list3').offset().top-500) ){  //공통조건으로 바꾸기
+
+         section2_3start = section2_3start + 1
+         if( section2_3start == 1 ){       
+         $('#list3').stop().animate({'opacity':'1'},800)
+      }}
+
+      if (sc >= ($('#list_section2 li:nth-child(1)').offset().top-600) ){
+         section3_start = section3_start + 1
+         if( section3_start == 1 ){       
+         $('#list_section2 li:nth-child(1)').stop().animate({'opacity':'1'},1500)
+         $('#list_section_bg').stop().animate({'opacity':'1'},3000)
+      }}
+
+      if (sc >= ($('#list_section2 li:nth-child(2)').offset().top-500) ){
+         section4_start = section4_start + 1
+         if( section4_start == 1 ){       
+         $('#list_section2 li:nth-child(2)').stop().animate({'opacity':'1'},1000)
+         $('#list_section_mark').stop().animate({'opacity':'1'},1500)
+      }}
+   
+      if (sc >= ($('#list_section2 li:nth-child(3)').offset().top-500) ){
+         section5_start = section5_start + 1
+         if( section5_start == 1 ){       
+         $('#list_section2 li:nth-child(3)').stop().animate({'opacity':'1'},1500)
+      }}
+   
+      if (sc >= ($('#list_section2 li:nth-child(4)').offset().top-500) ){
+         section6_start = section6_start + 1
+         if( section6_start == 1 ){       
+         $('#list_section2 li:nth-child(4)').stop().animate({'opacity':'1'},1500)
+      }}
+//      if( lastsc < sc ){ //스크롤이 내려갈때
+//            if (sc >=1800 && sc < 2900 ){
+//         $('#list_section_bg').stop().stop().animate({'opacity':'1'})
+//         $('#list_section_mark').stop().stop().animate({'opacity':'1'},function(){
+//            $('#list_section_mark').stop().stop().animate({'top':'700px'})
+//         })
+//            } //&&는 '부터' 
+//            else if (sc >=2900 && sc < 3000 ){
+//         $('#list_section_bg').stop().stop().animate({'opacity':'0'})
+//            }
+//      }   //
+//      else {    //스크롤이 올라갈때
+//            if (sc >=2400 && sc < 3200 ){
+//         $('#list_section_bg').stop().stop().animate({'opacity':'1'})
+//            } //&&는 '부터' 
+//            else if (sc >=1800 && sc < 2400 ){
+//         $('#list_section_bg').stop().stop().animate({'opacity':'0'})
+//            }
+//      } //
+//      lastsc = sc; //lastsc 는 sc지만 sc보다 늦게반응함
+//
+   }); //마지막묶음
+
+
+
+         slide=setInterval(function(){
+         if(click == 0){
+            click = 1;
+         if(slide_num < -400){slide_num = 0; $('#slide_box').css({'left':'0'}) }
+         slide_num = slide_num - 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+         $('#slide_box').stop().animate({'left':slide_num+'%'},500,function(){
+            click = 0  })
+         if (slide_num < -400){
+         $('#slide_btbox ul li').eq(0).css({'border':'2px solid #000','background-color':'transparent'}).siblings().css({'background-color':'#aaa','border':'none'})
+         }
+         $('#slide_btbox ul li').eq(slide_num/-100).css({'border':'2px solid #000','background-color':'transparent'}).siblings().css({'background-color':'#aaa','border':'none'})
+         }
+   
+      $('#slide_pausebt').click(function(){
+         clearInterval(slide)
+         $('#slide_startbt').stop().show()
+         $('#slide_pausebt').stop().hide()
+      })
+      $('#slide_startbt').click(function(){
+         $('#slide_startbt').stop().hide()
+         $('#slide_pausebt').stop().show()
+      })   },3000);
+
+
+      $('#loading').delay(700).fadeOut()
+
+
+      best_num = 0
+      click = 0;
+      $('#best_leftbt').click(function(){
+         if (click == 0){
+            click = 1;
+         if(best_num >= 0){best_num = -2400; $('#best_box ul').css({'left':'-2400px'}) }
+         best_num = best_num + 400
+         $('#best_box ul').stop().animate({'left':best_num + 'px'},400,function(){
+            click= 0 })
+         }
+      })
+
+
+      best_num = 0
+      click = 0;
+      $('#best_rightbt').click(function(){
+      if (click == 0){
+         click = 1;
+         if (best_num <= -2400){best_num = 0; $('#best_box ul').css({'left':'0px'})  }
+         best_num = best_num - 400
+         $('#best_box ul').stop().animate({'left':best_num + 'px'},400,function(){
+         click = 0   })
+      }
+      })
+
+      slide_num = 0
+      click = 0;
+      $('#slide_rightbt').click(function(){
+         if(click == 0){
+            click = 1;
+         if(slide_num < -400){slide_num = 0; $('#slide_box').css({'left':'0'}) }
+         slide_num = slide_num - 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+         $('#slide_box').stop().animate({'left':slide_num+'%'},500,function(){
+            click = 0  })
+         if (slide_num < -400){
+         $('#slide_btbox ul li').eq(0).css({'border':'2px solid #000','background-color':'transparent'}).siblings().css({'background-color':'#aaa','border':'none'})
+         }
+         $('#slide_btbox ul li').eq(slide_num/-100).css({'border':'2px solid #000','background-color':'transparent'}).siblings().css({'background-color':'#aaa','border':'none'})
+         }
+      })
+
+
+      slide_num = 0
+      click = 0;
+      $('#slide_leftbt').click(function(){
+         if(click == 0){
+            click = 1;
+         if(slide_num >= 0 ){slide_num = -500; $('#slide_box').css({'left':'-500%'}) }
+         slide_num = slide_num + 100 //1번 0, 2번 -100%, 3번 -200%, 4번 -300%, 5번 -400%
+         $('#slide_box').stop().animate({'left':slide_num+'%'},500,function(){
+            click = 0  })
+         if (slide_num >= 0){
+         $('#slide_btbox ul li').eq(0).css({'border':'2px solid #000','background-color':'transparent'}).siblings().css({'background-color':'#aaa','border':'none'})
+         }
+         $('#slide_btbox ul li').eq(slide_num/-100).css({'border':'2px solid #000','background-color':'transparent'}).siblings().css({'background-color':'#aaa','border':'none'})
+         }
+      })
+
+     $('#slide_btbox ul li').click(function(){
+        //슬라이드를 움직이는 변수가 이미 선언되어있다. 그 변수를 사용하자
+        slide_num = $(this).index()*-100;//해당 li(this)의 번호를 발생 1~9 = 0~8 (0으로 출발)= 0~8 * 100 = 0~800
+      $('#slide_box').stop().animate({'left':slide_num+'%'},500)
+      //슬라이드가 해당 버튼을 클릭할 때 발생하는 순번에 따라 반응하도록 변수 연결
+      $(this).css({'border':'2px solid #000','background-color':'transparent'}).siblings().css({'background-color':'#aaa','border':'none'})
+     })
+   })
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+
+  <style>
+	* {
+		margin : 0;
+		padding : 0;
+		list-style : none;
+		font-family : 'NanumSquare', sans-serif;
+	}
+
+	.w3c {
+		text-align: center;
+		background-color: #eaeaea;	
+	}
+
+	header {
+		width : 100%;
+		height : 59px;
+		border-bottom : 1px solid #ddd;
+		line-height : 59px;
+		position : relative;
+	}
+
+	#logo {
+		width : 130px;
+		height : 22px;
+		float : left;
+		margin-top : 17px;
+		margin-left : 50px;
+	}
+
+	#logo img {
+		width : 100%;
+		vertical-align : top;
+		cursor : pointer;
+	}
+
+	#icon {
+		height : 20px;
+		float : right;
+		margin-right : 50px;
+		margin-top : 19px;
+		text-align : center;
+	}
+
+	#icon li {
+		float : left;
+		margin-left : 15px;
+	}
+
+	#icon li img {
+		vertical-align : top;
+		cursor : pointer;
+	}
+
+	#menu {
+		width : 100%;
+		height : 59px;
+		position : absolute;
+		left : 0;
+		right : 0;
+		top : 0;
+		margin : auto;
+		text-align : center;
+	}
+
+	#menu > li {
+		display : inline-block;
+		padding : 0 18px;
+		font-weight : 300;
+		position : relative;
+		cursor : pointer;
+		font-size : 18px;
+		font-weight : 400;
+	}
+
+	.line {
+		width : 0;
+		height : 3px;
+		background-color : #000;
+		position : absolute;
+		left : 0;
+		bottom : 0;
+		right : 0;
+		margin : auto;
+		transition : 0.3s;
+	}
+
+		#menu > li:hover {
+		font-weight : 700;
+		transition : 0.3s;
+	}
+
+	#menu > li:hover .line {
+		width : 100%;
+	}
+
+	#hidden_menu_bt {
+		float : right;
+		margin-top : 20px;
+		margin-right : 20px;
+		display : none;
+		cursor : pointer;
+	}
+
+	.sub_menu_box {
+		width : 1920px;
+		height : 50px;
+		background-color : #f7f7f7;
+		position : fixed;
+		left : 0;
+		top : 59px;
+		z-index : 99;
+		display : none;
+	}
+
+	.sub_menu {
+		width : 1000px;
+		line-height : 50px;
+		display : none;
+		z-index : 999;
+		left : 0;
+		right : -385px;
+		margin : auto;
+		top : 60px;
+		position : fixed;
+		font-size : 14px;
+		font-weight : 400;
+		color : #5f5f5f;
+	}
+
+	.sub_menu > li {
+		display : block;
+		font-weight : 300;
+		padding : 0 15px;
+		display : inline-block;
+		float : left;
+	}
+
+	.sub_menu > li:hover {
+		font-weight : 600;
+	}
+
+	#slide {
+		width : 100%;
+		height : 790px;
+		background-size : cover;
+		position : relative;
+		margin : auto;
+		overflow : hidden;
+	}
+
+	#slide_box {
+		width : 600%;
+		height : 790px;
+		position : absolute;
+	}
+
+	#slide_box li {
+		width : 16.666666%;
+		height : 790px;
+		float : left;
+		position : relative;
+		overflow : hidden;
+	}
+
+	#slide_box li:nth-child(1) {
+		background : url(images/slide1.jpg) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(2) {
+		background : url(images/slide2.png) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(3) {
+		background : url(images/slide3.png) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(4) {
+		width : 16.666666%;
+		position : relative;
+	}
+
+	#video1 {
+		width : 1920px;
+		position : absolute;
+		left : 50%;
+		margin-left : -960px;
+		top : -100px;
+	}
+
+	#video2 {
+		width : 100%;
+		position : absolute;
+	}
+
+	#slide_box li:nth-child(5) {
+		background : url(images/slide5.png) center no-repeat #fff;
+	}
+
+	#slide_box li:nth-child(6) {
+		background : url(images/slide1.jpg) center no-repeat #fff;
+	}
+
+	.slide_textbox {
+		width : 400px;
+		height : 200px;
+		position : absolute;
+		left : 250px;
+		top : 0;
+		bottom : 0;
+		margin : auto;
+		text-align : left;
+	}
+
+	.slide_textbox h5 {
+		font-size : 15px;
+		margin-left : 5px;
+		padding-top : 2px;
+		width : 45px;
+		line-height : 20px;
+		background-color : #0056ac;
+		color : #fff;
+		text-align : center;
+	}
+
+	.slide_textbox h2 {
+		font-weight : 500;
+		font-size : 45px;
+		margin-top : 15px;
+	}
+
+	.slide_textbox h3 {
+		font-weight : 400;
+		font-size : 20px;
+		margin-top : 30px;
+	}
+
+	.slide_textbox p {
+		font-weight : 300;
+		margin-top : 10px;
+	}
+
+	#slide_btbox {
+		width : 300px;
+		text-align : center;
+		left : 0;
+		right : 0;
+		bottom : 20px;
+		margin : auto;
+		position : absolute;
+	}
+
+	#slide_leftbt {
+		width : 15px;
+		margin-right : 8px;
+		vertical-align : middle;
+		cursor : pointer;
+		z-index : 9;
+	}
+
+	#slide_pausebt {
+		vertical-align : middle;
+		cursor : pointer;
+	}
+
+	#slide_startbt {
+		vertical-align : middle;
+		cursor : pointer;
+		display : none;
+	}
+
+	#slide_rightbt {
+		width : 15px;
+		margin-left : 8px;
+		vertical-align : middle;
+		cursor : pointer;
+	}
+
+	#slide_btbox ul {
+		display : inline-block;
+		vertical-align : middle;
+	}
+
+	#slide_btbox ul li {
+		width : 8px;
+		height : 8px;
+		background-color : #aaa;
+		border-radius : 10px;
+		display : inline-block;
+		margin : 0 5px;
+		vertical-align : middle;
+		cursor : pointer;
+	}
+
+	#slide_btbox ul li:first-child {
+		border : #000 solid 2px;
+		background : none;
+	}
+
+	#best {
+		width : 100%;
+		height : 880px;
+		position : relative;
+		text-align : center;
+		overflow : hidden;
+		margin : auto;
+	}
+
+	#best_bg {
+		width : 1920px;
+		height : 450px;
+		left : 50%;
+		margin-left : -960px;
+		overflow : hidden;
+		position : absolute;
+		top : 0;
+		z-index : -1;
+	}
+
+	#best_bg video {
+		width : 100%;
+		overflow : hidden;
+	}
+
+	#best h2 {
+		font-size : 40px;
+		font-weight : 900;
+		padding-top : 70px;
+	}
+
+	#best_box {
+		width : 1200px;
+		height : 650px;
+		margin : auto;
+		margin-top : 30px;
+		position : relative;
+		overflow : hidden;
+	}
+
+	#best_box ul {
+		width : 3600px;
+		position : absolute;
+	}
+
+	#best_box li {
+		width : 380px;
+		height : 650px;
+		margin : 10px;
+		float : left;
+		text-align : center;
+		position : relative;
+		cursor : pointer;
+	}
+
+	.best_img {
+		width : 330px;
+		transition : 0.3s;
+		opacity : 0;
+		position : absolute;
+		top : 0;
+		right : 0;
+		left : 0;
+		margin : auto;
+	}
+
+	.best_img1 {
+		width : 330px;
+		transition : 0.3s;
+		opacity : 0;
+		position : absolute;
+		top : 100px;
+		right : 0;
+		left : 0;
+		margin : auto;
+	}
+
+	#best_box ul li:nth-child(1) .best_img {
+		position : absolute;
+		top : 30px;
+	}
+
+	#best_box li h4 img {
+		width : 20px;
+		height : 20px;
+		margin-top : 20px;
+	}
+
+	#best_box li:hover .best_img {
+		transform : rotate(-10deg);
+	}
+
+	#best_box li:hover .best_img1 {
+		transform : rotate(-10deg);
+	}
+
+	.pickme {
+		position : absolute;
+		right : 50px;
+		top : 300px;
+		opacity : 0;
+		transition : 0.3s;
+	}
+
+	#best_box li:hover .pickme {
+		opacity : 1;
+	}
+
+	#best_box li h2 {
+		font-size : 18px;
+		font-weight : 600;
+		color : #0068d0;
+		margin-top : 350px;
+	}
+
+	#best_box li h3 {
+		margin-top : 10px;
+		font-size : 18px;
+		font-weight : 400;
+	}
+
+	#best_box li h5 {
+		font-weight : 200;
+		font-size : 15px;
+		line-height : 25px;
+	}
+
+	#best_box li p {
+		font-size : 12px;
+		font-weight : 200;
+		margin-top : 10px;
+	}
+
+	#best_leftbt {
+		position : absolute;
+		left : 0;
+		bottom : 400px;
+		cursor : pointer;
+		z-index : 999;
+	}
+
+	#best_rightbt {
+		position : absolute;
+		right : 0;
+		bottom : 400px;
+		cursor : pointer;
+		z-index : 999;
+	}
+
+	#list_section {
+		width : 100%;
+		background : linear-gradient(180deg, #fff, #e4eefa, #e4eefa, #f4f0f5, #f4f0f5, #f4f0f5, #fff);
+	}
+
+	#list_section1 {
+		width : 1221px;
+		padding-top : 200px;
+		overflow : hidden;
+		margin : auto;
+	}
+
+	#list_section1 h2 {
+		width : 200px;
+		font-size : 15px;
+		font-weight : 700;
+		letter-spacing : 2px;
+		color : #0068d0;
+		position : absolute;
+		transform : rotate(-90deg);
+		left : -120px;
+		top : 90px;
+		text-align : right;
+	}
+
+	#list_section1 li {
+		width : 323px;
+		float : left;
+		margin : 42px;
+		position : relative;
+	}
+
+	#list_section1 li img {
+		width : 85%;
+	}
+
+	#list_section1 h3 {
+		width : 280px;
+		font-size : 18px;
+		font-weight : 500;
+		margin-top : 10px;
+		color : #505050;
+	}
+
+	#list_section1 h4 {
+		width : 280px;
+		font-size : 15px;
+		font-weight : 400;
+		margin-top : 10px;
+		line-height : 22px;
+		color : #585858;
+	}
+
+	#list1,#list2,#list3 {
+		opacity : 0;
+	}
+
+	#list_section2 {
+		width : 1221px;
+		height : 1480px;
+		margin : auto;
+		margin-top : 200px;
+		position : relative;
+	}
+
+	#list_section2 h2 {
+		width : 200px;
+		font-size : 15px;
+		font-weight : 700;
+		letter-spacing : 2px;
+		color : #0068d0;
+		position : absolute;
+		transform : rotate(-90deg);
+		left : -120px;
+		top : 90px;
+		text-align : right;
+	}
+
+	#list_section2 li img {
+		width : 100%;
+	}
+
+	#list_section2 h3 {
+		font-size : 18px;
+		font-weight : 500;
+		margin-top : 10px;
+		color : #505050;
+	}
+
+	#list_section2 h4 {
+		font-size : 15px;
+		font-weight : 400;
+		margin-top : 10px;
+		line-height : 22px;
+		color : #585858;
+	}
+
+	#list_section2 li:nth-child(1) {
+		width : 700px;
+		height : 530px;
+		position : absolute;
+		left : 50px;
+		top : 10px;
+		opacity : 0;
+	}
+
+	#list_section2 li:nth-child(2) {
+		width : 390px;
+		height : 760px;
+		position : absolute;
+		right : 0;
+		top : 150px;
+		opacity : 0;
+	}
+
+	#list_section2 li:nth-child(3) {
+		width : 338px;
+		height : 600px;
+		position : absolute;
+		left : 50px;
+		top : 800px;
+		opacity : 0;
+	}
+
+	#list_section2 li:nth-child(4) {
+		width : 686px;
+		height : 520px;
+		position : absolute;
+		right : 0;
+		top : 1200px;
+		opacity : 0;
+	}
+
+	#sns_box {
+		height : 350px;
+		width : 1100px;
+		margin : auto;
+		position : relative;
+	}
+
+	#sns {
+		height : 400px;
+		text-align : center;
+		width : 1050px;
+		margin : auto;
+		position : relative;
+		overflow : hidden;
+	}
+
+	#sns > ul {
+		width : 5250px;
+		margin : auto;
+		overflow : hidden;
+		position : absolute;
+	}
+
+	.sns_img {
+		width : 100%;
+		left : 0;
+		top : 0;
+		transition : 0.5s;
+		position : absolute;
+	}
+
+	#sns > ul > li {
+		width : 200px;
+		height : 200px;
+		float : left;
+		margin : 5px;
+		position : relative;
+		overflow : hidden;
+		cursor : pointer;
+	}
+
+	#sns h2 {
+		font-size : 45px;
+		font-weight : 900;
+	}
+
+	#sns h3 {
+		font-size : 17px;
+		color : #606060;
+		margin : 10px;
+	}
+
+	#sns_bt_left {
+		position : absolute;
+		top : 170px;
+		left : -10px;
+		cursor : pointer;
+		border-radius : 5px;
+	}
+
+	#sns_bt_left:hover {
+		background-color : #f2f2f2;
+	}
+
+	#sns_bt_right {
+		position : absolute;
+		top : 170px;
+		right : -10px;
+		cursor : pointer;
+		border-radius : 5px;
+	}
+
+	#sns_bt_right:hover {
+		background-color : #f2f2f2;
+	}
+
+	#sns_bt_more {
+		width : 100px;
+		height : 30px;
+		background-color : #fff;
+		color : #535353;
+		border : #000 solid 1px;
+		position : absolute;
+		margin : auto;
+		right : 0;
+		left : 0;
+		bottom : 0;
+	}
+
+	#sns_bt_more:hover {
+		background-color : #3399ff;
+		border : none;
+		color : #fff;
+		transition : 0.4s;
+		cursor : pointer;
+	}
+
+	#sns > ul > li:hover .sns_img {
+		top : -20px;
+		cursor : pointer;
+	}
+
+	#sns ul li:hover .sns_textbox {
+		bottom : 0;
+		transition : 0.5s;
+	}
+
+	.sns_textbox {
+		height : 60px;
+		width : 100%;
+		position : absolute;
+		left : 0;
+		bottom : -60px;
+		background-color : #fff;
+		border : #ddd solid 1px;
+		box-sizing : border-box;
+	}
+
+	.sns_textbox h5 {
+		margin-top : 10px;
+		color : #4d4d4d;
+	}
+
+	.sns_textbox p {
+		font-size : 12px;
+		color : #646464;
+		margin : 10px auto;
+		width : 180px;
+		overflow : hidden;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+
+	footer {
+		width : 100%;
+		margin : auto;
+	}
+
+	#footerbox {
+		margin : auto;
+		padding-top : 200px;
+		padding-bottom : 100px;
+		color : #4e4d65;
+	}
+
+	#footerbox2 {
+		width : 100%;
+		line-height : 50px;
+		font-size : 13px;
+		margin-top : 200px;
+		background-color : #eaeaea;
+		display : none;
+		border-top : 1px solid #ddd;
+	}
+
+	#footerbox2 p {
+		margin-left : 30px;
+	}
+
+	#line_u {
+		width : 100%;
+		border-top : 1px solid #ececec;
+		border-bottom : 1px solid #ececec;
+		float : left;
+		padding-left : 6vw;
+		box-sizing : border-box;
+	}
+
+	#line_u li {
+		font-size : 15px;
+		float : left;
+		padding : 10px;
+		margin-right : 10px;
+		display : inline-block;
+		cursor : pointer;
+	}
+
+	#footersns {
+		float : right;
+		padding-right : 8vw;
+	}
+
+	#footersns img {
+		padding : 5px 7px;
+		cursor : pointer;
+	}
+
+	#line_d {
+		padding-top : 30px;
+		margin-top : 30px;
+	}
+
+	#line_d p {
+		float : left;
+		padding-left : 7vw;
+		box-sizing : border-box;
+		font-size : 14px;
+		font-weight : 200;
+	}
+
+	#line_d img {
+		float : right;
+		padding-right : 8vw;
+		box-sizing : border-box;
+		height : 50px;
+	}
+
+	#loading {
+		width : 100%;
+		height : 100%;
+		background-color : #fff;
+		position : fixed;
+		z-index : 9999;
+		left : 0;
+		top : 0;
+	}
+
+	#loading_img {
+		width : 40px;
+		position : absolute;
+		left : 0;
+		top : 0;
+		bottom : 0;
+		right : 0;
+		margin : auto;
+	}
+
+/*미디어쿼리 시작*/
+
+/*모바일 버전 시작*/
+	@media all and (min-width: 0) {
+		#logo {
+			width : 100px;
+			height : 17px;
+			margin-top : 21px;
+			margin-left : 15px;
+		}
+
+		#menu {
+			display : none;
+		}
+
+		#icon li:nth-child(1), #icon li:nth-child(2) {
+			display : none;
+		}
+
+		#icon {
+			margin-right : 10px;
+		}
+
+		#hidden_menu_bt {
+			float : right;
+			margin-top : 20px;
+			margin-right : 20px;
+			display : block;
+		}
+
+		#best_box {
+			width : 400px;
+		}
+
+		.pickme {
+			display : none;
+		}
+
+		#slide {
+			width : 100%;
+			height : 860px;
+			position : relative;
+			margin : auto;
+			overflow : hidden;
+		}
+
+		#slide_box {
+			width : 600%;
+			height : 860px;
+			position : absolute;
+		}
+
+		#slide_box li {
+			width : 16.666666%;
+			height : 860px;
+			float : left;
+			position : relative;
+			overflow : hidden;
+		}
+
+		#slide_box li:nth-child(1) {
+			background : url(images/201228-main-kv-water-sleeping-mask-ex-mo.jpg) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		#slide_box li:nth-child(2) {
+			background : url(images/20201014_final_phyto-alexin_main-KV_mo.png) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		#slide_box li:nth-child(3) {
+			background : url(images/20200617_neo-cushion_KV_mo_1.png) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		#slide_box li:nth-child(4) {
+			width : 16.666666%;
+			position : relative;
+			background-size : cover;
+		}
+
+		#video1 {
+			display : none;
+		}
+
+		#video2 {
+			width : 100%;
+			display : block;
+		}
+
+		#slide_box li:nth-child(5) {
+			background : url(images/20200812_water-sleeping-mask-limited-edition_KV_mo_01_.png) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		#slide_box li:nth-child(6) {
+			background : url(images/201228-main-kv-water-sleeping-mask-ex-mo.jpg) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		.slide_textbox {
+			position : absolute;
+			left : 50%;
+			margin-left : -200px;
+			top : -500px;
+			text-align : center;
+		}
+
+		.slide_textbox h5 {
+			font-size : 15px;
+			width : 45px;
+			line-height : 20px;
+			background-color : #0056ac;
+			color : #fff;
+			margin-left : 170px;
+		}
+
+		.slide_textbox h2 {
+			width : 100%;
+			font-weight : 500;
+			font-size : 30px;
+			line-height : 36px;
+		}
+
+		.slide_textbox h3 {
+			font-weight : 400;
+			font-size : 17px;
+			line-height : 23px;
+		}
+
+		.slide_textbox p {
+			font-weight : 300;
+			margin-top : 10px;
+		}
+
+		body {
+			background-color : #fff;
+		}
+
+		#list_section1 {
+			width : 100%;
+			padding-top : 20px;
+		}
+
+		#list_section1 li {
+			width : 75vw;
+			height : 120vw;
+			margin-top : 10vw;
+			margin-left : 18vw;
+		}
+
+		#list_section1 li img {
+			max-width : 430px;
+		}
+
+		#list_section1 h3 {
+			font-size : 3vw;
+			width : 75vw;
+			max-width : 400px;
+		}
+
+		#list_section1 h4 {
+			font-size : 2.7vw;
+			width : 65vw;
+			max-width : 430px;
+		}
+
+		#list_section2 {
+			width : 100%;
+			height : 450vw;
+			margin-top : 20px;
+		}
+
+		#list_section2 li img {
+			width : 85%;
+			max-width : 430px;
+		}
+
+		#list_section2 li:nth-child(1) {
+			width : 76vw;
+			left : 18vw;
+			top : 0;
+		}
+
+		#list_section2 li:nth-child(2) {
+			width : 76vw;
+			right : 2.7vw;
+			top : 70vw;
+		}
+
+		#list_section2 li:nth-child(3) {
+			width : 76vw;
+			left : 18vw;
+			top : 215vw;
+		}
+
+		#list_section2 li:nth-child(4) {
+			width : 76vw;
+			right : 2.7vw;
+			top : 355vw;
+		}
+
+		#list_section2 h3 {
+			font-size : 3vw;
+			width : 76vw;
+		}
+
+		#list_section2 h4 {
+			font-size : 2.7vw;
+			width : 65vw;
+			max-width : 430px;
+		}
+
+		#sns_box {
+			width : 415px;
+		}
+
+		#sns {
+			width : 408px;
+		}
+
+		#sns > ul {
+			width : 5250px;
+			height : 200px;
+		}
+
+		#sns > ul > li {
+			margin : 2px;
+		}
+
+		#sns > h2 {
+			font-size : 20px;
+		}
+
+		#sns > h3 {
+			font-size : 12px;
+			margin-bottom : 30px;
+		}
+
+		#sns_bt_left {
+			top : 145px;
+			left : -32px;
+		}
+
+		#sns_bt_right {
+			top : 145px;
+			right : -32px;
+		}
+
+		#footerbox {
+			display : none;
+		}
+
+		#footerbox2 {
+			display : block;
+			font-size : 12px;
+	}
+
+	.w3c{
+		background-color: #eaeaea;
+		text-align: left;
+		padding-left: 30px;
+	}
+}
+/*모바일 버전 끝*/
+
+/*태블릿 버전 시작*/
+	@media all and (min-width: 820px) {
+		.w3c {
+			background-color: #eaeaea;	
+			text-align: left;
+			padding-left: 30px;
+		}
+
+		#logo {
+			width : 100px;
+			height : 17px;
+			margin-top : 21px;
+			margin-left : 15px;
+		}
+
+		#menu {
+			display : none;
+		}
+
+		#icon li:nth-child(1), #icon li:nth-child(2) {
+			display : none;
+		}
+
+		#icon {
+			margin-right : 10px;
+		}
+
+		#hidden_menu_bt {
+			float : right;
+			margin-top : 20px;
+			margin-right : 20px;
+			display : block;
+		}
+
+		#best_box {
+			width : 800px;
+		}
+
+		#slide {
+			width : 100%;
+			height : 860px;
+			position : relative;
+			margin : auto;
+			overflow : hidden;
+		}
+
+		#slide_box {
+			width : 600%;
+			height : 860px;
+			position : absolute;
+		}
+
+		#slide_box li:nth-child(1) {
+			background : url(images/slide1.jpg) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		#slide_box li:nth-child(2) {
+			background : url(images/slide2.png) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		#slide_box li:nth-child(3) {
+			background : url(images/slide3.png) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		#slide_box li:nth-child(4) {
+			width : 16.666666%;
+			position : relative;
+			background-size : cover;
+		}
+
+		#video1 {
+			width : 1920px;
+			display : block;
+		}
+
+		#video2 {
+			display : none;
+		}
+
+		#slide_box li:nth-child(5) {
+			background : url(images/slide5.png) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		#slide_box li:nth-child(6) {
+			background : url(images/slide1.jpg) center no-repeat #fff;
+			background-size : cover;
+		}
+
+		.slide_textbox {
+			width : 400px;
+			height : 200px;
+			position : absolute;
+			left : 100px;
+			top : 0;
+			bottom : 0;
+			margin : auto;
+			text-align : left;
+		}
+
+		.slide_textbox h5 {
+			font-size : 15px;
+			margin-left : 5px;
+			padding-top : 2px;
+			width : 45px;
+			line-height : 20px;
+			background-color : #0056ac;
+			color : #fff;
+			text-align : center;
+		}
+
+		.slide_textbox h2 {
+			font-weight : 500;
+			font-size : 3vw;
+			margin-top : 15px;
+		}
+
+		.slide_textbox h3 {
+			font-weight : 400;
+			font-size : 2vw;
+			margin-top : 30px;
+		}
+
+		.slide_textbox p {
+			font-weight : 300;
+			margin-top : 10px;
+		}
+
+		#list_section1 {
+			width : 100%;
+			padding-top : 80px;
+		}
+
+		#list_section1 li img {
+			width : 100%;
+			max-width : 2000px;
+		}
+
+		#list_section1 li {
+			width : 25vw;
+			height : 60vw;
+			margin : 3.8vw;
+		}
+
+		#list_section1 h3 {
+			font-size : 18px;
+			width : 25vw;
+		}
+
+		#list_section1 h4 {
+			font-size : 15px;
+			width : 25vw;
+			max-width : 2000px;
+		}
+
+		#list_section2 {
+			width : 100%;
+			height : 160vw;
+			margin-top : 70px;
+		}
+
+		#list_section2 li img {
+			width : 100%;
+			max-width : 2000px;
+		}
+
+		#list_section2 li:nth-child(1) {
+			width : 45vw;
+			left : 50px;
+			top : 5vw;
+		}
+
+		#list_section2 li:nth-child(2) {
+			width : 27vw;
+			right : 50px;
+			top : 20vw;
+		}
+
+		#list_section2 li:nth-child(3) {
+			width : 30vw;
+			left : 50px;
+			top : 60vw;
+		}
+
+		#list_section2 li:nth-child(4) {
+			width : 45vw;
+			right : 50px;
+			top : 95vw;
+		}
+
+		#list_section2 h3 {
+			font-size : 18px;
+			width : 95%;
+		}
+
+		#list_section2 h4 {
+			font-size : 15px;
+			width : 99%;
+			max-width : 2000px;
+		}
+
+		#sns_box {
+			width : 680px;
+		}
+
+		#sns {
+			width : 630px;
+		}
+
+		#sns > ul {
+			width : 5250px;
+		}
+
+		#sns > ul > li {
+			margin : 5px;
+		}
+
+		#sns > h2 {
+			font-size : 35px;
+		}
+
+		#sns > h3 {
+			font-size : 15px;
+		}
+
+		#sns_bt_left {
+			top : 170px;
+			left : -15px;
+		}
+
+		#sns_bt_right {
+			top : 170px;
+			right : -15px;
+		}
+
+		#footerbox {
+			display : none;
+		}
+
+		#footerbox2 {
+			display : block;
+			font-size : 13px;
+		}
+	}
+/*태블릿 버전 끝*/
+
+/*PC버전 시작*/
+	@media all and (min-width: 1220px) {
+		body {
+			background-color : #fff;
+		}
+
+		#logo {
+			width : 130px;
+			height : 22px;
+			margin-top : 17px;
+			margin-left : 50px;
+		}
+
+		#menu {
+			display : block;
+		}
+
+		#menu li {
+			padding : 0 18px;
+		}
+
+		#icon li:nth-child(1), #icon li:nth-child(2) {
+			display : block;
+		}
+
+		#icon {
+			margin-right : 50px;
+		}
+
+		#hidden_menu_bt {
+			float : right;
+			margin-top : 20px;
+			margin-right : 20px;
+			display : none;
+		}
+
+		#best_box {
+			width : 1200px;
+		}
+
+		#slide {
+			width : 100%;
+			height : 790px;
+			background-size : cover;
+			position : relative;
+			margin : auto;
+			overflow : hidden;
+		}
+
+		#slide_box {
+			width : 600%;
+			height : 790px;
+			position : absolute;
+		}
+
+		#slide_box li {
+			width : 16.666666%;
+			height : 790px;
+			float : left;
+			position : relative;
+			overflow : hidden;
+		}
+
+		#slide_box li:nth-child(1) {
+			background : url(images/slide1.jpg) center no-repeat #fff;
+		}
+
+		#slide_box li:nth-child(2) {
+			background : url(images/slide2.png) center no-repeat #fff;
+		}
+
+		#slide_box li:nth-child(3) {
+			background : url(images/slide3.png) center no-repeat #fff;
+		}
+
+		#slide_box li:nth-child(4) {
+			width : 16.666666%;
+			position : relative;
+		}
+
+		#video1 {
+			width : 1920px;
+			display : block;
+		}
+
+		#video2 {
+			display : none;
+		}
+
+		#slide_box li:nth-child(5) {
+			background : url(images/slide5.png) center no-repeat #fff;
+		}
+
+		#slide_box li:nth-child(6) {
+			background : url(images/slide1.jpg) center no-repeat #fff;
+		}
+
+		.slide_textbox {
+			width : 400px;
+			height : 200px;
+			position : absolute;
+			left : 100px;
+			top : 0;
+			bottom : 0;
+			margin : auto;
+			text-align : left;
+		}
+
+		.slide_textbox h5 {
+			font-size : 15px;
+			margin-left : 5px;
+			padding-top : 2px;
+			width : 45px;
+			line-height : 20px;
+			background-color : #0056ac;
+			color : #fff;
+			text-align : center;
+		}
+
+		.slide_textbox h2 {
+			font-weight : 500;
+			font-size : 45px;
+			margin-top : 15px;
+		}
+
+		.slide_textbox h3 {
+			font-weight : 400;
+			font-size : 20px;
+			margin-top : 30px;
+		}
+
+		.slide_textbox p {
+			font-weight : 300;
+			margin-top : 10px;
+		}
+
+		#list_section1 {
+			width : 1221px;
+		}
+
+		#list_section1 li img {
+			width : 323px;
+		}
+
+		#list_section1 li {
+			width : 323px;
+			height : 800px;
+			margin : 42px;
+		}
+
+		#list_section1 h3 {
+			font-size : 18px;
+			width : 323px;
+		}
+
+		#list_section1 h4 {
+			font-size : 15px;
+			width : 323px;
+		}
+
+		#list_section2 {
+			width : 1221px;
+			height : 2000px;
+		}
+
+		#list_section2 li:nth-child(1) {
+			width : 630px;
+			left : 35px;
+			top : 10px;
+		}
+
+		#list_section2 li:nth-child(2) {
+			width : 400px;
+			right : 35px;
+			top : 150px;
+		}
+
+		#list_section2 li:nth-child(3) {
+			width : 420px;
+			left : 35px;
+			top : 800px;
+		}
+
+		#list_section2 li:nth-child(4) {
+			width : 600px;
+			right : 35px;
+			top : 1200px;
+		}
+
+		#list_section2 h3 {
+			font-size : 18px;
+			width : 17vw;
+		}
+
+		#list_section2 h4 {
+			font-size : 15px;
+			width : 30vw;
+		}
+
+		#sns_box {
+			width : 1100px;
+		}
+
+		#sns {
+			width : 1050px;
+		}
+
+		#sns > ul {
+			width : 5250px;
+		}
+
+		#sns > ul > li {
+			margin : 5px;
+		}
+
+		#sns > h2 {
+			font-size : 45px;
+		}
+
+		#sns > h3 {
+			font-size : 17px;
+		}
+
+		#sns_bt_left {
+			top : 170px;
+			left : -10px;
+		}
+
+		#sns_bt_right {
+			top : 170px;
+			right : -10px;
+		}
+
+		#footerbox {
+			display : block;
+		}
+
+		#footerbox2 {
+			display : none;
+		}
+
+		#line_u {
+			padding-left : 6vw;
+		}
+
+		#footersns {
+			padding-right : 8vw;
+		}
+
+		#line_d p {
+			padding-left : 7vw;
+		}
+
+		#line_d img {
+			padding-right : 8vw;
+		}
+		.w3c {
+			background-color: #fff;	
+			text-align: center;
+			padding-left: 0;
+		}
+	}
+/*PC버전 끝*/
+</style></head><body>
+<!--  <h1 id="scroll_text">0</h1> -->
+<!--  <h2 id="section1_start">0</h2>	 -->
+  <header>
+   	<h1 id="logo"><img src="laneige-logo.svg" alt="라네즈 로고"></h1>
+  	<ul id="menu">
+		<li>브랜드
+		<div class="sub_menu_box">
+			<ul class="sub_menu">
+				<li>브랜드 스토리</li>
+				<li>브랜드 캐릭터</li>
+				<li>레스큐 월터 캠페인</li>
+				<li>루미너스 라이브</li>
+				<li>플레그십 스토어</li>
+			</ul>
+		</div>			
+<div class="line"></div>
+		</li>
+		<li>베스트 & 신상품
+		<div class="sub_menu_box">
+			<ul class="sub_menu">
+				<li>신상품</li>
+				<li>어워드 위너</li>
+				<li>베스트 셀러</li>
+			</ul>
+		</div>			
+		<div class="line"></div>
+		</li>
+		<li>스킨케어
+		<div class="sub_menu_box">
+		<ul class="sub_menu">
+			<li>유형별</li>
+			<li>고민별</li>
+			<li>라인별</li>
+			<li>전체보기</li>
+		</ul>
+		</div>
+		<div class="line"></div>
+		</li>
+		<li>메이크업
+		<div class="sub_menu_box">
+		<ul class="sub_menu">
+			<li>페이스</li>
+			<li>아이</li>
+			<li>립</li>
+			<li>전체보기</li>
+		</ul>
+		</div>
+		<div class="line"></div>
+		</li>
+		<li>옴므
+		<div class="sub_menu_box">
+		<ul class="sub_menu">
+			<li>유형별</li>
+			<li>고민별</li>
+			<li>라인별</li>
+			<li>전체보기</li>
+		</ul>
+		</div>
+		<div class="line"></div>
+		</li>
+		<li>이벤트
+		
+		<div class="line"></div>
+		</li>
+	</ul>
+	<img src="icons/hidden_menu_bt.png" alt="메뉴 리스트 아이콘" id="hidden_menu_bt">
+  	<ul id="icon">
+		<li><img src="icons/l1.png" alt="마이페이지 아이콘"></li>
+		<li><img src="icons/l2.png" alt="지도 아이콘"></li>
+		<li><img src="icons/l3.png" alt="검색 아이콘"></li>	
+	</ul>
+  </header>
+<!-- slide 1 영역시작 -->
+<div id="slide">
+	<ul id="slide_box">
+		<li>
+			<div class="slide_textbox">
+				<h5>NEW</h5>
+				<h2>워터 슬리핑 마스크 </h2>
+				<h3>푹 잔 듯 생기있는 피부로</h3>
+				<p>#수분 생기 수면팩</p>		
+			</div>
+		</li>
+		<li>
+			<div class="slide_textbox">
+				<h5>NEW</h5>
+				<h2>PHYTO-ALEXIN</h2>
+				<h3>도시형 민감 피부를 위한 솔루션!</h3>
+				<p>#진정해보라</p>		
+			</div>			
+		</li>
+		<li></li>
+		<li><video src="images/slide4.mp4" id="video1" autoplay loop muted></video>
+		<video src="images/perfect-renew-youth-regenerator-mainkv_mo.mp4" id="video2" autoplay loop muted></video></li>
+<!-- 		<li><video src="images/perfect-renew-youth-regenerator-mainkv_mo.mp4"></video></li> -->
+		<li>
+			<div class="slide_textbox">
+				<h2>RESCUE WALTER CAMPAIGN</h2>
+				<h3>월터 앤 프렌즈와 함께 지구의 물을 지킬 수 있습니다.</h3>
+				<p>#레스큐월터</p>		
+			</div>						
+		</li>
+		<li>
+			<div class="slide_textbox">
+				<h5>NEW</h5>
+				<h2>HOLIDAY EDITION</h2>
+				<h3>설렘 가득한 홀리데이 시즌을 만끽하세요!</h3>
+				<p>#홀리데이_에디션</p>		
+			</div>
+		</li>
+	</ul>
+	<div id="slide_btbox">
+		<img src="icons/prev.png" alt="슬라이드 이전 버튼" id="slide_leftbt">
+		<img src="icons/stop.png" alt="슬라이드 멈춤 버튼" id="slide_pausebt">
+		<img src="icons/st.png" alt="슬라이드 재생 버튼" id="slide_startbt">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<img src="icons/next.png" alt="슬라이드 다음 버튼" id="slide_rightbt">
+	</div>
+</div>
+<!-- section2 영역시작 -->
+<div id="best">
+	<div id="best_bg">
+		<video src="images/bestseller-bg.mp4" autoplay loop muted></video>		
+	</div>
+
+
+	<h2>BEST SELLER</h2>
+
+	<div id="best_box">
+		<ul>
+			<li>
+				<img src="images/20200325_final_product_cream-skin_pc.png" alt="크림 스킨 이미지" class="best_img1">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>CREAM SKIN REFINER</h2>
+				<h3>크림 스킨</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>스킨인데 뛰어난 보습지속력과, 산뜻한<br>사용감으로 이만한 스킨은 없는 것<br>같아요</h5>
+				<p>@rabb*********</p>
+			</li>
+			<li>
+				<img src="images/bestseller-1.png" alt="워터 슬리핑 마스크 이미지" class="best_img">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>WATER SLEEPING MASK</h2>
+				<h3>워터 슬리핑 마스크</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>수분감 충만한 슬리핑팩! 밤에 듬뿍<br>바르고 자고 일어나면 아침에 화장이<br>매우 잘먹는다</h5>
+				<p>@heat********</p>
+			</li>
+			<li>
+				<img src="images/bestseller-2.png" alt="스킨 베일 베이스 이미지" class="best_img1">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>SKIN VEIL BASE</h2>
+				<h3>스킨 베일 베이스</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>피부 색이 탁해서 베이스를 무조건<br>깔아줘야하는 피부였는데 이거<br>쓰고나서 정착했어요</h5>
+				<p>@dpql**********</p>
+			</li>
+<!--  -->
+			<li>
+				<img src="images/bestseller-6.png" alt="네오 쿠션 이미지" class="best_img">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>NEO CUSHION</h2>
+				<h3>네오 쿠션</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>마스크때문에 매트한 쿠션 샀는데 지금까지 썼던 <br> 쿠션 중에 제일 마무리감이 좋았어요.</h5>
+				<p>@euns********</p>
+			</li>
+			<li>
+				<img src="images/bestseller-4.png" alt="립 슬리핑 마스크 이미지" class="best_img">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>LIP SLEEPING MASK</h2>
+				<h3>립 슬리핑 마스크</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>자기전 딱 바르고 나면 다음 날 입술<br>컨디션이 넘넘 좋아져서 요즘 매일 사용<br>하고 있어요</h5>
+				<p>@heat********</p>
+			</li>
+			<li>
+				<img src="images/bestseller-7.png" alt="래디언-C크림 이미지" class="best_img">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>RADIAN-C CREAM</h2>
+				<h3>래디언-C 크림</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>벌써 3통째에요! 기미가 고민인 요즘 사용하면<br>피부가 밝아지고 확실히 잡티가 옅어지네요~</h5>
+				<p>@dpql**********</p>
+			</li>
+			<li>
+				<img src="images/20200325_final_product_cream-skin_pc.png" alt="크림 스킨 이미지" class="best_img">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>CREAM SKIN REFINER</h2>
+				<h3>크림 스킨</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>스킨인데 뛰어난 보습지속력과, 산뜻한<br>사용감으로 이만한 스킨은 없는 것<br>같아요</h5>
+				<p>@rabb*********</p>
+			</li>
+			<li>
+				<img src="images/bestseller-1.png" alt="워터 슬리핑 마스크 이미지" class="best_img">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>WATER SLEEPING MASK</h2>
+				<h3>워터 슬리핑 마스크</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>수분감 충만한 슬리핑팩! 밤에 듬뿍<br>바르고 자고 일어나면 아침에 화장이<br>매우 잘먹는다</h5>
+				<p>@heat********</p>
+			</li>
+			<li>
+				<img src="images/bestseller-2.png" alt="스킨 베일 베이스 이미지" class="best_img">
+				<img src="icons/pickme.png" alt="픽미 텍스트 이미지" class="pickme">
+				<h2>SKIN VEIL BASE</h2>
+				<h3>스킨 베일 베이스</h3>
+				<h4><img src="icons/Ek1.png" alt="따옴표 이미지"></h4>
+				<h5>피부 색이 탁해서 베이스를 무조건<br>깔아줘야하는 피부였는데 이거<br>쓰고나서 정착했어요</h5>
+				<p>@dpql**********</p>
+			</li>
+		</ul>
+		<img src="icons/prev.png" alt="이전 버튼" id="best_leftbt">
+		<img src="icons/next.png" alt="다음 버튼" id="best_rightbt">
+
+	</div>
+</div>
+<!-- list_section1 영역 시작 -->
+<div id="list_section">
+<!-- <div id="list_section_bg"></div> -->
+<!-- <img src="icons/luminous-gradient-color.png" alt="" id="list_section_mark"> -->
+<ul id="list_section1">
+	<li id="list1">
+		<h2>BRAND STORY</h2>
+		<img src="images/feature-a-0.jpg" alt="루미너스 뷰티 이미지">
+		<h3>루미너스 뷰티</h3>
+		<h4>수분 가득 맑고 건강하게 빛나는 아름다움, 루미너스 뷰티</h4>
+	</li>
+	<li id="list2">
+		<h2>NEW ARRIVALS</h2>
+		<img src="images/20200903_final_perfect-renew-youth-regenerator_new-arrivals.png" alt="퍼펙트리뉴 유스 리제너레이터 이미지">
+		<h3>퍼펙트리뉴 유스 리제너레이터</h3>
+		<h4>초기 피부 노화 징후 5가지를 7일만에 개선해주는 토탈 안티에이징</h4>
+	</li>
+	<li id="list3">
+		<h2>AWARD WINNER</h2>
+		<img src="images/feature-a-2.jpg" alt="워터 슬리핑 마스크 이미지">
+		<h3>워터 슬리핑 마스크</h3>
+		<h4>2019 글로우픽 컨슈머 뷰티어워드 수면팩 부문 1위</h4>
+	</li>
+</ul>
+<!-- section2 영역시작 -->
+<ul id="list_section2">
+	<li>
+		<h2>AWARD WINNER</h2>
+		<img src="images/feature-b-0.jpg" alt="스테인드 글로우 립밤 이미지">
+		<h3>스테인드 글로우 립밤</h3>
+		<h4>2019 상반기 언파 뷰티리뷰위너스 립밤 부문 1위</h4>
+	</li>
+	<li>
+		<h2>FLAGSHIP STORE</h2>
+		<img src="images/feature-b-1.jpg" alt="립 슬리핑 마스크 이미지">
+		<h3>MY DELICIOUS THERAPY</h3>
+		<h4>세상에 하나뿐인 나만의 '립 슬리핑 마스크'를 만들어 보세요!</h4>
+	</li>
+	<li>
+		<h2>BEST SELLER</h2>		
+		<img src="images/200103-feature-b-2.jpg" alt="레이어링 립 바 이미지">
+		<h3>레이어링 립 바</h3>
+		<h4>한 번의 터치로, 리얼 볼륨 그라데이션을 완성하세요.</h4>
+	</li>
+	<li>
+		<h2>CAMPAIGN</h2>
+		<img src="images/feature-b-3.jpg" alt="레스큐 윌터 캠페인 이미지">
+		<h3>레스큐 월터 캠페인</h3>
+		<h4>라네즈는 물을 지키고, 깨끗하게 하는 일을 함께합니다.</h4>
+	</li>
+</ul>
+</div>
+<!-- sns 영역시작 -->
+<div id="sns_box">
+<div id="sns">
+	<h2>#LUMINOUS LIVE</h2>
+	<h3>SHARE YOUR LUMINOUS MOMENTS WITH LANEIGE!</h3>
+	<ul>
+		<li><img src="images/1.jpg" alt="인스타그램 이미지 1" class="sns_img"><div class="sns_textbox">
+		<h5>bettybeautyau</h5>
+		<p>Good morning! In case you did whatttt</p></div></li>
+		<li><img src="images/2.jpg" alt="인스타그램 이미지 2" class="sns_img"><div class="sns_textbox">		
+		<h5>@chaesooo</h5>
+		<p>#유료광고 라네즈 #피토알렉신 에센스ㄹㄹㄹㄹ</p></div></li>
+		<li><img src="images/3.jpg" alt="인스타그램 이미지 3" class="sns_img"><div class="sns_textbox">		
+		<h5>@saes_saem</h5>
+		<p>PHYTO-ALEXIN 피토알렉신 처돌이ㄹㄹㄹ</p></div></li>
+		<li><img src="images/4.jpg" alt="인스타그램 이미지 4" class="sns_img"><div class="sns_textbox">		
+		<h5>@ooll2s</h5>
+		<p>#제품협찬 라네즈 피토알렉신 오아ㅗ앙</p></div></li>
+		<li><img src="images/5.jpg" alt="인스타그램 이미지 5" class="sns_img"><div class="sns_textbox">
+		<h5>@floye_e</h5>
+		<p>#라네즈스테이 비스포크 #크림협찬ㄹㄹㄹ</p></div></li>	
+		<li><img src="images/6.jpg" alt="인스타그램 이미지 6" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에라ㅓ니아러</p></div></li>
+		<li><img src="images/7.jpg" alt="인스타그램 이미지 7" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에라ㅓ니아러</p></div></li>
+		<li><img src="images/8.jpg" alt="인스타그램 이미지 8" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에라ㅓ니아러</p></div></li>
+		<li><img src="images/9.jpg" alt="인스타그램 이미지 9" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>#제품협찬 라네즈 피토알렉신 오아ㅗ앙</p></div></li>
+		<li><img src="images/10.jpg" alt="인스타그램 이미지 10" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에라ㅓ니아러</p></div></li>
+		<li><img src="images/11.jpg" alt="인스타그램 이미지 11" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>Good morning! In case you did whatttt</p></div></li>
+		<li><img src="images/12.jpg" alt="인스타그램 이미지 12" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>#제품협찬 라네즈 피토알렉신 오아ㅗ앙</p></div></li>
+		<li><img src="images/13.jpg" alt="인스타그램 이미지 13" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>Good morning! In case you did whatttt</p></div></li>
+		<li><img src="images/14.jpg" alt="인스타그램 이미지 14" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에ㅇ라ㅓ니아러</p></div></li>
+		<li><img src="images/15.jpg" alt="인스타그램 이미지 15" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에ㅇ라ㅓ니아러</p></div></li>
+		<li><img src="images/16.jpg" alt="인스타그램 이미지 16" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에라ㅓ니아러</p></div></li>
+		<li><img src="images/17.jpg" alt="인스타그램 이미지 17" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에ㅇ라ㅓ니아러</p></div></li>
+		<li><img src="images/18.jpg" alt="인스타그램 이미지 18" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>환절기엔 글로우타입과 매트한 에ㅇ라ㅓ니아러</p></div></li>
+		<li><img src="images/19.jpg" alt="인스타그램 이미지 19" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>Good morning! In case you did whatttt</p></div></li>
+		<li><img src="images/20.jpg" alt="인스타그램 이미지 20" class="sns_img"><div class="sns_textbox">
+		<h5>@rabbit.chu</h5>
+		<p>#제품협찬 라네즈 피토알렉신 오아ㅗ앙</p></div></li>
+		<li><img src="images/1.jpg" alt="인스타그램 이미지 21" class="sns_img"><div class="sns_textbox">
+		<h5>bettybeautyau</h5>
+		<p>Good morning! In case you did whatttt</p></div></li>
+		<li><img src="images/2.jpg" alt="인스타그램 이미지 22" class="sns_img"><div class="sns_textbox">		
+		<h5>@chaesooo</h5>
+		<p>#유료광고 라네즈 #피토알렉신 에센스ㄹㄹㄹㄹ</p></div></li>
+		<li><img src="images/3.jpg" alt="인스타그램 이미지 23" class="sns_img"><div class="sns_textbox">		
+		<h5>@saes_saem</h5>
+		<p>PHYTO-ALEXIN 피토알렉신 처돌이ㄹㄹㄹ</p></div></li>
+		<li><img src="images/4.jpg" alt="인스타그램 이미지 24" class="sns_img"><div class="sns_textbox">		
+		<h5>@ooll2s</h5>
+		<p>#제품협찬 라네즈 피토알렉신 오아ㅗ앙</p></div></li>
+		<li><img src="images/5.jpg" alt="인스타그램 이미지 25" class="sns_img"><div class="sns_textbox">
+		<h5>@floye_e</h5>
+		<p>#라네즈스테이 비스포크 #크림협찬ㄹㄹㄹ</p></div></li>	
+		</ul>
+
+</div>
+		<img src="icons/prev_b.png" alt="sns 이전 버튼" id="sns_bt_left">
+		<img src="icons/next_b.png" alt="sns 다음 버튼" id="sns_bt_right">
+		<button id="sns_bt_more">View More</button>
+</div>
+<!-- footer 영역시작 -->
+<div id="footerbox2">
+	<p><strong>&copy; AMOREPACIFIC </strong>ALL RIGHTS RESERVED.</p>
+</div>
+ <div id="footerbox">
+ 	<div id="line_u">
+		<ul>
+			<li>회사소개</li>
+			<li>서비스이용약관</li>
+			<li>UGC 이용약관</li>
+			<li><b>개인정보처리방침</b></li>
+			<li>영상정보처리방침</li>
+			<li>뷰티포인트</li>
+			<li>사이트맵</li>
+			<li>공지사항</li>
+		</ul>
+		<div id="footersns">
+		<img src="icons/sns_instagram_renew.png" alt="인스타그램 아이콘" >
+		<img src="icons/sns_facebook_renew.png" alt="페이스북 아이콘">
+		<img src="icons/sns_youtube_renew.png" alt="유튜브 아이콘" >
+		</div>
+	</div>
+ 	<div id="line_d">
+		<p>고객상담실 (수신자요금부담) 080-023-5454 | 운영시간 : 월-금 09:00 ~ 18:00<br><br>
+		© <b>AMOREPACIFIC</b> CORPORATION. ALL RIGHTS RESERVED.</p>
+		<img src="icons/wa-mark.png" alt="워터마크 이미지">
+	</div>
+ </div>
+
+ <div id="loading"><img src="icons/luminous-gradient-color.png" alt="로딩 이미지" id="loading_img"></div> 
+
+<div class="w3c">
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+		<img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="올바른 CSS입니다!" />
+		  </a>
+		<!-- css 검사완료 코드 -->
+		<a href="http://validator.kldp.org/check?uri=referer"
+		  onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))" target="_blank"><img
+		  src="http://validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80" ></a>
+		<!-- html 검사완료 코드 -->
+	
+</div>
+
+ </body>
+</html>

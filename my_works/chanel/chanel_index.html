@@ -1,0 +1,1668 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<title>Fashion shows, Ready-to-wear and Accessories collections - CHANEL</title>
+ <link rel="shortcut icon" href="icons/clipart60901.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+		$('#hidden_menu>li:first-child').click(function(){
+			$('#left_menu_bg').show()
+			$('#left_menu').animate({'left':'0'},300)
+		})
+		$('#left_menu_close').click(function(){
+			$('#left_menu_bg').hide()
+			$('#left_menu').animate({'left':'-84%'},300)
+		})
+	  $('#starter_close').click(function(){
+		$('#starter_bg').hide()
+	  })
+
+		$('#left_footer>li').click(function(){
+			$('#language_popup_box').show()
+		})
+		$('#close_bt').click(function(){
+			$('#language_popup_box').hide()
+		})
+
+	if( $(window).width() < 768 ){ //모바일상태
+		$('#hidden_menu>li:first-child').click(function(){
+			$('#left_menu_bg').show()
+			$('#left_menu').animate({'left':'0'},300)
+		})
+		$('#left_menu_close').click(function(){
+			$('#left_menu_bg').hide()
+			$('#left_menu').animate({'left':'-84%'},300)
+		})
+		$('.last_section_hidden_box').hide()
+		}
+	else{ //태블릿pc상태
+		$('.last_section_hidden_box').show()
+		}
+	//.last_section_hidden_box가 모바일에서는 꺼지고 pc에서 켜지는 미디어쿼리 css는 미디어쿼리에서 할당되어있다. 그러나 slideToggle명령에 의해서 미디어쿼리에 영향을 받지 않는 스크립트가 추가되기때문에 해당 slideToggle를 제어할(초기화)스크립트가 필요하다.
+	resize = 0; resize_pc = 0;
+	$(window).resize(function(){//화면크기가 변경되면 수행하시오
+		if( $(window).width() < 768){ //모바일 상태
+			resize_pc = 0
+			resize = resize +1;
+				if(resize ==1){ //한번만 발생
+					$('.last_section_hidden_box').hide()
+				}
+		}
+		else{ //태블릭 pc상태
+			$('.last_section_hidden_box').show()
+			resize = 0;
+			resize_pc = resize_pc + 1;
+			if(resize_pc ==1 ){
+				$('.last_section_hidden_box').hide()
+			}
+		}
+	})
+	$('#last_section ul li h3').click(function(){
+		$(this).siblings('.last_section_hidden_box').slideToggle()
+	})
+	//inputbox를 클릭하면 #inputbox h6가 위로 올라오고, inputbox 아닌곳을 클릭하면 h6가 내려가라
+	//focusin 활성화되면(클릭,탭) focusout 활성화되지 않으면
+	$('#inputbox').focusin(function(){//클릭
+		$('#inputbox h6').animate({'top':-20},300)
+		$('#inputbox_line').animate({'width':'100%'},300)
+	})
+	$('#inputbox').focusout(function(){//다른곳 클릭
+		$('#inputbox h6').animate({'top':15},300)
+		$('#inputbox_line').animate({'width':'0'})
+	})
+});
+</script>
+<style>
+	* {
+		margin : 0;
+		padding : 0;
+		list-style : none;
+		font-family : 'Overpass', sans-serif;
+	}
+
+	a {
+		color : inherit;
+		text-decoration : none;
+	}
+
+	.w3c{
+		text-align: center;
+	}
+
+	header {
+		width : 100%;
+		height : 132px;
+		border-top : 7px solid #000;
+		text-align : center;
+		font-size : 14px;
+		font-weight : 600;
+		letter-spacing : 1px;
+		margin : auto;
+		text-align : center;
+	}
+
+	#header1 {
+		width : 100%;
+		height : 67px;
+		position : fixed;
+		z-index : 999;
+		background-color : #fff;
+		top : 0;
+		border-top : 7px solid #000;
+	}
+
+	#logo {
+		width : 180px;
+		height : 50px;
+		margin : auto;
+		padding-top : 12px;
+	}
+
+	#logo img {
+		width : 100%;
+		cursor : pointer;
+	}
+
+	#icon_menu {
+		float : right;
+		position : absolute;
+		right : 30px;
+		top : 30px;
+	}
+
+	#icon_menu li {
+		display : inline-block;
+		float : left;
+		margin-left : 15px;
+		cursor : pointer;
+	}
+
+	#hidden_menu {
+		float : left;
+		margin-left : 10px;
+		margin-top : 20px;
+	}
+
+	#hidden_menu li {
+		display : inline-block;
+		float : left;
+		margin-left : 10px;
+		cursor : pointer;
+	}
+
+	#header2 {
+		width : 100%;
+		height : 44px;
+		line-height : 44px;
+		padding-top : 65px;
+	}
+
+	#header2 li {
+		display : inline-block;
+		margin-right : 20px;
+		cursor : pointer;
+	}
+
+	#main {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1603297275686-homemodehv4desktop.jpg) center 0 no-repeat;
+		background-size : cover;
+		margin-top : 35px;
+		position : relative;
+	}
+
+	#section1 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1607016328902-hpmodehv4desktop.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section2 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1585901889255-hpmodedesktop.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section3 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1596125007502-hpfashionhv4desktopcopy.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section4 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1602001386456-hpmodehv4desktop.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section5 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1601545062198-gallierapushhpmodedesktop350px.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section6 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1600072169180-homemodedesktoppushnews2deauville.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section7 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1594223543072-20aibhpfashionhv4desktop.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section8 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1594046515190-hpfashionhv4desktop.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section9 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1584347434962-eyewearss20pushhomemodeimagefixedesktop.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	#section10 {
+		width : 100%;
+		height : 655px;
+		background : url(images/FSH-1574945612223-new2homemodedesktopx2.jpg) center 0 no-repeat #fff;
+		background-size : cover;
+		position : relative;
+	}
+
+	.main_textbox {
+		width : 100%;
+		position : absolute;
+		bottom : 10%;
+		text-align : center;
+		text-transform : uppercase;
+		letter-spacing : 1px;
+	}
+
+	.main_textbox h3 {
+		font-size : 11px;
+		color : #fff;
+		font-weight : 700;
+		text-shadow : 1px 1px 0 #333;
+	}
+
+	.main_textbox h2 {
+		font-size : 20px;
+		color : #fff;
+		font-weight : 400;
+		margin-top : 7px;
+		text-shadow : 1px 1px 0 #333;
+	}
+
+	.main_textbox button {
+		width : 100px;
+		line-height : 35px;
+		font-size : 11px;
+		font-weight : 600;
+		background-color : #fff;
+		border : none;
+		margin-top : 15px;
+		transition : 0.5s;
+		cursor : pointer;
+		text-transform : uppercase;
+	}
+
+	.main_textbox button:hover {
+		width : 100px;
+		line-height : 35px;
+		font-size : 11px;
+		font-weight : 600;
+		background-color : rgba(255, 255, 255, 0.5);
+		border : none;
+		margin-top : 15px;
+	}
+
+	#section1 .main_textbox button {
+		border : #fff solid 1px;
+		background-color : transparent;
+		color : #fff;
+	}
+
+	#section2 .main_textbox h3 {
+		color : #000;
+		text-shadow : none;
+	}
+
+	#section2 .main_textbox h2 {
+		color : #000;
+		text-shadow : none;
+	}
+
+	#section9 .main_textbox h3 {
+		color : #000;
+		text-shadow : none;
+	}
+
+	#section9 .main_textbox h2 {
+		color : #000;
+		text-shadow : none;
+	}
+
+	#section2 .main_textbox button {
+		border : #000 solid 1px;
+		color : #000;
+	}
+
+	#last_section ul {
+		overflow : hidden;
+		padding : 50px 0;
+		background-color : #fff;
+	}
+
+	#last_section ul li {
+		width : 35%;
+		float : left;
+		margin-left : 10%;
+		margin-right : 5%;
+		text-align : center;
+	}
+
+	#last_section h3 {
+		font-size : 12px;
+		font-weight : 600;
+		line-height : 40px;
+	}
+
+	#last_section p {
+		font-size : 14px;
+		font-weight : 300;
+		line-height : 18px;
+		margin-top : 10px;
+	}
+
+	#last_section h4 {
+		cursor : pointer;
+		font-size : 12px;
+		font-weight : 600;
+		line-height : 12px;
+		width : 80px;
+		text-align : left;
+		margin-top : 40px;
+		margin-bottom : 10px;
+	}
+
+	#last_section h4 span {
+		float : right;
+		margin-right : 15px;
+		transition : 0.4s;
+		cursor : pointer;
+	}
+
+	#last_section h4:hover span {
+		margin-right : 0;
+	}
+
+	#last_section ul li h3 span {
+		float : right;
+		cursor : pointer;
+	}
+
+	#inputbox {
+		margin-top : 20px;
+		width : 100%;
+		height : 40px;
+		position : relative;
+	}
+
+	#inputbox h6 {
+		position : absolute;
+		left : 0;
+		top : 15px;
+		font-size : 10px;
+		color : #999;
+	}
+
+	#inputbox_line {
+		width : 0%;
+		height : 2px;
+		background-color : #000;
+		position : absolute;
+		left : 0;
+		bottom : 0;
+	}
+
+	#inputbox input {
+		float : left;
+		width : 80%;
+		height : 40px;
+		border : none;
+		position : relative;
+		outline : none;
+		background : transparent;
+	}
+
+	#zoom {
+		float : right;
+		margin-top : 8px;
+	}
+
+	#last_section {
+		margin-bottom : 800px;
+	}
+
+	#last_section_footer {
+		width : 100%;
+		border-top : 1px solid #ececec;
+		background-color : #fff;
+	}
+
+	#last_section_footer_img {
+		width : 84%;
+		line-height : 52px;
+		padding-left : 130px;
+		box-sizing : border-box;
+		background : url(icons/last_section_footer_logo.jpg) 10px 0 no-repeat;
+		font-size : 14px;
+		color : #767676;
+		margin : auto;
+	}
+
+	footer {
+		width : 100%;
+		height : 800px;
+		background-color : #000;
+		color : #fff;
+		text-align : center;
+		position : fixed;
+		bottom : 0;
+		z-index : -9;
+		padding-bottom : 50px;
+	}
+
+	#footer_menu {
+		width : 80%;
+		margin : auto;
+		text-align : left;
+	}
+
+	#footer_menu ul {
+		float : left;
+		width : 28%;
+		margin : 0.5%;
+		display : inline-block;
+		vertical-align : top;
+		margin-top : 150px;
+		text-align : left;
+	}
+
+	#footer_menu ul:last-child {
+		width : 13%;
+		margin : 0;
+		margin-top : 150px;
+	}
+
+	#footer_menu h2 {
+		font-size : 16px;
+		font-weight : 600;
+		color : #fff;
+		margin-top : 0;
+		display : inline-block;
+	}
+
+	#footer_menu ul li {
+		font-size : 15px;
+		font-weight : 300;
+		line-height : 30px;
+		color : #9b9b9b;
+		cursor : pointer;
+		transition : 0.5s;
+	}
+
+	#footer_menu ul li:hover {
+		color : #4e4e4e;
+	}
+
+	#chanel_logo {
+		margin : auto;
+		display : block;
+		text-align : center;
+		padding-top : 260px;
+	}
+
+	#footer_menu2 {
+		width : 80%;
+		display : inline-block;
+		border-top : 1px solid #333;
+		margin-top : 40px;
+	}
+
+	#left_footer {
+		float : left;
+		margin-left : 0;
+		margin-top : 15px;
+		font-size : 14px;
+	}
+
+	.left_footer_languages {
+		font-size : 14px;
+		color : #9b9b9b;
+		font-weight : 300;
+	}
+
+	#left_footer li {
+		transition : 0.5s;
+		cursor : pointer;
+	}
+
+	#left_footer li:hover {
+		color : #9b9b9b;
+	}
+
+	#right_footer {
+		float : right;
+		margin-top : 15px;
+	}
+
+	#right_footer li {
+		display : inline-block;
+	}
+
+	#right_footer li img {
+		width : 20px;
+		height : 20px;
+		cursor : pointer;
+	}
+
+	#language_popup_box {
+		width : 100%;
+		height : 100%;
+		background-color : rgba(0, 0, 0, 0.4);
+		position : fixed;
+		left : 0;
+		top : 0;
+		z-index : 9999;
+		display : none;
+	}
+
+	#language_popup {
+		width : 476px;
+		height : 382px;
+		text-align : center;
+		background-color : #fff;
+		position : absolute;
+		left : 0;
+		bottom : 0;
+		right : 0;
+		top : 0;
+		margin : auto;
+	}
+
+	#close_bt {
+		position : absolute;
+		right : 20px;
+		top : 20px;
+		cursor : pointer;
+	}
+
+	#language_popup h2 {
+		font-size : 16px;
+		font-weight : 900;
+		color : #1d1d1d;
+		text-transform : uppercase;
+		margin-top : 50px;
+	}
+
+	#language_popup h3 {
+		font-size : 14px;
+		font-weight : 300;
+		color : #333;
+		margin-top : 25px;
+	}
+
+	#language_popup h4 {
+		font-size : 12px;
+		font-weight : 900;
+		color : #1d1d1d;
+		text-transform : uppercase;
+		margin-top : 40px;
+	}
+
+	#country {
+		width : 270px;
+		background : none;
+		border : none;
+		margin-top : 30px;
+		color : #767676;
+		cursor : pointer;
+	}
+
+	#language_popup button {
+		margin-top : 35px;
+		width : 140px;
+		height : 50px;
+		background-color : #000;
+		color : #fff;
+		font-weight : 900;
+		font-size : 11px;
+		border : none;
+		cursor : pointer;
+	}
+
+	#left_menu_bg {
+		width : 100%;
+		height : 100%;
+		position : fixed;
+		left : 0;
+		top : 0;
+		background-color : rgba(0, 0, 0, 0.5);
+		z-index : 9999;
+		display : none;
+	}
+
+	#left_menu {
+		width : 84%;
+		height : 100%;
+		position : fixed;
+		left : -84%;
+		top : 6px;
+		background-color : #fff;
+		z-index : 99999;
+	}
+
+	#left_menu_top {
+		width : 100%;
+		height : 30px;
+		border-bottom : 1px solid #f6f6f6;
+	}
+
+	#left_menu_top h2 {
+		text-align : center;
+		font-size : 20px;
+		margin-top : 15px;
+		line-height : 20px;
+		letter-spacing : 1px;
+	}
+
+	#left_menu_close {
+		float : right;
+		margin-top : -20px;
+		margin-right : 15px;
+		cursor : pointer;
+	}
+
+	#left_menu_ul {
+		width : 90%;
+		padding-left : 15px;
+		margin-top : 40px;
+		margin-bottom : 10px;
+	}
+
+	#left_menu_ul li {
+		border-bottom : 1px solid #f6f6f6;
+		font-size : 15px;
+		font-weight : 800;
+		line-height : 70px;
+		letter-spacing : 2px;
+		cursor : pointer;
+	}
+
+	#left_menu_ul li:last-child {
+		border : none;
+	}
+
+	#left_menu_ul2 {
+		height : 100%;
+		background-color : #f6f6f6;
+	}
+
+	#left_menu_ul2 li {
+		font-size : 13px;
+		letter-spacing : 2px;
+		line-height : 48px;
+		border-bottom : 1px solid #e3e3e3;
+		padding-left : 15px;
+		cursor : pointer;
+	}
+
+	#left_menu_ul2 li:last-child {
+		border : none;
+	}
+
+	#starter_bg {
+		width : 100%;
+		height : 100%;
+		background-color : rgba(255, 255, 255, 0.6);
+		position : fixed;
+		top : 0;
+		left : 0;
+		z-index : 9999;
+	}
+
+	#starter {
+		width : 777px;
+		height : 160px;
+		background-color : #fff;
+		position : absolute;
+		left : 0;
+		right : 0;
+		margin : auto;
+		top : -400px;
+		bottom : 0;
+		z-index : 99999;
+		border-radius : 10px;
+		text-align : center;
+		letter-spacing : 1px;
+		border : #000 solid 1px;
+	}
+
+	#starter img {
+		float : right;
+		margin-top : 15px;
+		margin-right : 15px;
+		cursor : pointer;
+	}
+
+	#starter h2 {
+		font-size : 16px;
+		color : #000;
+		font-weight : 900;
+		margin-top : 45px;
+	}
+
+	#starter h3 {
+		font-size : 13px;
+		color : #ddd;
+		font-weight : 300;
+		margin-top : 25px;
+	}
+
+	.span {
+		text-decoration : underline;
+	}
+
+	/*미디어쿼리 반응형*/
+
+	/*모바일 버전 시작*/
+	@media all and (min-width: 0px) {
+		header {
+			width : 100%;
+			height : 28px; 
+		}
+
+		#header1 {
+			width : 100%;
+			height : 64px;
+			border-top : 5px solid #000;
+		}
+
+		#logo {
+			width : 100px;
+			height : 25px;
+			margin-top : 5px;
+		}
+
+		#header2 {
+			display : none;
+		}
+
+		#icon_menu li:nth-child(1) {
+			display : none;
+		}
+
+		#icon_menu {
+			/*여백 위치 조정*/
+			margin-right : -5px;
+			top : 23px;
+		}
+
+		#hidden_menu {
+			display : block;
+			margin-top : 23px;
+		}
+
+		#main, #section1, #section2, #section3, #section4, #section5, #section6, #section7, #section8, #section9, #section10 {
+			height : 115vw;
+		}
+
+		.main_textbox h3 {
+			font-size : 16px;
+		}
+
+		.main_textbox h2 {
+			font-size : 26px;
+		}
+
+		#section2 .main_textbox h3 {
+			color : #fff;
+			text-shadow : 1px 1px 0 #333;
+		}
+
+		#section2 .main_textbox h2 {
+			color : #fff;
+			text-shadow : 1px 1px 0 #333;
+		}
+
+		#section9 .main_textbox h3 {
+			color : #fff;
+			text-shadow : 1px 1px 0 #333;
+		}
+
+		#section9 .main_textbox h2 {
+			color : #fff;
+			text-shadow : 1px 1px 0 #333;
+		}
+
+		#section2 .main_textbox button {
+			border : #000 solid 1px;
+			color : #000;
+		}
+
+		#main {
+			background-image : url(images/FSH-1600066366212-homemodehv4mobile180.jpg);
+		}
+
+		#section1 {
+			background-image : url(images/FSH-1607016347928-fashionapp.jpg);
+		}
+
+		#section2 {
+			background-image : url(images/FSH-1585839509148-hpmodemobile.jpg);
+		}
+
+		#section3 {
+			background-image : url(images/FSH-1596124998282-hpfashionhv4mobile.jpg);
+		}
+
+		#section4 {
+			background-image : url(images/FSH-1602001391700-hpmodehv4mobile.jpg);
+		}
+
+		#section5 {
+			background-image : url(images/FSH-1601545106693-gallierapushhpmodemobilehv4370px.jpg);
+		}
+
+		#section6 {
+			background-image : url(images/FSH-1600072171705-homemodemobilepushnews2deauville.jpg);
+		}
+
+		#section7 {
+			background-image : url(images/FSH-1594223544248-20aibhpfashionhv4mobile.jpg);
+		}
+
+		#section8 {
+			background-image : url(images/FSH-1602251912754-homeapp.jpg);
+		}
+
+		#section9 {
+			background-image : url(images/FSH-1584347681030-eyewearss20pushhomemodeimagefixemobile.jpg);
+		}
+
+		#section10 {
+			background-image : url(images/FSH-1574945616014-new2homemodemobilex2.jpg);
+		}
+
+		#last_section ul li {
+			float : none;
+			margin : auto;
+			width : 95%;
+			text-align : left;
+			border-bottom : 1px solid #000;
+		}
+
+		.last_section_hidden_box {
+			display : none;
+		}
+
+		#last_section ul li h3 span {
+			display : inline;
+		}
+
+		footer {
+			width : 100%;
+			height : 800px;
+			background-color : #000;
+			color : #fff;
+			text-align : center;
+		}
+
+		#footer_menu {
+			width : 94%;
+			margin : auto;
+			text-align : left;
+			padding-top : 30px;
+		}
+
+		#footer_menu ul {
+			float : left;
+			width : 100%;
+			display : inline-block;
+			vertical-align : top;
+			margin-top : 22px;
+			text-align : left;
+		}
+
+		#footer_menu ul:last-child {
+			width : 100%;
+			margin-top : 1%;
+		}
+
+		#chanel_logo {
+			display : none;
+		}
+
+		#footer_menu h2 {
+			font-size : 14px;
+			font-weight : 600;
+			color : #fff;
+			margin-top : 0;
+			display : inline-block;
+		}
+
+		#footer_menu ul li {
+			font-size : 14px;
+			font-weight : 300;
+			line-height : 30px;
+			color : #9b9b9b;
+			cursor : pointer;
+			transition : 0.5s;
+		}
+
+		#footer_menu ul li:hover {
+			color : #4e4e4e;
+		}
+
+		#footer_menu2 {
+			width : 94%;
+			display : inline-block;
+			border-top : 1px solid #333;
+			margin-top : 40px;
+		}
+
+		#last_section_footer {
+			width : 100%;
+			border-top : 1px solid #ececec;
+		}
+
+		#last_section_footer_img {
+			width : 100%;
+			line-height : 52px;
+			padding-left : 120px;
+			box-sizing : border-box;
+			background : url(icons/last_section_footer_logo.jpg) -5px 0 no-repeat;
+			font-size : 14px;
+			color : #767676;
+			margin : auto;
+		}
+
+		#starter {
+			width : 70vw;
+			height : 150px;
+			background-color : #fff;
+			position : absolute;
+			left : 0;
+			right : 0;
+			margin : auto;
+			top : -400px;
+			bottom : 0;
+			z-index : 99999;
+			border-radius : 10px;
+			text-align : center;
+			letter-spacing : 1px;
+			border : #000 solid 1px;
+		}
+
+		#starter img {
+			cursor : pointer;
+		}
+
+		#starter h2 {
+			font-size : 12px;
+			color : #000;
+			font-weight : 500;
+			margin-top : 33px;
+			padding : 1vw 13vw;
+		}
+
+		#starter h3 {
+			font-size : 8px;
+			color : #858585;
+			font-weight : 300;
+			margin-top : 5px;
+			padding : 0 5vw;
+			padding-bottom : 5vw;
+		}
+
+	}/*모바일 버전 끝*/
+
+	/*태블릿 버전 시작*/
+@media all and (min-width:768px) {
+
+		header {
+			width : 100%;
+			height : 70px;
+		}
+
+		#logo {
+			width : 150px;
+			height : 40px;
+			margin-top : 10px;
+		}
+
+		#header1 {
+			height : 66px;
+			border-top : 6px solid #000;
+		}
+
+		#header2 {
+			display : block;
+		}
+
+		#icon_menu li:nth-child(1) {
+			display : block;
+		}
+
+		#icon_menu {
+			margin-right : 40px;
+		}
+
+		#header2 li {
+			font-size : 12px;
+		}
+
+		#hidden_menu {
+			display : none;
+		}
+
+		#main, #section1, #section2, #section3, #section4, #section5, #section6, #section7, #section8, #section9, #section10 {
+			height : 655px;
+		}
+
+		.main_textbox h3 {
+			font-size : 12px;
+		}
+
+		.main_textbox h2 {
+			font-size : 22px;
+		}
+
+		#section2 .main_textbox h3 {
+			color : #000;
+			text-shadow : none;
+		}
+
+		#section2 .main_textbox h2 {
+			color : #000;
+			text-shadow : none;
+		}
+
+		#section9 .main_textbox h3 {
+			color : #000;
+			text-shadow : none;
+		}
+
+		#section9 .main_textbox h2 {
+			color : #000;
+			text-shadow : none;
+		}
+
+		#main {
+			background-image : url(images/FSH-1603297275686-homemodehv4desktop.jpg);
+		}
+
+		#section1 {
+			background-image : url(images/FSH-1607016328902-hpmodehv4desktop.jpg);
+		}
+
+		#section2 {
+			background-image : url(images/FSH-1585901889255-hpmodedesktop.jpg);
+		}
+
+		#section3 {
+			background-image : url(images/FSH-1596125007502-hpfashionhv4desktopcopy.jpg);
+		}
+
+		#section4 {
+			background-image : url(images/FSH-1602001386456-hpmodehv4desktop.jpg);
+		}
+
+		#section5 {
+			background-image : url(images/FSH-1601545062198-gallierapushhpmodedesktop350px.jpg);
+		}
+
+		#section6 {
+			background-image : url(images/FSH-1600072169180-homemodedesktoppushnews2deauville.jpg);
+		}
+
+		#section7 {
+			background-image : url(images/FSH-1594223543072-20aibhpfashionhv4desktop.jpg);
+		}
+
+		#section8 {
+			background-image : url(images/FSH-1594046515190-hpfashionhv4desktop.jpg);
+		}
+
+		#section9 {
+			background-image : url(images/FSH-1584347434962-eyewearss20pushhomemodeimagefixedesktop.jpg);
+		}
+
+		#section10 {
+			background-image : url(images/FSH-1574945612223-new2homemodedesktopx2.jpg);
+		}
+
+		#last_section ul li {
+			float : left;
+			width : 35%;
+			margin-left : 10%;
+			margin-right : 5%;
+			text-align : center;
+			border : none;
+			cursor : pointer;
+		}
+
+		.last_section_hidden_box {
+			display : block;
+		}
+
+		#last_section ul li h3 span {
+			display : none;
+		}
+
+		footer {
+			width : 100%;
+			height : 800px;
+			background-color : #000;
+			color : #fff;
+			text-align : center;
+		}
+
+		#footer_menu {
+			width : 80%;
+			margin : auto;
+			text-align : left;
+		}
+
+		#footer_menu ul {
+			float : left;
+			width : 48%;
+			margin : 1%;
+			display : inline-block;
+			vertical-align : top;
+			margin-top : 150px;
+			text-align : left;
+		}
+
+		#footer_menu ul:last-child {
+			width : 48%;
+			margin : 1%;
+			margin-top : -150px;
+		}
+
+		#chanel_logo {
+			display : block;
+			text-align : center;
+			padding-top : 55px;
+		}
+
+		#footer_menu h2 {
+			font-size : 12px;
+			font-weight : 600;
+			color : #fff;
+			margin-top : 0;
+			display : inline-block;
+		}
+
+		#footer_menu ul li {
+			font-size : 14px;
+			font-weight : 300;
+			line-height : 30px;
+			color : #9b9b9b;
+			cursor : pointer;
+			transition : 0.5s;
+		}
+
+		#footer_menu ul li:hover {
+			color : #4e4e4e;
+		}
+
+		#footer_menu2 {
+			width : 80%;
+			display : inline-block;
+			border-top : 1px solid #333;
+			margin-top : 40px;
+		}
+
+		#last_section_footer {
+			width : 100%;
+			border-top : 1px solid #ececec;
+		}
+
+		#last_section_footer_img {
+			width : 85%;
+			line-height : 52px;
+			padding-left : 130px;
+			box-sizing : border-box;
+			background : url(icons/last_section_footer_logo.jpg) no-repeat;
+			font-size : 14px;
+			color : #767676;
+			margin : auto;
+		}
+
+		#starter {
+			width : 70vw;
+			height : 150px;
+			background-color : #fff;
+			position : absolute;
+			left : 0;
+			right : 0;
+			margin : auto;
+			top : -400px;
+			bottom : 0;
+			z-index : 99999;
+			border-radius : 10px;
+			text-align : center;
+			letter-spacing : 1px;
+			border : #000 solid 1px;
+		}
+
+		#starter img {
+			float : right;
+			margin-top : 15px;
+			margin-right : 15px;
+			cursor : pointer;
+		}
+
+		#starter h2 {
+			font-size : 14px;
+			color : #000;
+			font-weight : 500;
+			margin-top : 40px;
+			padding : 0;
+		}
+
+		#starter h3 {
+			font-size : 12px;
+			color : #858585;
+			font-weight : 300;
+			margin-top : 25px;
+			padding : 0 5vw;
+			padding-bottom : 5vw;
+		}
+} /*태블릿 버전 끝*/
+
+	/*PC버전 시작*/
+@media all and (min-width: 1024px) {
+		#header1 {
+			width : 100%;
+			height : 67px;
+			position : fixed;
+			z-index : 999;
+			background-color : #fff;
+			top : 0;
+			border-top : 7px solid #000;
+		}
+
+		#header2 {
+			padding-top : 65px;
+		}
+
+		#header2 li {
+			font-size : 14px;
+		}
+
+		.last_section_hidden_box {
+			display : block;
+		}
+
+		#last_section ul li h3 span {
+			display : none;
+		}
+
+		footer {
+			width : 100%;
+			height : 800px;
+			background-color : #000;
+			color : #fff;
+			text-align : center;
+		}
+
+		#footer_menu {
+			width : 80%;
+			margin : auto;
+			text-align : left;
+		}
+
+		#footer_menu ul {
+			float : left;
+			width : 28%;
+			margin : 0.5%;
+			display : inline-block;
+			vertical-align : top;
+			margin-top : 150px;
+			text-align : left;
+		}
+
+		#footer_menu ul:last-child {
+			width : 13%;
+			margin : 0;
+			margin-top : 150px;
+		}
+
+		#chanel_logo {
+			display : block;
+			text-align : center;
+			padding-top : 250px;
+		}
+
+		#footer_menu h2 {
+			font-size : 16px;
+			font-weight : 600;
+			color : #fff;
+			margin-top : 0;
+			display : inline-block;
+		}
+
+		#footer_menu ul li {
+			font-size : 15px;
+			font-weight : 300;
+			line-height : 30px;
+			color : #9b9b9b;
+			cursor : pointer;
+			transition : 0.5s;
+		}
+
+		#footer_menu ul li:hover {
+			color : #4e4e4e;
+		}
+
+		#footer_menu2 {
+			width : 80%;
+			display : inline-block;
+			border-top : 1px solid #333;
+			margin-top : 40px;
+		}
+
+		#last_section_footer {
+			width : 100%;
+			border-top : 1px solid #ececec;
+		}
+
+		#last_section_footer_img {
+			width : 84%;
+			line-height : 52px;
+			padding-left : 130px;
+			box-sizing : border-box;
+			background : url(icons/last_section_footer_logo.jpg) 10px 0 no-repeat;
+			font-size : 14px;
+			color : #767676;
+			margin : auto;
+		}
+
+		#starter {
+			width : 777px;
+			height : 160px;
+			background-color : #fff;
+			position : absolute;
+			left : 0;
+			right : 0;
+			margin : auto;
+			top : -400px;
+			bottom : 0;
+			z-index : 99999;
+			border-radius : 10px;
+			text-align : center;
+			letter-spacing : 1px;
+			border : #000 solid 1px;
+		}
+
+		#starter img {
+			float : right;
+			margin-top : 15px;
+			margin-right : 15px;
+			cursor : pointer;
+		}
+
+		#starter h2 {
+			font-size : 16px;
+			color : #000;
+			font-weight : 500;
+			margin-top : 45px;
+		}
+
+		#starter h3 {
+			font-size : 13px;
+			color : #858585;
+			font-weight : 300;
+			margin-top : 25px;
+			padding : 0;
+	}
+}
+	/*PC버전 끝*/
+
+</style>
+</head>
+<body>
+<header>
+	<div id="header1">
+	<ul id="hidden_menu">
+		<li><img src="icons/hidden_menu.jpg" alt="메뉴 아이콘"></li>
+		<li><img src="icons/top_icon1.gif" alt="서치 아이콘"></li>
+	</ul>
+		<h1 id="logo"><img src="logo.png" alt="샤넬 로고"></h1>
+		<ul id="icon_menu">
+			<li><img src="icons/top_icon1.gif" alt="서치 아이콘"></li>
+			<li><img src="icons/top_icon3.gif" alt="즐겨찾기 아이콘"></li>
+		</ul>
+	</div>
+	<ul id="header2">
+		<li>HAITE COUTURE</li>
+		<li>COLLECTIONS</li>
+		<li>PRODUCTS</li>
+		<li>CHANEL NEWS</li>
+	</ul>
+</header>
+
+<div id="main">
+	<div class="main_textbox">
+		<h3>CRUISE 2020/21</h3>
+		<h2>IN BOUTIQUES</h2>
+		<button>SEE MORE</button>
+	</div>
+</div>
+
+<div id="section1">
+	<div class="main_textbox">
+		<h3>Métiers d’art 2020/21</h3>
+		<h2>Le château des Dames<br>Show</h2>
+		<button>see more</button>
+	</div>
+</div>	
+<div id="section2">
+	<div class="main_textbox">
+		<h3>The chanel 19 bag</h3>
+		<h2>in boutiques</h2>
+		<button>see more</button>
+	</div>
+</div>	
+<div id="section3">
+	<div class="main_textbox">
+		<h3>fall-winter 2020/21</h3>
+		<h2>in boutiques</h2>
+		<button>listen on</button>
+	</div>
+</div>	
+
+
+<div id="section4">
+	<div class="main_textbox">
+		<h3>spring-summer 2021</h3>
+		<h2>ready-to-wear<br>show</h2>
+		<button>listen on</button>
+	</div>
+</div>	
+
+<div id="section5">
+	<div class="main_textbox">
+		<h3>Palais Galliera Exhibition</h3>
+		<h2>Gabrielle Chanel<br>fashion manifesto</h2>
+		<button>see more</button>
+	</div>
+</div>	
+
+<div id="section6">
+	<div class="main_textbox">
+		<h3>CHANEL in cinema</h3>
+		<h2>46thEdition of the deauville American Film Festival</h2>
+		<button>see more</button>
+	</div>
+</div>	
+
+<div id="section7">
+	<div class="main_textbox">
+		<h3>metiers d'art 2019/20</h3>
+		<h2>in boutiques</h2>
+		<button>see more</button>
+	</div>
+</div>	
+<div id="section8">
+	<div class="main_textbox">
+		<h3>Fall-winter 2020/21</h3>
+		<h2>in boutiques</h2>
+		<button>see more</button>
+	</div>
+</div>	
+
+<div id="section9">
+	<div class="main_textbox">
+		<h3>eyewear</h3>
+		<h2>spring-summer 2020 campaign</h2>
+		<button>see more</button>
+	</div>
+</div>	
+
+<div id="section10">
+	<div class="main_textbox">
+		<h3>the chanel podcab st</h3>
+		<h2>conversations on creation</h2>
+		<button>listen on</button>
+	</div>
+</div>	
+
+<div id="last_section">
+	<ul>
+	
+	<li>	
+	<h3>CONTACT US <span class="down"><img src="icons/down.png" alt="화살표 아이콘"></span></h3>
+	<div class="last_section_hidden_box">
+		<p>To contact CHANEL customer service, please:</p>
+		<h4>EMAIL <span>&gt;</span></h4>	
+	</div></li>
+	<li>
+			<h3>Find a store<span class="down"><img src="icons/down.png" alt="화살표 아이콘"></span></h3>
+		<div class="last_section_hidden_box">	
+			<p>Find your closest store information, services,opening housrs, and contact details.</p>
+			<div id="inputbox">
+			<h6>Enter an address or city</h6>
+			<div id="inputbox_line"></div>
+			<input type="text"><img src="icons/top_icon1.gif" alt="검색 아이콘" id="zoom"></div>
+		</div>		
+	</li>
+	</ul>
+	<div id="last_section_footer">
+		<div id="last_section_footer_img">Fashion</div>
+	</div>
+</div>
+
+<footer>
+	<img src="logo2.png" alt="샤넬 로고" id="chanel_logo">
+	<div id="footer_menu">
+		<ul>	
+		<li><h2>EXPLORE CHANEL.COM</h2></li>
+			<li>Haute couture</li>
+			<li>Fashion</li>
+			<li>Watches</li>
+			<li>Fine jewelry</li>
+			<li>Fragrance</li>
+			<li>Makeup</li>
+			<li>Skincare</li>
+		</ul>
+		<ul>
+			<li><h2>HOUSE OF CHANEL</h2></li>
+			<li>Inside Chanel</li>
+			<li>Careers</li>
+			<li>Fondation Chanel</li>
+		</ul>
+		<ul>
+			<li><h2>SERVICES</h2></li>
+			<li>Find a store</li>
+			<li>Contact</li>
+			<li>FAQ</li>
+			<li>Care & services</li>
+		</ul>
+		<ul>
+			<li><h2>LEGAL</h2></li>
+			<li>Legal statement</li>
+			<li>Privacy policy</li>
+		</ul>
+	</div>
+	<div id="footer_menu2">
+		<ul id="left_footer">
+			<li><span class="left_footer_languages">Languages:</span> Other locations (en) ∨</li>	
+		</ul>
+		<ul id="right_footer">
+			<li><img src="icons/icon-Facebook.png" alt="페이스북 아이콘"></li>
+			<li><img src="icons/icon-Instagram.png" alt="인스타그램 아이콘"></li>
+			<li><img src="icons/icon-Youtube.png" alt="유튜브 아이콘"></li>
+			<li><img src="icons/icon-Twitter.png" alt="트위터 아이콘"></li>
+	
+	</ul>	
+	</div>
+
+</footer>	
+<div class="w3c">
+		<a href="http://validator.kldp.org/check?uri=referer"
+		  onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))" target="_blank"><img
+		  src="http://validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80"></a>
+		<!-- html 검사완료 코드 -->
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+		<img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="올바른 CSS입니다!" />
+		  </a>
+		<!-- css 검사완료 코드 -->
+</div>
+
+<div id="language_popup_box">
+	<div id="language_popup">
+		<img src="icons/close_bt.png" alt="닫기 아이콘" id="close_bt">
+		<h2>you are visiting the chanel <br> united states website</h2>
+		<h3>Location selection allows CHANEL to deliver you the best<br>services with respect to your localisation.</h3>
+		<h4>change your location</h4>
+		<select name="country" id="country">
+			<option value="">Netherlands</option>
+			<option value="">Poland</option>
+			<option value="">Qatar</option>
+			<option value="">Russia</option>
+			<option value="">Spain</option>
+			<option value="">Taiwan Region</option>
+			<option value="">United Kingdom</option>
+			<option value="">United States</option>
+			<option value="">Korea</option>
+			<option value="">Vietnam</option>
+		</select>
+		<br>
+		<button>GO TO WEBSITE</button>
+	</div>
+</div>			
+
+<div id="left_menu_bg"></div>
+	<div id="left_menu">
+		<div id="left_menu_top">
+			<h2>MENU</h2>
+			<img src="icons/close_bt.png" alt="닫기 아이콘" id="left_menu_close">
+		</div>
+		<ul id="left_menu_ul">
+			<li>HAUTE COUTURE</li>
+			<li>COLLECTIONS</li>
+			<li>PRODUCTS</li>
+			<li>CHANEL NEWS</li>
+		</ul>
+		<ul id="left_menu_ul2">
+				<li>Store location</li>
+				<li>Contact</li>
+				<li>Languages</li>
+		</ul>
+	</div>
+
+<div id="starter_bg">
+	<div id="starter">
+		<img src="icons/close_bt.png" alt="닫기 아이콘" id="starter_close">
+		<h2>본 사이트는 <span class="span">포트폴리오 용 사이트</span>로 리소스는 원작자에게 있습니다.</h2>
+		<h3>HTML5, CSS3, JavaScript&jQuery로 제작되었으며 Google Chrom(반응형)에 최적화되어있습니다.</h3>
+	</div>
+</div>
+
+
+</body>
+</html>
