@@ -1,1632 +1,1889 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-<title>이지혜 웹퍼블리셔의 포트폴리오</title>
- <link rel="shortcut icon" href="icons/pavicon_me.ico" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.gstatic.com" type="text/font">
-<link rel="preconnect" href="https://fonts.gstatic.com" type="text/font">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="jquery-animate-css-rotate-scale.js"></script>
-<script>
-$(document).ready(function(){ //시작했을때만 반응
-$('#screenshot1').stop().animate({'opacity':1},1000,function a(){
-	$('#screenshot2').stop().delay(2000).animate({'opacity':1},1000,function(){
-	$('#screenshot3').stop().delay(2000).animate({'opacity':1},1000,function(){
-		$('#screenshot4').stop().delay(2000).animate({'opacity':1},1000,function(){				
-			$('#screenshot5').stop().delay(2000).animate({'opacity':1},1000,function(){			
-				$('#screenshot2,#screenshot3,#screenshot4').stop().animate({'opacity':0},1)
-				$('#screenshot1').stop().animate({'opacity':1},1000,a)				
-				$('#screenshot5').stop().delay(1000).animate({'opacity':0},2000)
-
-			})})})})})
-
-	   toggle2 = 0; //토글에 사용할 변수 선언
-	   click = 0;
-
-	   $('#menu_mobile').click(function(){ //button을 클릭할 때 2가지의 상황을 연출
-		   if( toggle2 == 0) { //toggle이 0일때 A의 상황
-			   toggle2 = 1;
-			   $('#popup_bg').fadeIn()
-		   }
-		   else { //toggle이 0이 아닐때 B의 상황
-			   toggle2 = 0;
-			   $('#popup_bg').fadeOut()
-		   }
-		
-	   })
-
-	$('#popup li').click(function(){
-		toggle2 = 0;
-		$('#popup_bg').fadeOut(100)
-		$('#menu_mobile li:nth-child(1)').animate({'rotate':'0deg','top':'0px','background-color':'#000'},300)
-		$('#menu_mobile li:nth-child(2)').animate({'left':'0px','opacity':'1'},300)
-		$('#menu_mobile li:nth-child(3)').animate({'rotate':'0deg','top':'16px','background-color':'#000'},300)
-	})
-	$('#popup li:nth-child(1)').click(function(){	
-		$('body,html').animate({scrollTop:0})
-	})
-	$('#popup li:nth-child(2)').click(function(){
-		$('body,html').animate({scrollTop:$('#main_portfolio').offset().top})
-	})
-	$('#popup li:nth-child(3)').click(function(){
-		$('body,html').animate({scrollTop:$('#my_portfolio').offset().top})
-	})
-	$('#popup li:nth-child(4)').click(function(){
-		$('body,html').animate({scrollTop:$('#profile img').offset().top})
-	})
-	$('#popup li:nth-child(5)').click(function(){
-		$('body,html').animate({scrollTop:$('#contact').offset().top})
-	})
-
-	$('#menu>li:nth-child(1)').click(function(){
-		$('body,html').animate({scrollTop:$('#main').offset().top})
-	})
-	$('#menu>li:nth-child(2)').click(function(){
-		$('body,html').animate({scrollTop:$('#main_portfolio').offset().top})
-	})
-	$('#menu>li:nth-child(3)').click(function(){
-		$('body,html').animate({scrollTop:$('#my_portfolio').offset().top})
-	})
-	$('#menu>li:nth-child(4)').click(function(){
-		$('body,html').animate({scrollTop:$('#profile').offset().top})
-	})
-	$('#menu>li:nth-child(5)').click(function(){
-		$('body,html').animate({scrollTop:$('#contact').offset().top})
-	})
-
-$(window).scroll(function(){
-	sc = $(window).scrollTop();
-	if (sc >= $('#profile').offset().top){
-		$('#profile_rightbox li:nth-child(1) .profile_boxbar').stop().animate({'width':'95%'},300)
-		$('#profile_rightbox li:nth-child(2) .profile_boxbar').stop().delay(100).animate({'width':'90%'},300)
-		$('#profile_rightbox li:nth-child(3) .profile_boxbar').stop().delay(100).animate({'width':'95%'},300)
-		$('#profile_rightbox li:nth-child(4) .profile_boxbar').stop().delay(100).animate({'width':'85%'},300)
-
-	}
-})
-
-key1 = 0; 
-$(window).resize(function(){ //창의 크기에 따라 반응
-	if( $(window).width() >= 0 && $(window).width()<770 ){	
-	key1 = 0; 
-	$('.work_img').css({'opacity':'0.3'})
-	$('#my_portfolio>ul>li>h4').css({'opacity':'0'})
-	$('#my_portfolio ul li h5').css({'font-size':'2.8vw','top':'10vw','opacity':'1','letter-spacing':'1px'})
-	$('#my_portfolio ul li>a').css({'width':'15vw','height':'4vw','line-height':'4vw','bottom':'5vw','border-radius':'5px','font-size':'2vw','opacity':'1','border':'none'})
-
-	}
-	else if( $(window).width() >= 770 && $(window).width()<1200 ){	
-	key1 = 0; 
-	$('.work_img').css({'opacity':'0.3','top':'3vw'})
-	$('#my_portfolio>ul>li>h4').css({'opacity':'1','top':'2vw'})
-	$('#my_portfolio ul li h5').css({'font-size':'1.3vw','top':'8vw','opacity':'1','letter-spacing':'1px'})
-	$('#my_portfolio ul li>a').css({'width':'10vw','height':'25px','line-height':'25px','bottom':'3vw','border-radius':'8px','font-size':'1vw','opacity':'1','border':'1px 1px 2px #fff'})
-//		css 값 따로 넣어주기
-	}
-
-	else if( $(window).width() >=1200 ){	
-key1 = 1; 
-	$('.work_img').css({'opacity':'0.3'})
-	$('#my_portfolio>ul>li>h4').css({'opacity':'0','top':'80px'})
-	$('#my_portfolio ul li h5').css({'font-size':'18px','top':'150px','opacity':'0','letter-spacing':'1px'})
-	$('#my_portfolio ul li>a').css({'width':'140px','height':'30px','line-height':'30px','bottom':'20px','border-radius':'8px','font-size':'13px','opacity':'0','border':'1px 1px 2px #fff'})
-
-
-	}
-
-
-})//창크기반응구역
-
-
-
-//원래반응구역 
-	if( $(window).width() >= 1200 ){ 
-	key1 = 1;
-	$('#my_portfolio>ul>li').mouseenter(function(){ //mouseover은 해당 요소만 hover, mouseenter은 자식요소까지 감싸줌
-		if( key1 == 1  ){
-			
-				$(this).children('.work_img').stop().stop().delay(70).animate({'opacity':'0.1'},500)
-				$(this).children('h4').stop().stop().delay(150).animate({'opacity':'0.9','top':'60px'},500)
-				$(this).children('h5').stop().stop().delay(200).animate({'opacity':'0.9','top':'120px'},500)
-				$(this).children('a').stop().stop().delay(250).animate({'opacity':'1','bottom':'50px'},500)
-		}
-	})
-
-	$('#my_portfolio>ul>li').mouseleave(function(){
-		if( key1 == 1  ){
-		$(this).children('.work_img').stop().stop().delay(70).animate({'opacity':'0.3'},500)
-		$(this).children('h4').stop().stop().delay(150).animate({'opacity':'0','top':'80px'},500)
-		$(this).children('h5').stop().stop().delay(200).animate({'opacity':'0','top':'150px'},500)
-		$(this).children('a').stop().stop().delay(250).animate({'opacity':'0','bottom':'20px'},500)
-		}
-	})
-
-}
-
-	$('#wheel').animate({top:15,opacity:0},500,function mouse_loop(){
-		$('#wheel').css({'top':'6px','opacity':'1'}).delay(200).animate({top:15,opacity:0},500,mouse_loop)
-	})
-	tg = 0;
-		$('#menu_mobile').click(function(){
-			if(tg ==0){
-				tg = 1;
-			$('#menu_mobile li:nth-child(1)').animate({'rotate':'45deg','top':'5px','background-color':'#000'},300)
-			$('#menu_mobile li:nth-child(2)').animate({'left':'30px','opacity':'0'},300)
-			$('#menu_mobile li:nth-child(3)').animate({'rotate':'-45deg','top':'5px','background-color':'#000'},300)
-			}
-			else {
-				tg = 0;  // 0으로 바뀌어야 순환
-			$('#menu_mobile li:nth-child(1)').animate({'rotate':'0deg','top':'0px','background-color':'#000'},300)
-			$('#menu_mobile li:nth-child(2)').animate({'left':'0px','opacity':'1'},300)
-			$('#menu_mobile li:nth-child(3)').animate({'rotate':'0deg','top':'16px','background-color':'#000'},300)
-			}
-		})
-
-})
-</script>
-<style>
-
-	.bold {
-			background-color: #f2cd00;
-			font-weight: 900;
-			}
-
-  #scroll_text {
-		position: fixed;
-		left: 5px;
-		top: 5px;
-		font-size: 50px;
-		background-color: #000;
-		color: #fff;
-		z-index: 999999;
-		display: none;
-	}
-
-	* { 
-			margin:0; 
-			padding:0; 
-			list-style:none;
-			font-family: 'Overpass', sans-serif;
-			}
-
-	a { 
-		color:inherit; 
-		text-decoration: none; 
-		}
-
-	body {
-		height: 100%;
-		background: url(images/33.jpg) center no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-		}
-
-	html {
-		height: 100%;
-		}
-
-	#main {
-		width: 100%;
-		height: 100%;
-		position: relative;
-		overflow: hidden;
-		background: url(images/bgdd.png) center no-repeat;
-		background-size: cover;
-		}
-
-	#main_text {
-		position: absolute;
-		width: 100%;
-		text-align: center;
-		height: 95px;
-		top: 380px;
-		bottom: 0;
-		margin: auto;
-		color: #fff;
-		}
-
-	#main_text h1 {
-		font-size: 40px;
-		line-height: 60px;
-		text-transform: uppercase;
-		}
-
-	#main_text h2 {
-		font-size: 10px;
-		line-height: 35px;
-		}
-
-	header {
-		position: fixed;
-		bottom: 0;
-		width: 100%;
-		height: 50px;
-		line-height: 50px;
-		background-color:rgba(41,66,107,0);
-		left: 0;
-		bottom: 0;
-		overflow: hidden;
-		border: 10px rgba(255,255,255,0.8);
-		z-index: 9999;
-		box-shadow: 5px 5px 20px #333;
-		}
-
-	#logo {
-		float: left;
-		font-size: 24px;
-		margin-left: 20px;
-		}
-
-	#menu {
-		float: right;
-		margin-right: 20px;
-		color: #fff;
-		}
-
-	#menu li {
-		float: left;
-		margin-left: 20px;
-		font-size: 14px;
-		cursor: pointer;
-		font-weight: 700;
-		}
-
-	#menu_mobile {
-		width: 20px;
-		height: 18px;
-		position: relative;
-		float: right;
-		margin-top: 10px;
-		display: none;
-		right: 20px;
-		cursor: pointer;
-		}
-
-	#menu_mobile li {
-		width: 20px;
-		height: 2px;
-		background-color: #fff;
-		position: absolute;
-		}
-
-	#menu_mobile li:nth-child(1) {
-		left: 0;
-		top: 0;
-		}
-
-	#menu_mobile li:nth-child(2) {
-		left: 0;
-		top: 8px;
-		}
-
-	#menu_mobile li:nth-child(3) {
-		left: 0;
-		top: 16px;
-		}
-
-
-	#main_icon {
-		width: 40px;
-		height: 40px;
-		position: fixed;
-		left: 5px;
-		bottom: 3px;
-		background:url(icons/icon_pc.png) 0 0 no-repeat;
-		background-size: cover;
-		z-index: 9999;
-		}
-
-	#mouse {
-		width: 20px;
-		height: 28px;
-		border: 3px solid #fff;
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 70px;
-		margin: auto;border-radius: 12px;
-		}
-
-	#wheel {
-		width: 4px;
-		height: 4px;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 6px;
-		border-radius: 30px;
-		background-color: #fff;
-		margin: auto;
-		}
-
-
-	#main_portfolio {
-		width: 100%;
-		padding-top: 100px;
-		margin-top: 100px;
-		text-align: center;
-		color: #333;
-		position: relative;
-		}
-
-	#main_portfolio>h2 {
-		font-size: 24px;
-		margin-bottom: 80px;
-		}
-
-	#left_side {
-		width: 50%;
-		height: 40vw;
-		float: left;
-		position: relative;
-		}
-
-	#desktop {
-		width: 30vw;
-		position: relative;
-		z-index: 99;
-		top: 0;
-		right: 0px;
-		}
-
-	#screenshot1 {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		right: 0px;
-		opacity: 1;
-		}
-
-	#screenshot2 {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		right: 0px;
-		opacity: 0;
-		}
-
-	#screenshot3 {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		right: 0px;
-		opacity: 0;
-		}
-
-	#screenshot4 {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		right: 0px;
-		opacity: 0;
-		}
-
-	#screenshot5 {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		right: 0px;
-		opacity: 0;
-		}
-
-
-	#desktop_content {
-		width: 30vw;
-		height: 20vw;
-		border-radius: 50px;
-		text-align: center;
-		overflow: hidden;
-		top: 0;
-		right: 0px;
-		left: 0;
-		margin: auto;
-		background-color: #000;
-		}
-
-	#desktop_bt {
-		width: 150px;
-		height: 40px;
-		line-height: 40px;
-		font-size: 20px;
-		background:linear-gradient(125deg,#fff,rgba(255,255,255,0.5));
-		box-shadow: -2px -2px 3px #fff;
-		cursor: pointer;
-		border: 1px solid #ddd;
-		color: #333;
-		position: absolute;
-		right: 5vw;
-		margin: auto;
-		z-index: 999;
-		bottom: 0;
-		top: 0;
-		border-radius: 3px;
-		transition:0.3s;
-		letter-spacing: 2px;
-		}
-
-	#desktop_bt:hover {
-		letter-spacing: 4px;
-		background:linear-gradient(125deg,#6da5d8,rgba(255,255,255,0));
-		color: #fff;
-		}
-
-	#right_side {
-		width: 50%;
-		float: right;
-		border-radius: 5vw;
-		}
-
-
-	#main_content {
-		width: 70%;
-		height: 50%;
-		margin-left: 4vw;
-		letter-spacing: 2px;
-		}
-
-	#main_content h2 {
-		font-size: 20px;
-		margin-bottom: 2vw;
-		margin-top: 2vw;
-		}
-
-	#content_left {
-		width: 20%;
-		height: 50%;
-		float: left;
-		text-align: left;
-		}
-
-	#content_left li {
-		line-height: 50px;
-		font-size: 15px;
-		margin-right: -50px;
-		}
-
-	#font {
-		margin-top: 10px;
-		}
-
-	#content_right {
-		width: 80%;
-		height: 50%;
-		float: left;
-		text-align: left;
-		}
-
-	#content_right li {
-		line-height: 50px;
-		font-size: 14px;
-		font-family: 'Noto Sans KR', sans-serif;
-		}
-
-	#detail {
-		line-height: 23px;
-		}
-
-
-	#my_portfolio {
-		width: 100%;
-		text-align: center;
-		overflow: hidden;
-		}
-
-	#my_portfolio h2 {
-		font-size: 24px;
-		margin-bottom: 80px;
-		color: #333;
-		}
-
-	#my_portfolio p {
-		margin-top: 20px;
-		font-size: 14px;
-		color: #333;
-		}
-
-	#my_portfolio ul {
-		width: 120px;
-		margin: auto;
-		margin-top: 30px;
-		}
-
-	#my_portfolio ul li {
-		width: 32%; 
-		margin: 0.5%; /* 반응형의 계산을 위해서 비율로 설정*/ /*4개 = 25% 3개 = 33.333% (마진포함)*/
-		float: left;
-		border-radius: 8px;
-		text-align: center;
-		font-size: 50px;
-		position: relative;
-		overflow: hidden;
-		cursor: pointer;
-		} 
-
-	#laneige {
-		background:linear-gradient(to bottom, #50699f,#50699f, rgba(80,105,159,0));
-		} /*라네즈*/
-
-	#chanel {
-		background:linear-gradient(to bottom, #000,#000, rgba(0,0,0,0));
-		} /*샤넬*/
-
-	#starbucks {
-		background:linear-gradient(to bottom, #006e3f,#006e3f, rgba(0,110,63,0));
-		} /*스타벅스*/
-
-	#dunkin {
-		background:linear-gradient(to bottom, #fc6719,#fc6719, rgba(252,103,25,0));
-	} /*던킨도너츠*/
-
-	#kona {
-		background:linear-gradient(to bottom, #fe4155,#fe4155, rgba(254,65,85,0));
-		} /*코나카드*/
-
-	#lotte {
-		background:linear-gradient(to bottom, #877a70,#877a70, rgba(135,122,112,0));
-	} /*롯데호텔*/
-
-
-	#my_portfolio ul>li>img {
-		width: 100%;
-		vertical-align: top;
-		border-radius: 8px;
-		}
-
-	#my_portfolio ul li h4 {
-		position: absolute;
-		width: 60%;
-		left: 0;
-		right: 0;
-		top: 80px;
-		margin: auto;
-		}
-
-	#my_portfolio ul>li>h4>img {
-		width: 100%;
-		}
-
-	#my_portfolio p {
-		font-size: 15px;
-		}
-
-	#my_portfolio ul li h5 {
-		position: absolute;
-		font-size: 18px;
-		font-weight: 100;
-		right: 0;
-		left: 0;
-		margin: auto;
-		top: 150px;
-		color: #fff;
-		font-family: 'Do Hyeon', sans-serif;
-		letter-spacing: 3px;
-		}
-
-	#my_portfolio ul li a {
-		width: 140px;
-		height: 30px;
-		line-height: 30px;
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 20px;
-		margin: auto;
-		cursor: pointer;
-		background-color: rgba(255,255,255,0);
-		border-radius: 3px;
-		border: 1px solid #fff;
-		color: #fff;
-		font-size: 13px;
-		z-index: 9999;
-		}
-
-	#my_portfolio ul li a:hover {
-		background-color: rgba(255,255,255,0.7);
-		line-height: 26px;
-		color: #333;
-		}
-
-
-	#profile {
-		width: 100%;
-		text-align: center;
-		padding-bottom: 100px;
-		}
-
-	#profile h2 {
-		padding-bottom: 50px;
-		color: #333;	
-		}
-
-	#profile_img {
-		width: 300px;
-		border-radius: 300px;
-		margin-top: 20px;
-		box-shadow: inset 1px 1px 3px rgba(255,255,255,0.5);
-		}
-
-	#profile_box {
-		width: 1200px;
-		overflow: hidden;
-		border: 1px solid #fff;
-		padding: 10px;
-		margin: auto;
-		margin-top: 20px;
-		}
-
-	#profile_leftbox {	
-		width: 50%;
-		height: 300px;
-		float: left;
-		border-radius: 2vw 0vw 0 2vw;
-		background:linear-gradient(to right ,rgba(255,255,255,1),rgba(255,255,255,0.7),rgba(255,255,255,0.5),rgba(255,255,255,0.5) );
-		}
-
-	#profile_leftbox h3 {
-		margin-top: 50px;
-		margin-left: 20px;
-		}
-
-	#profile_leftbox p {
-		margin-top: 20px;
-		margin-left: 20px;
-		}
-
-	#profile_rightbox {
-		width: 50%;
-		height: 300px;
-		float: right;
-		background:linear-gradient(to right,rgba(255,255,255,0.5),rgba(255,255,255,0.5),rgba(255,255,255,0.3),rgba(255,255,255,0) );
-		}
-
-	#profile_rightbox ul {
-		padding: 5%;
-		width: 90%;
-		height: 80%;
-		}
-
-	#profile_rightbox ul li {	
-		width: 100%;
-		height: 24%;
-		margin-bottom: 1%;
-		position: relative;
-		}
-
-	#profile_rightbox ul li h5 {
-		float: left;
-		margin-top: 15px;
-		}
-
-	#profile_rightbox ul li h6 {
-		float: right;
-		margin-top: 15px;
-		}
-
-	.profile_boxbg {
-		width: 100%;
-		height: 4px;
-		position: absolute;
-		background-color: #555;
-		position: absolute;
-		left: 0;
-		bottom: 15px;
-		border-radius: 10px;
-		}
-
-	.profile_boxbar {
-		width: 50%;
-		height: 4px;
-		background-color: #d985e9; 
-		position: absolute;
-		left: 0;
-		bottom: 15px;
-		border-radius: 10px 0 0 10px;
-		}
-
-
-	#contact {
-		width: 100%;
-		padding: 100px 0;
-		margin: auto;
-		box-sizing: border-box;
-		}
-
-	#contact h2 {
-		color: #333;
-		text-align: center;
-		}
-
-	#contact ul {
-		width: 1000px;
-		margin: auto;
-		overflow: hidden;
-		margin-top: 50px;
-		background-color: rgba(255,255,255,0);
-		border-radius:1vw;
-		box-shadow: -2px -2px 5px #fff ;
-		padding: 3vw;
-		}
-
-	#contact li {
-		color: #fff;
-		text-shadow: 1px 1px #333;
-		border-right: 1px solid #fff;
-		padding:0 2%;
-		float: left;
-		box-sizing: border-box;
-		text-align: left;
-		} /*2% 2% *3 =12 , 100- 12 = 88*/
-
-	#contact li:nth-child(1) {
-		width: 20%;
-		}
-
-	#contact li:nth-child(2) {
-		width: 46%;
-		}
-
-	#contact li:nth-child(3) {
-		width: 34%;
-		border-right: none;
-		}
-
-
-	footer {
-		width: 100%;
-		background-color: rgba(255,255,255,0);
-		padding-bottom: 50px; 
-		}
-
-	#footer_box {
-		width: 1200px;
-		margin: auto;
-		overflow: hidden;
-		}
-
-	#footer_logo {
-		font-size: 20px;
-		line-height: 70px;
-		float: left;
-		}
-
-	#footer_logo img {
-		margin-top: 18px;
-		}
-
-	#footer_right {
-		font-size: 12px;
-		float: right;
-		line-height: 70px;
-		color: #eee;
-		font-weight: 100;
-		}
-
-
-	#popup_bg {
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		left: 0;
-		top: 0;
-		background-color: rgba(0,0,0,0.8);
-		display: none;
-		z-index: 9999;
-		}
-
-	#popup {
-		width: 100%;
-		height: 60vh;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		}
-
-	#popup li {
-		text-align: center;
-		font-size: 10vw;
-		color: #fff;
-		line-height: 12.5vh;
-		cursor: pointer;
-		}
-
-	#popup li:hover {
-		color: #bc64c4;
-		}
-
-	/*#close {position: absolute;font-size: 50px;right: 15px;top: 5px;color: #fff;cursor: pointer;}*/
-
-		.w3c {
-			text-align: center;
-			padding-bottom: 50px;		
-		}
-
-	</style>
-
-
-	<!-- 미디어쿼리 반응형 CSS 시작 -->
-
-	<style>
-	@media all and (min-width:0px) { /*0~770 모바일 */
-
-		#menu_mobile {
-			margin-top: 13px;
-			display: block;
-			}
-
-		#menu {
-			display: none;
-			}
-
-		#main_text h1 {
-			font-size: 30px;
-			line-height: 30px;
-			}
-
-		#main_text h2 {
-			font-size: 10px;
-			line-height: 25px;
-			}
-
-		#main_icon {
-			background-image: url(icons/icon_m.png);
-		}
-
-		header {
-			height: 40px;
-			line-height: 40px;
-		}
-		#logo {
-			font-size: 18px;
-		}
-
-		#mouse {
-			bottom: 60px;
-		}
-
-		#my_portfolio ul {
-			width: 94%;
-			}
-		#my_portfolio ul li {
-			width: 48%;
-			margin: 1%;
-		}
-
-		.work_img {
-			opacity: 0.3;
-		}
-
-		#my_portfolio>ul>li>h4 {
-			width: 40%;
-			top: 3vw;
-			opacity: 0;
-			}
-
-		#my_portfolio ul li h5 {
-			font-size: 2.8vw;
-			top: 10vw;
-			opacity: 1;
-			letter-spacing: 1px;
-			}
-
-		#my_portfolio ul li a {
-			width: 15vw;
-			height: 4vw;
-			line-height: 4vw;
-			bottom: 5vw;
-			border-radius: 5px;
-			font-size: 2vw;
-			opacity: 1;
-			border: none;
-			}
-
-		#my_portfolio ul li a:hover {
-			line-height: 4vw;
-			}
-
-		#my_portfolio h2 {
-			font-size: 24px;
-			margin-top: 0vw;
-			padding-top: 20vw;
-			}
-
-
-		#profile h2 {
-			padding-top: 23vw;
-			}
-
-		#profile_box {
-			width: 90%;
-			}
-
-		#profile_leftbox {
-			width: 100%;
-			border-radius: 2vw 2vw 0 0;
-			}
-
-		#profile_rightbox {
-			width: 100%;
-			}
-
-		#contact ul {
-			width: 80%;
-			}
-
-		#contact li:nth-child(1) {
-			width: 100%;
-			border-right: none;
-			margin-bottom: 20px;
-			}
-
-		#contact li:nth-child(2) {
-			width: 100%;
-			border-right: none;
-			margin-bottom: 20px;
-			}
-
-		#contact li:nth-child(3) {
-			width: 100%;
-			border-right: none;
-			}
-
-		#footer_box {
-			width: 90%;
-			}
-
-		#footer_logo {
-			font-size: 16px;
-			line-height: 50px;
-			float: none;
-			}
-
-		#footer_right {
-			font-size: 10px;
-			line-height: 18px;
-			margin-top: 5px;
-			float: none;
-			margin-bottom: 10px;
-			}
-
-
-		#left_side {
-			width: 100%;
-			position: relative;
-			}
-
-		#desktop_content {
-			position: absolute;
-			right: 0;
-			left: 0;
-			margin: auto;
-			width: 50vw;
-			height: 30vw;
-			border-radius: 20px;
-			}
-
-		#desktop_bt {
-			width: 18vw;
-			height: 5vw;
-			font-size: 3vw;
-			line-height: 5vw;
-			right: 20vw;
-			top: 25vw;
-			}
-
-		#desktop {
-			width: 50vw;
-			}
-
-		#right_side {
-			width: 100%;
-			}
-
-		#main_content {
-			width: 90%;
-			}
-
-		#main_content h2 {
-			font-size: 15px;
-			margin-top: 100px;
-			}
-
-		#content_left li {
-			line-height: 50px;
-			font-size: 13px;
-			}
-
-		#color_chip {
-			height: 30px;
-			margin-top: 10px;
-		}
-
-		#content_right li {
-			line-height: 50px;
-			font-size: 11px;
-			}
-
-		#detail {
-			margin-top: 10px;
-			}
-
-
-
-	}
-
-	@media all and (min-width:770px) { /*770~1200 태블릿pc*/
-
-		#menu_mobile {
-			display: none;
-			}
-
-		#menu {
-			display: block;
-			}
-
-		#main_text h1 {
-			font-size: 32px;
-			line-height: 50px;
-			}
-
-		#main_text h2 {
-			font-size: 10px;
-			line-height: 25px;
-			}
-
-		#main_icon {
-			background-image: url(icons/icon_tab.png);
-			}
-
-		header {
-			height: 50px;
-			line-height: 50px;
-			}
-
-		#logo {
-			font-size: 24px;
-			}
-
-		#mouse {
-			bottom: 85px;
-			}
-
-		#my_portfolio ul {
-			width: 94%;
-			}
-
-		#my_portfolio ul li {
-			width: 32%;
-			margin: 0.5%; 
-			}
-
-		#profile_box {
-			width: 90%;
-			}
-
-		#profile_leftbox {
-			width: 50%;
-			border-radius: 2vw 0vw 0 2vw;
-			}
-
-		#profile_rightbox {
-			width: 50%;
-			}
-
-		#contact ul {
-			width: 90%;
-			}
-
-		#contact li:nth-child(1) {
-			width: 20%;
-			border-right: 1px solid #fff;
-			margin-bottom: 0px;
-			}
-
-		#contact li:nth-child(2) {
-			width: 46%;
-			border-right: 1px solid #fff;
-			margin-bottom: 0px;
-			}
-
-		#contact li:nth-child(3) {
-			width: 34%;
-			border-right: none;
-			}
-
-		#footer_box {
-			width: 90%;
-			}
-
-		#footer_logo {
-			font-size: 20px;
-			line-height: 70px;
-			float: left;
-			}
-
-		#footer_right {
-			font-size: 12px;
-			line-height: 70px;
-			float: right;
-			margin-bottom: 0;
-			}
-
-
-		#main_content h2 {
-			font-size: 18px;
-			margin-top: 150px;
-			}
-
-		#left_side {
-			width: 100%;
-			}
-
-		#desktop_content {
-			border-radius: 20px;
-			}
-
-		#desktop_bt {
-			width: 14vw;
-			font-size: 2vw;
-			height: 4vw;
-			line-height: 4vw;
-			right: 20vw;
-			top: 25vw;
-			}
-
-		#right_side {
-			width: 100%;
-			}
-
-		#main_content {
-			width: 90%;
-		}
-		#content_left li {
-			line-height: 50px;
-			font-size: 16px;
-			}
-
-		#content_right li {
-			line-height: 50px;
-			font-size: 14px;
-			}
-
-
-		.work_img {
-			opacity: 0.3;
-			}
-
-		#profile h2 {
-			padding-top: 140px;
-			}
-
-		#my_portfolio {
-			text-align: center;
-			padding-bottom: 100px;
-			}
-
-		#my_portfolio h2 {
-			font-size: 24px;
-			padding-top: 180px;
-			margin-top: 0px;
-			}
-
-		#my_portfolio ul li h4 {
-			width: 40%;
-			top: 2vw;
-			opacity: 1;
-			}
-
-		#my_portfolio ul li h5 {
-			font-size: 1.3vw;
-			top: 8vw;
-			opacity: 1;
-			letter-spacing: 1px;
-			}
-
-		#my_portfolio ul li a {
-			width: 10vw;
-			height: 25px;
-			line-height: 25px;
-			bottom:3vw;
-			border-radius: 8px;
-			font-size: 1vw;
-			opacity: 1;
-			box-shadow: inset 1px 1px 2px #fff;
-			}
-
-		#my_portfolio ul li a:hover {
-			line-height: 25px;
-			}
-
-	}
-	@media all and (min-width:1200px) { /*1200~ pc*/
-
-		#menu_mobile {
-			display: none;
-			}
-
-		#menu {
-			display: block;
-			}
-
-		#main_text h1 {
-			font-size: 40px;
-			line-height: 60px;
-			}
-
-		#main_text h2 {
-			font-size: 13px;
-			line-height: 35px;
-			}
-
-		#main_icon {
-			background-image: url(icons/icon_pc.png);
-			}
-
-		#my_portfolio ul {
-			width: 1200px;
-			}
-
-		#my_portfolio ul li {
-			width: 32%;
-			margin: 0.5%;
-			}
-		
-
-		#profile h2 {
-			padding-top: 100px;
-			}
-
-		#profile_box {
-			width: 1200px;
-			}
-
-		#contact ul {
-			width: 1000px;
-			}
-
-		#footer_box {
-			width: 1200px;
-			}
-
-
-		#main_portfolio {
-			width: 100%;
-			margin-top: 200px;
-			}
-
-		#left_side {
-			width: 50%;
-			}
-
-		#desktop {
-			width: 30vw;
-			}
-
-		#desktop_content {
-			width: 30vw;
-			height: 20vw;
-			border-radius: 30px;
-			text-align: center;
-			}
-
-		#desktop_bt {
-			width: 150px;
-			height: 40px;
-			font-size: 20px;
-			line-height: 40px;
-			right: 5vw;
-			top: 0;
-			}
-
-		#right_side {
-			width: 50%;
-			}
-
-		#main_content {
-			width: 70%;
-			height: 50%;
-			margin-left: 4vw;
-			}
-
-		#main_content h2 {
-			font-size: 20px;
-			letter-spacing: 2px;
-			margin-bottom: 2vw;
-			text-align: left;
-			margin-top: 2vw;
-			}
-				
-		#content_left {
-			width: 20%;
-			height: 50%;
-			float: left;
-			text-align: left;
-			}
-
-		#content_left li {
-			line-height: 50px;
-			font-size: 15px;
-			}
-
-		#font {
-			margin-top: 10px;
-			}
-
-		#content_right {
-			width: 80%;
-			height: 50%;
-			float: left;
-			text-align: left;
-			}
-
-		#content_right li {
-			line-height: 50px;
-			font-size: 13px;
-			margin-right: -50px;
-			}
-
-		#detail {
-			line-height: 23px;
-			letter-spacing: 2px;
-			}
-		
-
-		.work_img {
-			opacity: 0.3;
-			}
-
-		#my_portfolio h2 {
-			font-size: 24px;
-			padding-top: 130px;
-			margin-top: 0;
-			}
-
-		#my_portfolio ul li h4 {
-			width: 60%;
-			top: 80px;
-			opacity: 0;
-			}
-
-		#my_portfolio ul li h5 {
-			font-size: 18px;
-			top: 150px;
-			opacity: 0;
-			}
-
-		#my_portfolio ul li a {
-			width: 140px;
-			height: 30px;
-			line-height: 30px;
-			bottom: 20px;
-			border-radius: 8px;
-			font-size: 13px;
-			opacity: 0;
-			}
-
-		#my_portfolio ul li a:hover {
-			line-height: 30px;
-			}
-
-	}
-</style>
-</head>
-<body>
- <h1 id="scroll_text">0</h1>
-	<div id="main">
-<!-- 		<video src="images/Wierd Monster Clouds Lenticular Clouds Changing Shape.mp4" id="video1" autoplay loop muted></video> -->
-		<div id="main_text">
-			<h1>I'm a Webpublisher</h1>
-			<h2>
-				creating modern and responsive design for Web and Mobile
-				<br> 모든 사이트는 W3C Validator HTML/CSS 웹표준검사를 완료했습니다.
-				<br> 현재 사이트는 반응형입니다.
-			</h2>
-		</div>
-			<header>
-				<ul id="menu">
-					<li>HOME</li>
-					<li>MAIN WORK</li>
-					<li>WORKS</li>
-					<li>ABOUT ME</li>
-					<li>CONTACT</li>
-				</ul>
-				<ul id="menu_mobile">
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-			</header>	
-
-				<div id="mouse">
-					<div id="wheel"></div>
-				</div>
-		</div>
-
-
-
-		<div id="main_portfolio">
-			<h2>Main Work</h2>
-			<div id="left_side">		
-			<a href="main_work/Skydive_Switzerland_index.html" target="_blank"><div id="desktop_bt">⇦ view</div></a>
-				<img src="images/desktop_pc.png" alt="PC 아이콘" id="desktop">
-				<div id="desktop_content">		
-					<img src="images/skydive_screenshot2.png" alt="스카이다이빙 웹사이트 스크린샷 1" id="screenshot1">
-					<img src="images/skydive_screenshot3.png" alt="스카이다이빙 웹사이트 스크린샷 2" id="screenshot2">
-					<img src="images/skydive_screenshot4.png" alt="스카이다이빙 웹사이트 스크린샷 3" id="screenshot3">
-					<img src="images/skydive_screenshot5.png" alt="스카이다이빙 웹사이트 스크린샷 4" id="screenshot4">
-					<img src="images/skydive_screenshot2.png" alt="스카이다이빙 웹사이트 스크린샷 5" id="screenshot5">
-				</div>
-			</div>
-
-			<div id="right_side">
-				<div id="main_content">
-					<h2>SKYDIVING IN INTERLAKEN</h2>					
-
-					<ul id="content_left">
-						<li>ViewPort</li>
-						<li>Color</li>
-						<li id="font">Font</li>
-						<li>Detail</li>
-					</ul>
-					<ul id="content_right">
-							<li>1920*1080 해상도(전체화면)의 데스크탑에 최적화 되어있습니다.</li>
-							<li><img src="images/color_chip.png" alt="색상 이미지" id="color_chip"></li>
-							<li>#Cairo #Roboto Condensed by Google</li>
-							<li><p id="detail">	스위스 인터라켄 스카이다이빙을 주제로 하여 프로그램 소개와 예약에 관한 페이지를 <span class="bold">직접 기획,디자인,제작</span>하여 만들었습니다.
-								<br><br> SetInterval을 이용하여 끝없이 이어지는 인터라켄의 풍경 그리고 흘러가는 구름을 표현했습니다.</p>	</li>
-					</ul>
-				</div>	
-			</div>
-</div>
-
-
-		<div id="my_portfolio">
-			<h2>WORKS</h2>
-			<p>		
-				This site is created with HTML5, CSS3, JavaScript & jQuery.
-				<br> Also, as a portfolio site, the resource is with the original company.
-				
-			</p>
-			<ul>
-				<li id="laneige">
-					<img src="images/4.jpg" alt="라네즈 사이트 이미지" class="work_img">
-					<a href="my_works/laneige/laneige_index.html" target="_blank">View more</a>
-					<h4><img src="icons/laneige_logo.png" alt="라네즈 로고 이미지"></h4>
-					<h5>라네즈 #반응형</h5>
-				</li>
-				<li id="chanel">
-					<img src="images/2.jpg" alt="샤넬 사이트 이미지" class="work_img">
-					<a href="my_works/chanel/chanel_index.html" target="_blank">View more</a>
-					<h4><img src="icons/chanel_logo.png" alt="샤넬 로고 이미지"></h4>
-					<h5>샤넬 #반응형</h5>
-				</li>
-				<li id="starbucks">
-					<img src="images/3.jpg" alt="스타벅스 사이트 이미지" class="work_img">
-					<a href="my_works/Mstarbucks/starbucks_m_index.html" target="_blank">View more</a>
-					<h4><img src="icons/starbucks_logo.png" alt="스타벅스 로고 이미지" ></h4>
-					<h5>스타벅스 #모바일</h5>
-				</li>
-				<li id="dunkin">
-					<img src="images/1.jpg" alt="던킨도너츠 사이트 이미지" class="work_img">
-					<a href="my_works/dunkindonuts/dunkindonuts_index.html" target="_blank">View more</a>
-					<h4><img src="icons/dunkin_logo.png" alt="던킨도너츠 로고 이미지"></h4>
-					<h5>던킨도너츠 # 데스크탑</h5>
-				</li>
-				<li id="kona">
-					<img src="images/5.jpg" alt="코나카드 사이트 이미지" class="work_img">
-					<a href="my_works/conacard/conacard_index.html" target="_blank">View more</a>
-					<h4><img src="icons/kona_logo.png" alt="코나카드 로고 이미지"></h4>
-					<h5>코나카드 #데스크탑</h5>
-				</li>
-				<li id="lotte">
-					<img src="images/6.jpg" alt="롯데 사이트 이미지" class="work_img">
-					<a href="my_works/lottehotel/lottehotel_index.html" target="_blank">View more</a>
-					<h4><img src="icons/lotte_logo.png" alt="롯데 로고 이미지"></h4>
-					<h5>롯데호텔 #데스크탑</h5>
-				</li>
-
-			</ul>
-		</div>
-
-
-		<div id="profile">
-			<h2>ABOUT ME</h2>
-			<img src="images/me.png" alt="프로필 사진" id="profile_img">
-			<div id="profile_box">
-				<div id="profile_leftbox">
-					<h3>WEB, UX/UI Publisher <br> LEE JIHYE</h3>
-					<p>I am proficient in all design software, as well as some other computer applications. My skills range from website design, all the way to application design.I will continue further studies to improve design/publishing skills.</p>	
-				</div>
-				<div id="profile_rightbox">
-	<ul>
-		<li>
-			<h5>Photoshop</h5>
-			<h6>95%</h6>
-			<div class="profile_boxbg"></div>
-			<div class="profile_boxbar"></div>
-		</li>
-		<li>
-			<h5>Illustrator</h5>
-			<h6>90%</h6>
-			<div class="profile_boxbg"></div>
-			<div class="profile_boxbar"></div>
-		</li>
-		<li>
-			<h5>html5&css3</h5>
-			<h6>95%</h6>
-			<div class="profile_boxbg"></div>
-			<div class="profile_boxbar"></div>
-		</li>
-		<li>
-			<h5>Java script</h5>
-			<h6>85%</h6>
-			<div class="profile_boxbg"></div>
-			<div class="profile_boxbar"></div>
-		</li>
-	</ul>
-				</div>
-			</div>
-		</div>
-
-<div id="contact">
-<h2>CONTACT ME</h2>
-	<ul>
-		<li>
-			<img src="http://uxuidesign.co.kr/portfolio/call.png" alt="통화 아이콘">
-			<h4>010-3549-0816</h4>
-			<h5>LEE JIHYE</h5>
-		</li>
-		<li>
-			<img src="http://uxuidesign.co.kr/portfolio/locate.png" alt="지도 아이콘">
-			<h4>Gyeonggi-do, Republic of Korea</h4>
-			<h5>22, Sinchon-ro, Uijeongbu-si, Gyeonggi-do, Republic of Korea</h5>
-		</li>
-		<li>
-			<img src="http://uxuidesign.co.kr/portfolio/mese.png" alt="메일 아이콘">
-			<h4>MAIL | KAKAOTALK | NATE ON</h4>
-			<h5>jiihy@naver.com</h5>
-		</li>
-
-	</ul>
-</div>
-<footer>
-	<div id="footer_box">
-		<h3 id="footer_logo"><img src="images/logoname.png" alt="로고 이미지"></h3>
-		<p id="footer_right">
-		2021 Copyrightⓒ Lee JiHye, All rights reserved.</p>
-	</div>
-</footer>
-
-<div id="main_icon"></div>
-
-<div id="popup_bg">
-	<ul id="popup">
-		<li>HOME</li>
-		<li>MAIN WORK</li>
-		<li>WORKS</li>
-		<li>ABOUT ME</li>
-		<li>CONTACT</li>
-	</ul>
-<!-- 	<p id="close">X</p> -->
-</div>
-
-<div class="w3c">
-		<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
-		<img style="border:0;width:88px;height:31px"
-        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-        alt="올바른 CSS입니다!" />
-		  </a>
-		<!-- css 검사완료 코드 -->
-		<a href="http://validator.kldp.org/check?uri=referer"
-		  onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))" target="_blank"><img
-		  src="http://validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80" ></a>
-		<!-- html 검사완료 코드 -->
-</div>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>이지혜 웹퍼블리셔의 포트폴리오</title>
+    <link rel="shortcut icon" href="icons/pavicon_me.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" type="text/font" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" type="text/font" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jquery-animate-css-rotate-scale.js"></script>
+    <script>
+      $(document).ready(function () {
+        //시작했을때만 반응
+        $("#screenshot1")
+          .stop()
+          .animate({ opacity: 1 }, 1000, function a() {
+            $("#screenshot2")
+              .stop()
+              .delay(2000)
+              .animate({ opacity: 1 }, 1000, function () {
+                $("#screenshot3")
+                  .stop()
+                  .delay(2000)
+                  .animate({ opacity: 1 }, 1000, function () {
+                    $("#screenshot4")
+                      .stop()
+                      .delay(2000)
+                      .animate({ opacity: 1 }, 1000, function () {
+                        $("#screenshot5")
+                          .stop()
+                          .delay(2000)
+                          .animate({ opacity: 1 }, 1000, function () {
+                            $("#screenshot2,#screenshot3,#screenshot4")
+                              .stop()
+                              .animate({ opacity: 0 }, 1);
+                            $("#screenshot1")
+                              .stop()
+                              .animate({ opacity: 1 }, 1000, a);
+                            $("#screenshot5")
+                              .stop()
+                              .delay(1000)
+                              .animate({ opacity: 0 }, 2000);
+                          });
+                      });
+                  });
+              });
+          });
+
+        toggle2 = 0; //토글에 사용할 변수 선언
+        click = 0;
+
+        $("#menu_mobile").click(function () {
+          //button을 클릭할 때 2가지의 상황을 연출
+          if (toggle2 == 0) {
+            //toggle이 0일때 A의 상황
+            toggle2 = 1;
+            $("#popup_bg").fadeIn();
+          } else {
+            //toggle이 0이 아닐때 B의 상황
+            toggle2 = 0;
+            $("#popup_bg").fadeOut();
+          }
+        });
+
+        $("#popup li").click(function () {
+          toggle2 = 0;
+          $("#popup_bg").fadeOut(100);
+          $("#menu_mobile li:nth-child(1)").animate(
+            { rotate: "0deg", top: "0px", "background-color": "#000" },
+            300
+          );
+          $("#menu_mobile li:nth-child(2)").animate(
+            { left: "0px", opacity: "1" },
+            300
+          );
+          $("#menu_mobile li:nth-child(3)").animate(
+            { rotate: "0deg", top: "16px", "background-color": "#000" },
+            300
+          );
+        });
+        $("#popup li:nth-child(1)").click(function () {
+          $("body,html").animate({ scrollTop: 0 });
+        });
+        $("#popup li:nth-child(2)").click(function () {
+          $("body,html").animate({
+            scrollTop: $("#main_portfolio").offset().top,
+          });
+        });
+        $("#popup li:nth-child(3)").click(function () {
+          $("body,html").animate({
+            scrollTop: $("#my_portfolio").offset().top,
+          });
+        });
+        $("#popup li:nth-child(4)").click(function () {
+          $("body,html").animate({ scrollTop: $("#profile img").offset().top });
+        });
+        $("#popup li:nth-child(5)").click(function () {
+          $("body,html").animate({ scrollTop: $("#contact").offset().top });
+        });
+
+        $("#menu>li:nth-child(1)").click(function () {
+          $("body,html").animate({ scrollTop: $("#main").offset().top });
+        });
+        $("#menu>li:nth-child(2)").click(function () {
+          $("body,html").animate({
+            scrollTop: $("#main_portfolio").offset().top,
+          });
+        });
+        $("#menu>li:nth-child(3)").click(function () {
+          $("body,html").animate({
+            scrollTop: $("#my_portfolio").offset().top,
+          });
+        });
+        $("#menu>li:nth-child(4)").click(function () {
+          $("body,html").animate({ scrollTop: $("#profile").offset().top });
+        });
+        $("#menu>li:nth-child(5)").click(function () {
+          $("body,html").animate({ scrollTop: $("#contact").offset().top });
+        });
+
+        $(window).scroll(function () {
+          sc = $(window).scrollTop();
+          if (sc >= $("#profile").offset().top) {
+            $("#profile_rightbox li:nth-child(1) .profile_boxbar")
+              .stop()
+              .animate({ width: "95%" }, 300);
+            $("#profile_rightbox li:nth-child(2) .profile_boxbar")
+              .stop()
+              .delay(100)
+              .animate({ width: "90%" }, 300);
+            $("#profile_rightbox li:nth-child(3) .profile_boxbar")
+              .stop()
+              .delay(100)
+              .animate({ width: "95%" }, 300);
+            $("#profile_rightbox li:nth-child(4) .profile_boxbar")
+              .stop()
+              .delay(100)
+              .animate({ width: "85%" }, 300);
+          }
+        });
+
+        key1 = 0;
+        $(window).resize(function () {
+          //창의 크기에 따라 반응
+          if ($(window).width() >= 0 && $(window).width() < 770) {
+            key1 = 0;
+            $(".work_img").css({ opacity: "0.3" });
+            $("#my_portfolio>ul>li>h4").css({ opacity: "0" });
+            $("#my_portfolio ul li h5").css({
+              "font-size": "2.8vw",
+              top: "10vw",
+              opacity: "1",
+              "letter-spacing": "1px",
+            });
+            $("#my_portfolio ul li>a").css({
+              width: "15vw",
+              height: "4vw",
+              "line-height": "4vw",
+              bottom: "5vw",
+              "border-radius": "5px",
+              "font-size": "2vw",
+              opacity: "1",
+              border: "none",
+            });
+          } else if ($(window).width() >= 770 && $(window).width() < 1200) {
+            key1 = 0;
+            $(".work_img").css({ opacity: "0.3", top: "3vw" });
+            $("#my_portfolio>ul>li>h4").css({ opacity: "1", top: "2vw" });
+            $("#my_portfolio ul li h5").css({
+              "font-size": "1.3vw",
+              top: "8vw",
+              opacity: "1",
+              "letter-spacing": "1px",
+            });
+            $("#my_portfolio ul li>a").css({
+              width: "10vw",
+              height: "25px",
+              "line-height": "25px",
+              bottom: "3vw",
+              "border-radius": "8px",
+              "font-size": "1vw",
+              opacity: "1",
+              border: "1px 1px 2px #fff",
+            });
+            //		css 값 따로 넣어주기
+          } else if ($(window).width() >= 1200) {
+            key1 = 1;
+            $(".work_img").css({ opacity: "0.3" });
+            $("#my_portfolio>ul>li>h4").css({ opacity: "0", top: "80px" });
+            $("#my_portfolio ul li h5").css({
+              "font-size": "18px",
+              top: "150px",
+              opacity: "0",
+              "letter-spacing": "1px",
+            });
+            $("#my_portfolio ul li>a").css({
+              width: "140px",
+              height: "30px",
+              "line-height": "30px",
+              bottom: "20px",
+              "border-radius": "8px",
+              "font-size": "13px",
+              opacity: "0",
+              border: "1px 1px 2px #fff",
+            });
+          }
+        }); //창크기반응구역
+
+        //원래반응구역
+        if ($(window).width() >= 1200) {
+          key1 = 1;
+          $("#my_portfolio>ul>li").mouseenter(function () {
+            //mouseover은 해당 요소만 hover, mouseenter은 자식요소까지 감싸줌
+            if (key1 == 1) {
+              $(this)
+                .children(".work_img")
+                .stop()
+                .stop()
+                .delay(70)
+                .animate({ opacity: "0.1" }, 500);
+              $(this)
+                .children("h4")
+                .stop()
+                .stop()
+                .delay(150)
+                .animate({ opacity: "0.9", top: "60px" }, 500);
+              $(this)
+                .children("h5")
+                .stop()
+                .stop()
+                .delay(200)
+                .animate({ opacity: "0.9", top: "120px" }, 500);
+              $(this)
+                .children("a")
+                .stop()
+                .stop()
+                .delay(250)
+                .animate({ opacity: "1", bottom: "50px" }, 500);
+            }
+          });
+
+          $("#my_portfolio>ul>li").mouseleave(function () {
+            if (key1 == 1) {
+              $(this)
+                .children(".work_img")
+                .stop()
+                .stop()
+                .delay(70)
+                .animate({ opacity: "0.3" }, 500);
+              $(this)
+                .children("h4")
+                .stop()
+                .stop()
+                .delay(150)
+                .animate({ opacity: "0", top: "80px" }, 500);
+              $(this)
+                .children("h5")
+                .stop()
+                .stop()
+                .delay(200)
+                .animate({ opacity: "0", top: "150px" }, 500);
+              $(this)
+                .children("a")
+                .stop()
+                .stop()
+                .delay(250)
+                .animate({ opacity: "0", bottom: "20px" }, 500);
+            }
+          });
+        }
+
+        $("#wheel").animate(
+          { top: 15, opacity: 0 },
+          500,
+          function mouse_loop() {
+            $("#wheel")
+              .css({ top: "6px", opacity: "1" })
+              .delay(200)
+              .animate({ top: 15, opacity: 0 }, 500, mouse_loop);
+          }
+        );
+        tg = 0;
+        $("#menu_mobile").click(function () {
+          if (tg == 0) {
+            tg = 1;
+            $("#menu_mobile li:nth-child(1)").animate(
+              { rotate: "45deg", top: "5px", "background-color": "#000" },
+              300
+            );
+            $("#menu_mobile li:nth-child(2)").animate(
+              { left: "30px", opacity: "0" },
+              300
+            );
+            $("#menu_mobile li:nth-child(3)").animate(
+              { rotate: "-45deg", top: "5px", "background-color": "#000" },
+              300
+            );
+          } else {
+            tg = 0; // 0으로 바뀌어야 순환
+            $("#menu_mobile li:nth-child(1)").animate(
+              { rotate: "0deg", top: "0px", "background-color": "#000" },
+              300
+            );
+            $("#menu_mobile li:nth-child(2)").animate(
+              { left: "0px", opacity: "1" },
+              300
+            );
+            $("#menu_mobile li:nth-child(3)").animate(
+              { rotate: "0deg", top: "16px", "background-color": "#000" },
+              300
+            );
+          }
+        });
+      });
+    </script>
+    <style>
+      .bold {
+        background-color: #f2cd00;
+        font-weight: 900;
+      }
+
+      #scroll_text {
+        position: fixed;
+        left: 5px;
+        top: 5px;
+        font-size: 50px;
+        background-color: #000;
+        color: #fff;
+        z-index: 999999;
+        display: none;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: "Overpass", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      body {
+        height: 100%;
+        background: url(images/33.jpg) center no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      #main {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        background: url(images/bgdd.png) center no-repeat;
+        background-size: cover;
+      }
+
+      #main_text {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        height: 95px;
+        top: 380px;
+        bottom: 0;
+        margin: auto;
+        color: #fff;
+      }
+
+      #main_text h1 {
+        font-size: 40px;
+        line-height: 60px;
+        text-transform: uppercase;
+      }
+
+      #main_text h2 {
+        font-size: 10px;
+        line-height: 35px;
+      }
+
+      nav {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background-color: rgba(41, 66, 107, 0);
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        border: 10px rgba(255, 255, 255, 0.8);
+        z-index: 9999;
+        box-shadow: 5px 5px 20px #333;
+      }
+
+      #logo {
+        float: left;
+        font-size: 24px;
+        margin-left: 20px;
+      }
+
+      #menu {
+        float: right;
+        margin-right: 20px;
+        color: #fff;
+      }
+
+      #menu li {
+        float: left;
+        margin-left: 20px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      #menu_mobile {
+        width: 20px;
+        height: 18px;
+        position: relative;
+        float: right;
+        margin-top: 10px;
+        display: none;
+        right: 20px;
+        cursor: pointer;
+      }
+
+      #menu_mobile li {
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+      }
+
+      #menu_mobile li:nth-child(1) {
+        left: 0;
+        top: 0;
+      }
+
+      #menu_mobile li:nth-child(2) {
+        left: 0;
+        top: 8px;
+      }
+
+      #menu_mobile li:nth-child(3) {
+        left: 0;
+        top: 16px;
+      }
+
+      #main_icon {
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        left: 5px;
+        bottom: 3px;
+        background: url(icons/icon_pc.png) 0 0 no-repeat;
+        background-size: cover;
+        z-index: 9999;
+      }
+
+      #mouse {
+        width: 20px;
+        height: 28px;
+        border: 3px solid #fff;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 70px;
+        margin: auto;
+        border-radius: 12px;
+      }
+
+      #wheel {
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 6px;
+        border-radius: 30px;
+        background-color: #fff;
+        margin: auto;
+      }
+
+      #main_portfolio {
+        width: 100%;
+        padding-top: 100px;
+        margin-top: 100px;
+        text-align: center;
+        color: #333;
+        position: relative;
+      }
+
+      #main_portfolio > h2 {
+        font-size: 24px;
+        margin-bottom: 80px;
+      }
+
+      #left_side {
+        width: 50%;
+        height: 40vw;
+        float: left;
+        position: relative;
+      }
+
+      #desktop {
+        width: 30vw;
+        position: relative;
+        z-index: 99;
+        top: 0;
+        right: 0px;
+      }
+
+      #screenshot1 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        opacity: 1;
+      }
+
+      #screenshot2 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        opacity: 0;
+      }
+
+      #screenshot3 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        opacity: 0;
+      }
+
+      #screenshot4 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        opacity: 0;
+      }
+
+      #screenshot5 {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        opacity: 0;
+      }
+
+      #desktop_content {
+        width: 30vw;
+        height: 20vw;
+        border-radius: 50px;
+        text-align: center;
+        overflow: hidden;
+        top: 0;
+        right: 0px;
+        left: 0;
+        margin: auto;
+        background-color: #000;
+      }
+
+      #desktop_bt {
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        background: linear-gradient(125deg, #fff, rgba(255, 255, 255, 0.5));
+        box-shadow: -2px -2px 3px #fff;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        color: #333;
+        position: absolute;
+        right: 5vw;
+        margin: auto;
+        z-index: 999;
+        bottom: 0;
+        top: 0;
+        border-radius: 3px;
+        transition: 0.3s;
+        letter-spacing: 2px;
+      }
+
+      #desktop_bt:hover {
+        letter-spacing: 4px;
+        background: linear-gradient(125deg, #6da5d8, rgba(255, 255, 255, 0));
+        color: #fff;
+      }
+
+      #right_side {
+        width: 50%;
+        float: right;
+        border-radius: 5vw;
+      }
+
+      #main_content {
+        width: 70%;
+        height: 50%;
+        margin-left: 4vw;
+        letter-spacing: 2px;
+      }
+
+      #main_content h2 {
+        font-size: 20px;
+        margin-bottom: 2vw;
+        margin-top: 2vw;
+      }
+
+      #content_left {
+        width: 20%;
+        height: 50%;
+        float: left;
+        text-align: left;
+      }
+
+      #content_left li {
+        line-height: 50px;
+        font-size: 15px;
+        margin-right: -50px;
+      }
+
+      #font {
+        margin-top: 10px;
+      }
+
+      #content_right {
+        width: 80%;
+        height: 50%;
+        float: left;
+        text-align: left;
+      }
+
+      #content_right li {
+        line-height: 50px;
+        font-size: 14px;
+        font-family: "Noto Sans KR", sans-serif;
+      }
+
+      #detail {
+        line-height: 23px;
+      }
+
+      #my_portfolio {
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      #my_portfolio h2 {
+        font-size: 24px;
+        margin-bottom: 80px;
+        color: #333;
+      }
+
+      #my_portfolio p {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      #my_portfolio ul {
+        width: 120px;
+        margin: auto;
+        margin-top: 30px;
+      }
+
+      #my_portfolio ul li {
+        width: 32%;
+        margin: 0.5%; /* 반응형의 계산을 위해서 비율로 설정*/ /*4개 = 25% 3개 = 33.333% (마진포함)*/
+        float: left;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 50px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      #laneige {
+        background: linear-gradient(
+          to bottom,
+          #50699f,
+          #50699f,
+          rgba(80, 105, 159, 0)
+        );
+      } /*라네즈*/
+
+      #chanel {
+        background: linear-gradient(to bottom, #000, #000, rgba(0, 0, 0, 0));
+      } /*샤넬*/
+
+      #starbucks {
+        background: linear-gradient(
+          to bottom,
+          #006e3f,
+          #006e3f,
+          rgba(0, 110, 63, 0)
+        );
+      } /*스타벅스*/
+
+      #dunkin {
+        background: linear-gradient(
+          to bottom,
+          #fc6719,
+          #fc6719,
+          rgba(252, 103, 25, 0)
+        );
+      } /*던킨도너츠*/
+
+      #kona {
+        background: linear-gradient(
+          to bottom,
+          #fe4155,
+          #fe4155,
+          rgba(254, 65, 85, 0)
+        );
+      } /*코나카드*/
+
+      #lotte {
+        background: linear-gradient(
+          to bottom,
+          #877a70,
+          #877a70,
+          rgba(135, 122, 112, 0)
+        );
+      } /*롯데호텔*/
+
+      #my_portfolio ul > li > img {
+        width: 100%;
+        vertical-align: top;
+        border-radius: 8px;
+      }
+
+      #my_portfolio ul li h4 {
+        position: absolute;
+        width: 60%;
+        left: 0;
+        right: 0;
+        top: 80px;
+        margin: auto;
+      }
+
+      #my_portfolio ul > li > h4 > img {
+        width: 100%;
+      }
+
+      #my_portfolio p {
+        font-size: 15px;
+      }
+
+      #my_portfolio ul li h5 {
+        position: absolute;
+        font-size: 18px;
+        font-weight: 100;
+        right: 0;
+        left: 0;
+        margin: auto;
+        top: 150px;
+        color: #fff;
+        font-family: "Do Hyeon", sans-serif;
+        letter-spacing: 3px;
+      }
+
+      #my_portfolio ul li a {
+        width: 140px;
+        height: 30px;
+        line-height: 30px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        margin: auto;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 3px;
+        border: 1px solid #fff;
+        color: #fff;
+        font-size: 13px;
+        z-index: 9999;
+      }
+
+      #my_portfolio ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+        line-height: 26px;
+        color: #333;
+      }
+
+      #profile {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 100px;
+      }
+
+      #profile h2 {
+        padding-bottom: 50px;
+        color: #333;
+      }
+
+      #profile_img {
+        width: 300px;
+        border-radius: 300px;
+        margin-top: 20px;
+        box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.5);
+      }
+
+      #profile_box {
+        width: 1200px;
+        overflow: hidden;
+        border: 1px solid #fff;
+        padding: 10px;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      #profile_leftbox {
+        width: 50%;
+        height: 300px;
+        float: left;
+        border-radius: 2vw 0vw 0 2vw;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0.7),
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.5)
+        );
+      }
+
+      #profile_leftbox h3 {
+        margin-top: 50px;
+        margin-left: 20px;
+      }
+
+      #profile_leftbox p {
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      #profile_rightbox {
+        width: 50%;
+        height: 300px;
+        float: right;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.3),
+          rgba(255, 255, 255, 0)
+        );
+      }
+
+      #profile_rightbox ul {
+        padding: 5%;
+        width: 90%;
+        height: 80%;
+      }
+
+      #profile_rightbox ul li {
+        width: 100%;
+        height: 24%;
+        margin-bottom: 1%;
+        position: relative;
+      }
+
+      #profile_rightbox ul li h5 {
+        float: left;
+        margin-top: 15px;
+      }
+
+      #profile_rightbox ul li h6 {
+        float: right;
+        margin-top: 15px;
+      }
+
+      .profile_boxbg {
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        background-color: #555;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        border-radius: 10px;
+      }
+
+      .profile_boxbar {
+        width: 50%;
+        height: 4px;
+        background-color: #d985e9;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        border-radius: 10px 0 0 10px;
+      }
+
+      #contact {
+        width: 100%;
+        padding: 100px 0;
+        margin: auto;
+        box-sizing: border-box;
+      }
+
+      #contact h2 {
+        color: #333;
+        text-align: center;
+      }
+
+      #contact ul {
+        width: 1000px;
+        margin: auto;
+        overflow: hidden;
+        margin-top: 50px;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 1vw;
+        box-shadow: -2px -2px 5px #fff;
+        padding: 3vw;
+      }
+
+      #contact li {
+        color: #fff;
+        text-shadow: 1px 1px #333;
+        border-right: 1px solid #fff;
+        padding: 0 2%;
+        float: left;
+        box-sizing: border-box;
+        text-align: left;
+      } /*2% 2% *3 =12 , 100- 12 = 88*/
+
+      #contact li:nth-child(1) {
+        width: 20%;
+      }
+
+      #contact li:nth-child(2) {
+        width: 46%;
+      }
+
+      #contact li:nth-child(3) {
+        width: 34%;
+        border-right: none;
+      }
+
+      footer {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        padding-bottom: 50px;
+      }
+
+      #footer_box {
+        width: 1200px;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      #footer_logo {
+        font-size: 20px;
+        line-height: 70px;
+        float: left;
+      }
+
+      #footer_logo img {
+        margin-top: 18px;
+      }
+
+      #footer_right {
+        font-size: 12px;
+        float: right;
+        line-height: 70px;
+        color: #eee;
+        font-weight: 100;
+      }
+
+      #popup_bg {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        z-index: 9999;
+      }
+
+      #popup {
+        width: 100%;
+        height: 60vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      #popup li {
+        text-align: center;
+        font-size: 10vw;
+        color: #fff;
+        line-height: 12.5vh;
+        cursor: pointer;
+      }
+
+      #popup li:hover {
+        color: #bc64c4;
+      }
+
+      /*#close {position: absolute;font-size: 50px;right: 15px;top: 5px;color: #fff;cursor: pointer;}*/
+
+      .w3c {
+        text-align: center;
+        padding-bottom: 50px;
+      }
+    </style>
+
+    <!-- 미디어쿼리 반응형 CSS 시작 -->
+
+    <style>
+      @media all and (min-width: 0px) {
+        /*0~770 모바일 */
+
+        #menu_mobile {
+          margin-top: 13px;
+          display: block;
+        }
+
+        #menu {
+          display: none;
+        }
+
+        #main_text h1 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        #main_text h2 {
+          font-size: 10px;
+          line-height: 25px;
+        }
+
+        #main_icon {
+          background-image: url(icons/icon_m.png);
+        }
+
+        nav {
+          height: 40px;
+          line-height: 40px;
+        }
+        #logo {
+          font-size: 18px;
+        }
+
+        #mouse {
+          bottom: 60px;
+        }
+
+        #my_portfolio ul {
+          width: 94%;
+        }
+        #my_portfolio ul li {
+          width: 48%;
+          margin: 1%;
+        }
+
+        .work_img {
+          opacity: 0.3;
+        }
+
+        #my_portfolio > ul > li > h4 {
+          width: 40%;
+          top: 3vw;
+          opacity: 0;
+        }
+
+        #my_portfolio ul li h5 {
+          font-size: 2.8vw;
+          top: 10vw;
+          opacity: 1;
+          letter-spacing: 1px;
+        }
+
+        #my_portfolio ul li a {
+          width: 15vw;
+          height: 4vw;
+          line-height: 4vw;
+          bottom: 5vw;
+          border-radius: 5px;
+          font-size: 2vw;
+          opacity: 1;
+          border: none;
+        }
+
+        #my_portfolio ul li a:hover {
+          line-height: 4vw;
+        }
+
+        #my_portfolio h2 {
+          font-size: 24px;
+          margin-top: 0vw;
+          padding-top: 20vw;
+        }
+
+        #profile h2 {
+          padding-top: 23vw;
+        }
+
+        #profile_box {
+          width: 90%;
+        }
+
+        #profile_leftbox {
+          width: 100%;
+          border-radius: 2vw 2vw 0 0;
+        }
+
+        #profile_rightbox {
+          width: 100%;
+        }
+
+        #contact ul {
+          width: 80%;
+        }
+
+        #contact li:nth-child(1) {
+          width: 100%;
+          border-right: none;
+          margin-bottom: 20px;
+        }
+
+        #contact li:nth-child(2) {
+          width: 100%;
+          border-right: none;
+          margin-bottom: 20px;
+        }
+
+        #contact li:nth-child(3) {
+          width: 100%;
+          border-right: none;
+        }
+
+        #footer_box {
+          width: 90%;
+        }
+
+        #footer_logo {
+          font-size: 16px;
+          line-height: 50px;
+          float: none;
+        }
+
+        #footer_right {
+          font-size: 10px;
+          line-height: 18px;
+          margin-top: 5px;
+          float: none;
+          margin-bottom: 10px;
+        }
+
+        #left_side {
+          width: 100%;
+          position: relative;
+        }
+
+        #desktop_content {
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: auto;
+          width: 50vw;
+          height: 30vw;
+          border-radius: 20px;
+        }
+
+        #desktop_bt {
+          width: 18vw;
+          height: 5vw;
+          font-size: 3vw;
+          line-height: 5vw;
+          right: 20vw;
+          top: 25vw;
+        }
+
+        #desktop {
+          width: 50vw;
+        }
+
+        #right_side {
+          width: 100%;
+        }
+
+        #main_content {
+          width: 90%;
+        }
+
+        #main_content h2 {
+          font-size: 15px;
+          margin-top: 100px;
+        }
+
+        #content_left li {
+          line-height: 50px;
+          font-size: 13px;
+        }
+
+        #color_chip {
+          height: 30px;
+          margin-top: 10px;
+        }
+
+        #content_right li {
+          line-height: 50px;
+          font-size: 11px;
+        }
+
+        #detail {
+          margin-top: 10px;
+        }
+      }
+
+      @media all and (min-width: 770px) {
+        /*770~1200 태블릿pc*/
+
+        #menu_mobile {
+          display: none;
+        }
+
+        #menu {
+          display: block;
+        }
+
+        #main_text h1 {
+          font-size: 32px;
+          line-height: 50px;
+        }
+
+        #main_text h2 {
+          font-size: 10px;
+          line-height: 25px;
+        }
+
+        #main_icon {
+          background-image: url(icons/icon_tab.png);
+        }
+
+        nav {
+          height: 50px;
+          line-height: 50px;
+        }
+
+        #logo {
+          font-size: 24px;
+        }
+
+        #mouse {
+          bottom: 85px;
+        }
+
+        #my_portfolio ul {
+          width: 94%;
+        }
+
+        #my_portfolio ul li {
+          width: 32%;
+          margin: 0.5%;
+        }
+
+        #profile_box {
+          width: 90%;
+        }
+
+        #profile_leftbox {
+          width: 50%;
+          border-radius: 2vw 0vw 0 2vw;
+        }
+
+        #profile_rightbox {
+          width: 50%;
+        }
+
+        #contact ul {
+          width: 90%;
+        }
+
+        #contact li:nth-child(1) {
+          width: 20%;
+          border-right: 1px solid #fff;
+          margin-bottom: 0px;
+        }
+
+        #contact li:nth-child(2) {
+          width: 46%;
+          border-right: 1px solid #fff;
+          margin-bottom: 0px;
+        }
+
+        #contact li:nth-child(3) {
+          width: 34%;
+          border-right: none;
+        }
+
+        #footer_box {
+          width: 90%;
+        }
+
+        #footer_logo {
+          font-size: 20px;
+          line-height: 70px;
+          float: left;
+        }
+
+        #footer_right {
+          font-size: 12px;
+          line-height: 70px;
+          float: right;
+          margin-bottom: 0;
+        }
+
+        #main_content h2 {
+          font-size: 18px;
+          margin-top: 150px;
+        }
+
+        #left_side {
+          width: 100%;
+        }
+
+        #desktop_content {
+          border-radius: 20px;
+        }
+
+        #desktop_bt {
+          width: 14vw;
+          font-size: 2vw;
+          height: 4vw;
+          line-height: 4vw;
+          right: 20vw;
+          top: 25vw;
+        }
+
+        #right_side {
+          width: 100%;
+        }
+
+        #main_content {
+          width: 90%;
+        }
+        #content_left li {
+          line-height: 50px;
+          font-size: 16px;
+        }
+
+        #content_right li {
+          line-height: 50px;
+          font-size: 14px;
+        }
+
+        .work_img {
+          opacity: 0.3;
+        }
+
+        #profile h2 {
+          padding-top: 140px;
+        }
+
+        #my_portfolio {
+          text-align: center;
+          padding-bottom: 100px;
+        }
+
+        #my_portfolio h2 {
+          font-size: 24px;
+          padding-top: 180px;
+          margin-top: 0px;
+        }
+
+        #my_portfolio ul li h4 {
+          width: 40%;
+          top: 2vw;
+          opacity: 1;
+        }
+
+        #my_portfolio ul li h5 {
+          font-size: 1.3vw;
+          top: 8vw;
+          opacity: 1;
+          letter-spacing: 1px;
+        }
+
+        #my_portfolio ul li a {
+          width: 10vw;
+          height: 25px;
+          line-height: 25px;
+          bottom: 3vw;
+          border-radius: 8px;
+          font-size: 1vw;
+          opacity: 1;
+          box-shadow: inset 1px 1px 2px #fff;
+        }
+
+        #my_portfolio ul li a:hover {
+          line-height: 25px;
+        }
+      }
+      @media all and (min-width: 1200px) {
+        /*1200~ pc*/
+
+        #menu_mobile {
+          display: none;
+        }
+
+        #menu {
+          display: block;
+        }
+
+        #main_text h1 {
+          font-size: 40px;
+          line-height: 60px;
+        }
+
+        #main_text h2 {
+          font-size: 13px;
+          line-height: 35px;
+        }
+
+        #main_icon {
+          background-image: url(icons/icon_pc.png);
+        }
+
+        #my_portfolio ul {
+          width: 1200px;
+        }
+
+        #my_portfolio ul li {
+          width: 32%;
+          margin: 0.5%;
+        }
+
+        #profile h2 {
+          padding-top: 100px;
+        }
+
+        #profile_box {
+          width: 1200px;
+        }
+
+        #contact ul {
+          width: 1000px;
+        }
+
+        #footer_box {
+          width: 1200px;
+        }
+
+        #main_portfolio {
+          width: 100%;
+          margin-top: 200px;
+        }
+
+        #left_side {
+          width: 50%;
+        }
+
+        #desktop {
+          width: 30vw;
+        }
+
+        #desktop_content {
+          width: 30vw;
+          height: 20vw;
+          border-radius: 30px;
+          text-align: center;
+        }
+
+        #desktop_bt {
+          width: 150px;
+          height: 40px;
+          font-size: 20px;
+          line-height: 40px;
+          right: 5vw;
+          top: 0;
+        }
+
+        #right_side {
+          width: 50%;
+        }
+
+        #main_content {
+          width: 70%;
+          height: 50%;
+          margin-left: 4vw;
+        }
+
+        #main_content h2 {
+          font-size: 20px;
+          letter-spacing: 2px;
+          margin-bottom: 2vw;
+          text-align: left;
+          margin-top: 2vw;
+        }
+
+        #content_left {
+          width: 20%;
+          height: 50%;
+          float: left;
+          text-align: left;
+        }
+
+        #content_left li {
+          line-height: 50px;
+          font-size: 15px;
+        }
+
+        #font {
+          margin-top: 10px;
+        }
+
+        #content_right {
+          width: 80%;
+          height: 50%;
+          float: left;
+          text-align: left;
+        }
+
+        #content_right li {
+          line-height: 50px;
+          font-size: 13px;
+          margin-right: -50px;
+        }
+
+        #detail {
+          line-height: 23px;
+          letter-spacing: 2px;
+        }
+
+        .work_img {
+          opacity: 0.3;
+        }
+
+        #my_portfolio h2 {
+          font-size: 24px;
+          padding-top: 130px;
+          margin-top: 0;
+        }
+
+        #my_portfolio ul li h4 {
+          width: 60%;
+          top: 80px;
+          opacity: 0;
+        }
+
+        #my_portfolio ul li h5 {
+          font-size: 18px;
+          top: 150px;
+          opacity: 0;
+        }
+
+        #my_portfolio ul li a {
+          width: 140px;
+          height: 30px;
+          line-height: 30px;
+          bottom: 20px;
+          border-radius: 8px;
+          font-size: 13px;
+          opacity: 0;
+        }
+
+        #my_portfolio ul li a:hover {
+          line-height: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="scroll_text">0</h1>
+    <header id="main">
+      <!-- 		<video src="images/Wierd Monster Clouds Lenticular Clouds Changing Shape.mp4" id="video1" autoplay loop muted></video> -->
+      <div id="main_text">
+        <h1>I'm a Webpublisher</h1>
+        <h2>
+          creating modern and responsive design for Web and Mobile
+          <br />
+          모든 사이트는 W3C Validator HTML/CSS 웹표준검사를 완료했습니다. 
+		  <br />
+          현재 사이트는 반응형입니다.
+        </h2>
+      </div>
+
+      <nav>
+        <ul id="menu">
+          <li>HOME</li>
+          <li>MAIN WORK</li>
+          <li>WORKS</li>
+          <li>ABOUT ME</li>
+          <li>CONTACT</li>
+        </ul>
+        <ul id="menu_mobile">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
+
+      <div id="mouse">
+        <div id="wheel"></div>
+      </div>
+    </header>
+
+    <section id="main_portfolio">
+      <h2>Main Work</h2>
+      <article id="left_side">
+        <a href="main_work/Skydive_Switzerland_index.html" target="_blank"><div id="desktop_bt">⇦ view</div></a>
+        <img src="images/desktop_pc.png" alt="PC 아이콘" id="desktop" />
+        <div id="desktop_content">
+          <img
+            src="images/skydive_screenshot2.png"
+            alt="스카이다이빙 웹사이트 스크린샷 1"
+            id="screenshot1"
+          />
+          <img
+            src="images/skydive_screenshot3.png"
+            alt="스카이다이빙 웹사이트 스크린샷 2"
+            id="screenshot2"
+          />
+          <img
+            src="images/skydive_screenshot4.png"
+            alt="스카이다이빙 웹사이트 스크린샷 3"
+            id="screenshot3"
+          />
+          <img
+            src="images/skydive_screenshot5.png"
+            alt="스카이다이빙 웹사이트 스크린샷 4"
+            id="screenshot4"
+          />
+          <img
+            src="images/skydive_screenshot2.png"
+            alt="스카이다이빙 웹사이트 스크린샷 5"
+            id="screenshot5"
+          />
+        </div>
+      </article>
+
+      <article id="right_side">
+        <div id="main_content">
+          <h2>SKYDIVING IN INTERLAKEN</h2>
+
+          <ul id="content_left">
+            <li>ViewPort</li>
+            <li>Color</li>
+            <li id="font">Font</li>
+            <li>Detail</li>
+          </ul>
+          <ul id="content_right">
+            <li>
+              1920*1080 해상도(전체화면)의 데스크탑에 최적화 되어있습니다.
+            </li>
+            <li>
+              <img
+                src="images/color_chip.png"
+                alt="색상 이미지"
+                id="color_chip"
+              />
+            </li>
+            <li>#Cairo #Roboto Condensed by Google</li>
+            <li>
+              <p id="detail">
+                스위스 인터라켄 스카이다이빙을 주제로 하여 프로그램 소개와
+                예약에 관한 페이지를
+                <span class="bold">직접 기획,디자인,제작</span>하여
+                만들었습니다. <br /><br />
+                SetInterval을 이용하여 끝없이 이어지는 인터라켄의 풍경 그리고
+                흘러가는 구름을 표현했습니다.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="my_portfolio">
+      <h2>WORKS</h2>
+      <p>
+        This site is created with HTML5, CSS3, JavaScript & jQuery.
+        <br />
+        Also, as a portfolio site, the resource is with the original company.
+      </p>
+      <ul>
+        <li id="laneige">
+          <img src="images/4.jpg" alt="라네즈 사이트 이미지" class="work_img" />
+          <a href="my_works/laneige/laneige_index.html" target="_blank">View more</a>
+          <h4><img src="icons/laneige_logo.png" alt="라네즈 로고 이미지" /></h4>
+          <h5>라네즈 #반응형</h5>
+        </li>
+        <li id="chanel">
+          <img src="images/2.jpg" alt="샤넬 사이트 이미지" class="work_img" />
+          <a href="my_works/chanel/chanel_index.html" target="_blank">View more</a>
+          <h4><img src="icons/chanel_logo.png" alt="샤넬 로고 이미지" /></h4>
+          <h5>샤넬 #반응형</h5>
+        </li>
+        <li id="starbucks">
+          <img
+            src="images/3.jpg"
+            alt="스타벅스 사이트 이미지"
+            class="work_img"
+          />
+          <a href="my_works/Mstarbucks/starbucks_m_index.html" target="_blank">View more</a>
+          <h4>
+            <img src="icons/starbucks_logo.png" alt="스타벅스 로고 이미지" />
+          </h4>
+          <h5>스타벅스 #모바일</h5>
+        </li>
+        <li id="dunkin">
+          <img
+            src="images/1.jpg"
+            alt="던킨도너츠 사이트 이미지"
+            class="work_img"
+          />
+          <a href="my_works/dunkindonuts/dunkindonuts_index.html" target="_blank">View more</a>
+          <h4>
+            <img src="icons/dunkin_logo.png" alt="던킨도너츠 로고 이미지" />
+          </h4>
+          <h5>던킨도너츠 # 데스크탑</h5>
+        </li>
+        <li id="kona">
+          <img
+            src="images/5.jpg"
+            alt="코나카드 사이트 이미지"
+            class="work_img"
+          />
+          <a href="my_works/conacard/conacard_index.html" target="_blank">View more</a>
+          <h4><img src="icons/kona_logo.png" alt="코나카드 로고 이미지" /></h4>
+          <h5>코나카드 #데스크탑</h5>
+        </li>
+        <li id="lotte">
+          <img src="images/6.jpg" alt="롯데 사이트 이미지" class="work_img" />
+          <a href="my_works/lottehotel/lottehotel_index.html" target="_blank">View more</a>
+          <h4><img src="icons/lotte_logo.png" alt="롯데 로고 이미지" /></h4>
+          <h5>롯데호텔 #데스크탑</h5>
+        </li>
+      </ul>
+    </section>
+
+    <section id="profile">
+      <h2>ABOUT ME</h2>
+      <img src="images/me.png" alt="프로필 사진" id="profile_img" />
+      <article id="profile_box">
+        <div id="profile_leftbox">
+          <h3>
+            WEB, UX/UI Publisher <br />
+            LEE JIHYE
+          </h3>
+          <p>
+            I am proficient in all design software, as well as some other
+            computer applications. My skills range from website design, all the
+            way to application design.I will continue further studies to improve
+            design/publishing skills.
+          </p>
+        </div>
+        <div id="profile_rightbox">
+          <ul>
+            <li>
+              <h5>Photoshop</h5>
+              <h6>95%</h6>
+              <div class="profile_boxbg"></div>
+              <div class="profile_boxbar"></div>
+            </li>
+            <li>
+              <h5>Illustrator</h5>
+              <h6>90%</h6>
+              <div class="profile_boxbg"></div>
+              <div class="profile_boxbar"></div>
+            </li>
+            <li>
+              <h5>html5&css3</h5>
+              <h6>95%</h6>
+              <div class="profile_boxbg"></div>
+              <div class="profile_boxbar"></div>
+            </li>
+            <li>
+              <h5>Java script</h5>
+              <h6>85%</h6>
+              <div class="profile_boxbg"></div>
+              <div class="profile_boxbar"></div>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>CONTACT ME</h2>
+      <ul>
+        <li>
+          <img
+            src="http://uxuidesign.co.kr/portfolio/call.png"
+            alt="통화 아이콘"
+          />
+          <h4>010-3549-0816</h4>
+          <h5>LEE JIHYE</h5>
+        </li>
+        <li>
+          <img
+            src="http://uxuidesign.co.kr/portfolio/locate.png"
+            alt="지도 아이콘"
+          />
+          <h4>Gyeonggi-do, Republic of Korea</h4>
+          <h5>22, Sinchon-ro, Uijeongbu-si, Gyeonggi-do, Republic of Korea</h5>
+        </li>
+        <li>
+          <img
+            src="http://uxuidesign.co.kr/portfolio/mese.png"
+            alt="메일 아이콘"
+          />
+          <h4>MAIL | KAKAOTALK | NATE ON</h4>
+          <h5>jiihy@naver.com</h5>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <div id="footer_box">
+        <h3 id="footer_logo">
+          <img src="images/logoname.png" alt="로고 이미지" />
+        </h3>
+        <p id="footer_right">2021 Copyrightⓒ Lee JiHye, All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div id="main_icon"></div>
+
+    <div id="popup_bg">
+      <ul id="popup">
+        <li>HOME</li>
+        <li>MAIN WORK</li>
+        <li>WORKS</li>
+        <li>ABOUT ME</li>
+        <li>CONTACT</li>
+      </ul>
+      <!-- 	<p id="close">X</p> -->
+    </div>
+
+    <div class="w3c">
+      <a
+        href="http://jigsaw.w3.org/css-validator/check/referer"
+        target="_blank"
+		>
+        <img
+          style="border: 0; width: 88px; height: 31px"
+          src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+          alt="올바른 CSS입니다!"
+        />
+      </a>
+      <!-- css 검사완료 코드 -->
+      <a
+        href="http://validator.kldp.org/check?uri=referer"
+        onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))"
+        target="_blank"
+        ><img
+          src="http://validator.kldp.org/w3cimgs/validate/html5-blue.png"
+          alt="Valid HTML 5"
+          height="15"
+          width="80"
+      /></a>
+      <!-- html 검사완료 코드 -->
+    </div>
+  </body>
 </html>
